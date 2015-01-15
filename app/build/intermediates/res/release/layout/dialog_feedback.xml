@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#d21617" >
+
+        <ImageView
+            android:id="@+id/zoomImageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/feedbacknibicon" />
+
+        <TextView
+            android:id="@+id/textViewsetts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/feedbackcomments"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#a3a3a3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#00000000"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/editTextComments"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/signup_text"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/feedbacktext"
+            android:inputType="textMultiLine"
+            android:maxLength="150"
+            android:padding="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="1dp" >
+
+            <Button
+                android:id="@+id/buttonfeedbacksubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/arrowsubmit"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/F:/Projects/HungryBell1812/app/src/main/res/layout/dialog_feedback.xml -->

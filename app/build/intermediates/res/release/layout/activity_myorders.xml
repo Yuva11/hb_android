@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/settings_roundedcorner">
+
+            <ImageView
+                android:id="@+id/zoomImageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ordericons" />
+
+            <TextView
+                android:id="@+id/textViewsetts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="My Orders"
+                android:textColor="#4e4e4e"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_above="@+id/datavalue"
+                android:layout_centerInParent="true"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:id="@+id/noorders"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            android:id="@+id/textViewsnothing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/noorders"
+                            android:textColor="#4e4e4e"
+                            android:gravity="center"
+                            android:textSize="20sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Order"
+                            android:id="@+id/buttonorders"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/signup_submit"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            android:paddingLeft="15dp"
+                            android:onClick="clickonOrders"
+                            android:paddingRight="15dp"
+                            android:layout_below="@+id/textViewsnothing"
+                            android:layout_centerHorizontal="true" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+            <ScrollView
+                android:id="@+id/scrollMyOrder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/datavalue"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:id="@+id/myIdValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/datavalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_cart"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/textOnlyContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="#525252"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:text="Questions ? Please Call Us"
+                        android:textColor="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/imageViewImagesOnly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/womangreen" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:background="#dfdfdf" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="5dp" >
+
+                            <TextView
+                                android:id="@+id/textViewcallus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:singleLine="true"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewphone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:singleLine="true"
+                                android:textColor="#d01715"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/textViewTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:singleLine="true"
+                                android:textColor="#d01715"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/undobar"
+        style="@style/UndoBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/undobar_message"
+                style="@style/UndoBarMessage" />
+
+            <ImageView
+                android:id="@+id/imageViewerror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:src="@drawable/error" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/undobar_button"
+            style="@style/UndoBarButton" />
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/F:/Projects/HungryBell1812/app/src/main/res/layout/activity_myorders.xml -->

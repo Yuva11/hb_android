@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/settings_roundedcorner">
+
+            <ImageView
+                android:id="@+id/zoomImageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_name" />
+
+            <TextView
+                android:id="@+id/textViewsetts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="Profile"
+                android:textColor="#4e4e4e"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="false">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/profileedit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="#00000000"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Name"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageViews1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_name" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <EditText
+                                android:id="@+id/textViewprofirstname"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:ems="10"
+                                android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM "
+                                android:gravity="center_vertical"
+                                android:hint="Name"
+                                android:paddingLeft="5dp"
+                                android:singleLine="true" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Email Address"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageViewImagesOnly"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/email" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <EditText
+                                android:id="@+id/textViewpromailid"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:gravity="center_vertical"
+                                android:hint="Email"
+                                android:inputType="textEmailAddress"
+                                android:paddingLeft="5dp"
+                                android:singleLine="true" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Mobile Number"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_phone" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:text="+91" />
+                            <EditText
+                                android:id="@+id/textViewpromobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:hint="Mobile"
+                                android:imeOptions="actionDone"
+                                android:digits="0123456789"
+                                android:inputType="phone"
+                                android:paddingLeft="5dp"
+                                android:singleLine="true" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="15dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="Date of Birth"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="150dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageView5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/calendaricon" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <TextView
+                                android:id="@+id/textViewprodob"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:hint="Date of Birth"
+                                android:paddingLeft="5dp"
+                                android:singleLine="true"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:padding="1dp"
+                        >
+
+                        <Button
+                            android:id="@+id/buttonsinguupsubmit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/signup_submit"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Save"
+                            android:textColor="#fff" />
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/viewscroll"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/profilenotedit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="#00000000"
+                    android:orientation="vertical" >
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:padding="1dp" >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageViewp1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_name" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <TextView
+                                android:id="@+id/textproname"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:ems="10"
+                                android:textSize="17sp"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:singleLine="true" />
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageViewImagesOnly1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/email" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <TextView
+                                android:id="@+id/textpromail"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:textSize="17sp"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:singleLine="true" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageViewp44"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_phone" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <TextView
+                                android:id="@+id/textpromobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:textSize="17sp"
+
+                                android:paddingLeft="5dp"
+                                android:singleLine="true" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/signup_text"
+                            android:padding="1dp" >
+
+                            <RelativeLayout
+                                android:layout_width="40dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_inside" >
+
+                                <ImageView
+                                    android:id="@+id/imageViewd5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="10dp"
+                                    android:src="@drawable/calendaricon" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#dfdfdf" />
+
+                            <TextView
+                                android:id="@+id/textprodob"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/signup_back"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:singleLine="true"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="15dp"
+                        android:padding="1dp" >
+
+                        <Button
+                            android:id="@+id/buttonsinguupedit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/signup_submit"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Edit"
+                            android:textColor="#fff" />
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/viewscrolledit"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/undobar"
+        style="@style/UndoBar"
+        android:layout_width="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/undobar_message"
+                style="@style/UndoBarMessage" />
+
+            <ImageView
+                android:id="@+id/imageViewerror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:src="@drawable/error" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/undobar_button"
+            style="@style/UndoBarButton" />
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/home/ftuser/Arunkumar/Backup/F%20Colon/Projects/HungryBell1812/app/src/main/res/layout-large-land/activity_profile.xml -->

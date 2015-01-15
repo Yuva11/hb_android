@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/undobar"
+        style="@style/UndoBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/undobar_message"
+                style="@style/UndoBarMessage" />
+
+            <ImageView
+                android:id="@+id/imageViewerror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/error" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/undobar_button"
+            style="@style/UndoBarButton" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_myorders"
+        android:icon="@drawable/ic_myorders"
+        android:title="@string/myorders"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_favrestaurent"
+        android:icon="@drawable/restaurent"
+        android:title="@string/favrest"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_feedback"
+        android:icon="@drawable/feedbackback_menu"
+        android:title="@string/feedbackcomments"
+        app:showAsAction="ifRoom"/>
+
+</menu><!-- From: file:/home/ftuser/Arunkumar/Backup/F%20Colon/Projects/HungryBell1812/app/src/main/res/menu/profile.xml -->

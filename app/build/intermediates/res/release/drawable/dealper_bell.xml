@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+
+    <corners
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="5dp"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="5dp" />
+
+    <solid android:color="#760000" />
+
+</shape><!-- From: file:/F:/Projects/HungryBell1812/app/src/main/res/drawable/dealper_bell.xml -->

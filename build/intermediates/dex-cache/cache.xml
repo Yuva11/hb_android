@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\com.koushikdutta.ion\ion\1.3.8\1fc0413880bde2e3ffab3c5e5a243f39dd409b1c\ion-1.3.8.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="1fc0413880bde2e3ffab3c5e5a243f39dd409b1c">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\ion-1.3.8-aaad95780c7cdc943175d90e51f5390deec3b2ed.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.71\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-073d2e646d7a3c2edc6af99c6e71e508465b8614.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\libs\libGoogleAnalyticsServices.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="e887c6c9b31b39a39b0eaba981448b78902ea813">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\libGoogleAnalyticsServices-64fb74db175f801edca061bc8171a52b1be24188.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core-slh\3.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="49223278ec2ede1d05d00868c5ce3e077b4016f8">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-e86837887fd64a245a80bd88658190953b672626.jar" />
+    </item>
+    <item
+        jar="D:\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-d468e72c8ea79625b7615186601440b8d5bb481e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.3\a85588bec3e2c4584d593d3f15df1677321bca72\universal-image-loader-1.9.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\universal-image-loader-1.9.3-82d2fc4c82f2a18a90d97aae7e149dfb7d76fc70.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\internal_impl-21.0.3-1b7bd530b8ca042afbed2536ffa7ec2e1024b533.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\libs\socialauth-android-3.2.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="32bae3266a7c49bc7019ef3a868d080cb141f8d3">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\socialauth-android-3.2-4083dcbcbb9c5a1dc04411e497226ce84ea9f414.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.twotoasters.jazzylistview\library\1.0.1\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="57b2e2d8ba828b125939f621aa74f7edabe7aa71">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-d9289825df53c3ee6d67a327dd4d6a93a4ecdeab.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\libs\socialauth-4.6.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="14c62d7fe1ba2e9cbf5a884c1815f0a9fd03890f">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\socialauth-4.6-37dc4671072c54e8c8d81bce6664b696ac1b8a49.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core\3.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="acf66033b1418ccf9e15c8e77750981e4809c4ea">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-efb84b28e1cf9cce8853a7ee8ea9a9b2fa291db8.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.getbase\floatingactionbutton\1.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="6530bce64dfbde38a6beceaf1cca8a0257516f51">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-78de7ca68a5b2fac54a18386a4872e7f2ba76cae.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\org.projectlombok\lombok\1.12.6\f5df0f60aa42762a86e31e29892da07c5aaa0c71\lombok-1.12.6.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="f5df0f60aa42762a86e31e29892da07c5aaa0c71">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\lombok-1.12.6-e1967375cb7cfaa34da252fd5371cbb7ba97f003.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\library-2.4.0-ba4fb47b322da6dc8db8070eae89d1200264d600.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-809770a22d6e490a53e43c7f4390713d4cc898cd.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-manipulation\3.1.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-ef66d99b0fe3e56e74df56767f9e26fdcf14965d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.8.1\1eb6690b0c629d7000c77a72df5e822fb974f521\jsoup-1.8.1.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\jsoup-1.8.1-486052166fd5cd12d55b0ba7d8d719d5decafca8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.4\4216af16d38465bbab0f3dff8efa14204f7a399a\commons-codec-1.4.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="4216af16d38465bbab0f3dff8efa14204f7a399a">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\commons-codec-1.4-3cfb39c3d644d8c32b0784a23f16dbcd11e405b1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\gson-2.3-5344cecd180b653df27de3085132b0fb173fd223.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\libs\viewflow.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="a05bf363a3be50d43434f49e1ae07ba735542ddb">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\viewflow-07f7db8d40a7d7dbe559f66d0ac7c9efa53119f1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Arunkumar\.gradle\caches\modules-2\files-2.1\com.koushikdutta.async\androidasync\1.3.8\1f8e4f77d5f24179688c32b24dd5f79e889e7110\androidasync-1.3.8.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="1f8e4f77d5f24179688c32b24dd5f79e889e7110">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\androidasync-1.3.8-ed0c3792f1edf0d493035ca2c8e5f5718482774d.jar" />
+    </item>
+    <item
+        jar="F:\Projects\HungryBell1812\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\18.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
+        <dex dex="F:\Projects\HungryBell1812\app\build\intermediates\pre-dexed\release\classes-0535a3995908afbeca1bfd71cad698fabb8c30af.jar" />
+    </item>
+
+</items>

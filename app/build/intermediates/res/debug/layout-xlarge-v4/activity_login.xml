@@ -1,0 +1,264 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageViewlogos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/hblogos" />
+
+    <ImageView
+        android:id="@+id/imageViewImagesOnly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewlogos"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/hb" />
+
+    <LinearLayout
+        android:id="@+id/undobar"
+        style="@style/UndoBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/undobar_message"
+                style="@style/UndoBarMessage" />
+
+            <ImageView
+                android:id="@+id/zoomImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:src="@drawable/error" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/undobar_button"
+            style="@style/UndoBarButton" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarhorizontal"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:indeterminateOnly="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewImagesOnly"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="70dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/facebookbutton"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/login_facebook_bg"
+                android:paddingTop="20dp" >
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/facebookic" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/linkedinbutton"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/login_linkedin_bg"
+                android:padding="20dp" >
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/linkedin" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/twitterbutton"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/login_twitter_bg"
+                android:padding="20dp" >
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/twitter" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/googlebutton"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/login_googleplus_bg"
+                android:padding="20dp" >
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/googleplus" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/layout"
+        android:layout_alignRight="@+id/layout"
+        android:layout_below="@+id/layout" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/textView1log"
+            android:background="#a3a3a3" />
+
+        <TextView
+            android:id="@+id/textView1log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Or Use Your Email Address"
+            android:textColor="#a3a3a3" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/textView1log"
+            android:background="#a3a3a3" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/relativeLayout2"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_signup"
+        android:text="Sign Up"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/relativeLayout2"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_signup"
+        android:text="Log In"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textViewothers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="By Signing up &amp; Login you agree our"
+        android:textColor="#a3a3a3" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewothers"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp" >
+
+        <TextView
+            android:id="@+id/textViewtermsuse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/textViewterms" />
+
+        <TextView
+            android:id="@+id/textViewterms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=" and "
+            android:textColor="#a3a3a3" />
+
+        <TextView
+            android:id="@+id/textViewprivacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/textViewterms" />
+    </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/home/ftuser/Arunkumar/Backup/F%20Colon/Projects/HungryBell1812/app/src/main/res/layout-xlarge/activity_login.xml -->

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#b0b0b0" >
+
+        <TextView
+            android:id="@+id/mycartText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="Ask Deal" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp" >
+
+                <TextView
+                    android:id="@+id/askcenteralign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/textViewaskname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Event Name"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/editTexteventName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textViewaskname"
+                    android:layout_alignBottom="@+id/textViewaskname"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/askcenteralign"
+                    android:hint="Event name"
+                    android:imeOptions="actionDone"
+                    android:inputType="textNoSuggestions"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/textViewaskdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/textViewaskname"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Event Date"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/eventDateText"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textViewaskdate"
+                    android:layout_alignBottom="@+id/textViewaskdate"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/askcenteralign"
+                    android:hint="Event Date"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/textViewaskguset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/textViewaskdate"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Guests"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/editTexteventguest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textViewaskguset"
+                    android:layout_alignBottom="@+id/textViewaskguset"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/askcenteralign"
+                    android:hint="No of guests"
+                    android:inputType="numberSigned"
+                    android:maxLength="6"
+                    android:singleLine="true" />
+
+                <DatePicker
+                    android:id="@+id/dpResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout><!-- From: file:/home/ftuser/Arunkumar/Backup/F%20Colon/Projects/HungryBell1812/app/src/main/res/layout/fragment_askdeal.xml -->

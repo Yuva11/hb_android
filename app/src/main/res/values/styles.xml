@@ -1,0 +1,132 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar"></style>
+
+    <style name="AppThemeMain" parent="Theme.AppCompat.Light"></style>
+
+    <style name="MyActionBarTabs" parent="@style/Widget.AppCompat.ActionBar.TabView">
+
+        <!-- tab indicator -->
+        <item name="android:background">@drawable/background_tab</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/background_tab</item>
+    </style>
+    <style name="PopupAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+    <style name="MyTheme.ActionBar.TabText" parent="android:style/Widget.Holo.ActionBar.TabText">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="ratingBarfavrest" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingsbellfav</item>
+    </style>
+    <style name="MyActionBarTabStyle" parent="android:style/Widget.Holo.Light.ActionBar.TabBar">
+        <item name="android:background">@drawable/background_tab</item>
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingRight">32dp</item>
+    </style>
+    <style name="ChromeStylePopup" parent="android:Widget.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:minWidth">75dp</item>
+        <item name="android:maxWidth">150dp</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+    <style name="ActionBarThemes" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/headerandfooter</item>
+    </style>
+    <!-- Application theme. -->
+    <style name="AppThemeMains" parent="Theme.AppCompat.Light"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+            <item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
+        <!--
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+        <item name="android:actionBarTabBarStyle">@style/MyTheme.ActionBar.TabBar</item>
+        <item name="android:actionBarTabStyle">@style/MyTheme.ActionBar.TabView</item>
+
+
+
+        -->
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/MyTheme.ActionBar.TabText</item>
+        <item name="android:actionBarStyle">@style/ActionBarThemes</item>
+    </style>
+
+    <style name="ActionButtonStyle" parent="@android:style/Widget.Holo.Light.ActionButton">
+        <item name="android:minWidth">0dip</item>
+        <item name="android:paddingLeft">6dip</item>
+        <item name="android:paddingRight">6dip</item>
+    </style>
+
+    <style name="ratingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingsbell1</item>
+    </style>
+
+    <style name="ratingBarb" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingsbell</item>
+    </style>
+    <style name="ratingBarBig" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingsbellbig1</item>
+    </style>
+
+    <style name="ratingBarbigB" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingsbell</item>
+    </style>
+    <declare-styleable name="TextProgressBar">
+        <attr name="text" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension"></attr>
+    </declare-styleable>
+
+    <style name="UndoBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/undobar</item>
+        <item name="android:clickable">true</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@drawable/undobar_divider</item>
+        <item name="android:dividerPadding">10dp</item>
+    </style>
+
+    <style name="UndoBarMessage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="UndoBarButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:background">@drawable/undobar_button</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:text">@string/retry</item>
+    </style>
+
+    <style name="myBackgroundStyle" parent="@android:style/Theme.Panel">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hungry Bells</string>
+    <!--
+     Local test
+    <string name="reg_gcm_id">564391025598</string>
+     <string name="gcm_project_id">peak-axiom-684</string>
+
+ <string name="reg_gcm_id">1011838200663</string>
+<string name="reg_gcm_id">499006981520</string>
+
+    <string name="gcm_project_id">cogent-repeater-764</string>
+    Internal test
+     <string name="gcm_project_id">peak-axiom-684</string>
+     -->
+
+    <string name="reg_gcm_id">564391025598</string>
+
+
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="facebook_text">Facebook</string>
+    <string name="twitter_text">Twitter</string>
+    <string name="gplus_text">Google Plus</string>
+    <string name="linkedin_text">LinkedIn</string>
+    <string name="myorders">My Orders</string>
+    <string name="party">Party</string>
+    <string name="reward">Reward</string>
+    <string name="profile">My Profile</string>
+    <string name="settings">Settings</string>
+    <string name="quantity">Availability</string>
+    <string name="pref_send_report">Send crash reports</string>
+    <string name="pref_send_report_summary">Helps to fix bugs</string>
+    <string name="pref_user_name">Set username</string>
+    <string name="pref_user_name_summary">Set your username</string>
+    <string name="pref_user_profile">User Profile</string>
+    <string name="pref_update_setting">Update Settings</string>
+    <string name="merchant_id">test_t1424</string>
+    <string name="merchant_key_id">payment</string>
+    <string name="transaction_type">SALE</string>
+    <string name="hash">ac45955f08bdfd61a5d77027db09175cfbf451823898373ef8a73587a2750810</string>
+    <string name="currency">INR</string>
+    <string name="errorinnetwork">Network speed is too slow.Please bare with us.</string>
+    <string name="dinein">Dine In</string>
+    <string name="takeaway">Take Away</string>
+    <string name="doordelivery">Delivery</string>
+    <string name="paymentui">REDIRECT</string>
+    <string name="hash_method">SHA256</string>
+    <string name="search_hint">Search deals</string>
+    <string name="action">Perform action</string>
+    <string name="undobar_sample_message"> No connection</string>
+    <string name="retry">Retry</string>
+    <string name="feedbacktext">We love to know what you feel&#8230;</string>
+    <string name="account_type">HungryBell</string>
+    <string name="facebooklogin">Facebook</string>
+    <string name="twiterlogin">Twitter</string>
+    <string name="gpluslogin">Google Plus</string>
+    <string name="linkedinlogin">Linkedin</string>
+    <string name="buynow">Buy Now</string>
+    <string name="cart">Cart</string>
+    <string name="like">Like</string>
+    <string name="share">Share</string>
+    <string name="canceltext">Cancel</string>
+    <string name="favrest">Favourite Hangout</string>
+    <string name="feedbackcomments">Feedback</string>
+    <string name="ratings">Ratings</string>
+    <string name="facebooksecret">f3e3cefe7548a7583ead78038f39be26
+    </string>
+    <string name="facebookkey">1391639181070101</string>
+    <string name="twittersecret">0NFOp1rNP5m18tQBiW7sWJ5VWuvSzqkwb50YlbiAFQrar5Zpjr</string>
+    <string name="twitterkey">1XvAPzaYGYynW8LdeahFck9L5</string>
+    <string name="linkedinsecret">mUuBlXOeoG3EBbz9</string>
+    <string name="linkedinkey">750iu20wutkjpl</string>
+    <string name="nocoupons">Sorry\! We couldn\'t find any Tickets for this location, Can you please try with someother location</string>
+    <string name="nodealstext">Sorry\! We couldn\'t find any Deals for this location, Can you please try with someother location</string>
+    <string name="nonetwork"> Oops! We are experiencing low internet connectivity </string>
+    <string name="nonetworkconn">Oops! Please check if your internet is ON</string>
+    <string name="feedbackscuess">Thank you for your feedback!!!</string>
+    <string name="emptyreview">Please enter your valuable feedback</string>
+    <string name="emptyreviewchars">Review comments should be minimum 3 characters</string>
+    <string name="emptyaddress">Please enter a address</string>
+    <string name="emptyaddresschars">Please enter a valid address</string>
+    <string name="avails">Available is only:</string>
+    <string name="soldout">We are Sorry!!! Item is SOLD OUT</string>
+    <string name="profilescuess">Your Profile has been updated!</string>
+    <string name="settingsucuess">Your Preference has been noted!</string>
+    <string name="likesucuess">You Liked it! Thank you</string>
+    <string name="likeremovesucuess">Oh! You Disliked!</string>
+    <string name="addedfav">Added to your Favourite Hangout</string>
+    <string name="removefav">Removed from your Favourite Hangout</string>
+    <string name="internalerror">Internal Error</string>
+    <string name="errordownload">Sorry we couldn’t download the file</string>
+    <string name="downloadcomp">Your file download is complete!</string>
+    <string name="nameempty">Please enter your Name</string>
+    <string name="mobilevalid">Please enter 10 digit phone no</string>
+    <string name="mobileempty">Please enter your mobile no</string>
+    <string name="birthdate">Age should be more than 16 years</string>
+    <string name="emailvalid">Please enter a valid email</string>
+    <string name="forgotpassmessage">Your password has been sent to registered email id</string>
+    <string name="emailempty">Please enter your email id</string>
+    <string name="passempty">Password should atleast be minimum 5 characters</string>
+    <string name="noorders">We didn\'t find any Orders from you yet!\n Would you like to make an Order?</string>
+    <string name="nofavorates">Didn\'t like any restaurant till now.</string>
+    <string name="deliveryaddress">Delivery Address for this item</string>
+    <string name="forgotpassword">Forgot Password</string>
+    <string name="forgotpasswordmessage">Please Enter your Email id</string>
+    <string name="promotional">4</string>
+    <string name="noads">Sorry\! We couldn\'t find any Contents for this location, Can you please try with someother location</string>
+    <string name="nodeals">Sorry\! We couldn\'t find any Deals for this location, Can you please try with someother location</string>
+    <string name="nonpromotional">2</string>
+    <string name="loadstring">Please hold on.. We are fetching your preferred contents</string>
+    <string name="showcase_main_title">Preference Change</string>
+    <string name="showcase_main_message">Click on This.Select My Profile</string>
+
+    <!--
+    <string name="local_cloud">http://192.168.1.193:7070/</string>
+    <string name="deepan_cloud">http://192.168.1.192:1010/</string>
+    <string name="serverurl_cloud">http://service.hungrybells.in:9090/</string>
+    <string name="serverurl_cloud_test">http://service.hungrybells.in:9091/</string>
+     <string name="serverurl_test">http://hbells.finateltech.com:7070/</string>
+     <string name="serverurl_test">http://hbservice.finateltech.com:9090/</string>
+    -->
+
+    <string name="serverurl_test">http://192.168.1.192:1010/</string>
+   <!-- <string name="facebookauth">http://hbservice.finateltech.com:9090/auth/facebook?scope=public_profile,email</string>
+   <string name="paymentcallback">http://hbservice.finateltech.com:9090/paymentresponse/addresponse</string>
+    <string name="twitterauth">http://hbservice.finateltech.com:9090/auth/twitter</string>
+    <string name="linkedinauth">http://hbservice.finateltech.com:9090/auth/linkedin</string>
+    <string name="googleauth">http://hbservice.finateltech.com:9090/auth/google?scope=profile+email</string>
+    <string name="fbterurnString">http://hbservice.finateltech.com:9090/#_=_</string>
+    <string name="gplusreturnString">http://hbservice.finateltech.com:9090/</string>-->
+
+</resources>

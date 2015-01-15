@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="StaggeredGridView">
+        <attr name="drawSelectorOnTop" format="boolean" />
+        <attr name="numColumns" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="ProgressWheel">
+        <attr name="textWheel" format="string" />
+        <attr name="textColorWheel" format="color" />
+        <attr name="textSizeWheel" format="dimension" />
+        <attr name="barColorWheel" format="color" />
+        <attr name="rimColorWheel" format="color" />
+        <attr name="rimWidthWheel" format="dimension" />
+        <attr name="spinSpeedWheel" format="dimension" />
+        <attr name="delayMillisWheel" format="integer" />
+        <attr name="circleColorWheel" format="color" />
+        <attr name="radiusWheel" format="dimension" />
+        <attr name="barWidthWheel" format="dimension" />
+        <attr name="barLengthWheel" format="dimension" />
+        <attr name="contourColorWheel" format="color"/>
+        <attr name="contourSizeWheel" format="dimension"/>
+    </declare-styleable>
+</resources>

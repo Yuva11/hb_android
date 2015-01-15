@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+              Replace placeholder ID with your tracking ID  Own 
+    <string name="ga_trackingId">UA-53442399-2</string>
+
+         Replace placeholder ID with your tracking ID  production 
+    <string name="ga_trackingId">UA-56315000-1</string>
+    //Production
+<string name="ga_trackingId">UA-55723283-2</string>
+
+ <string name="ga_trackingId">UA-56315000-1</string>
+ <string name="ga_trackingId">UA-55723283-2</string>
+    -->
+
+
+    <string name="ga_trackingId">UA-53442399-2</string>
+    <!-- Enable automatic activity tracking -->
+    <bool name="ga_autoActivityTracking">true</bool>
+
+    <!-- Enable automatic exception tracking -->
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+
+</resources>

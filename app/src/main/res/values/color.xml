@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="redtab">#d21615</color>
+    <color name="unredtab">#8d8d8d</color>
+    <color name="sa_green">#ffffff</color>
+    <color name="stacked_green">#f4f4f4</color>
+    <color name="accent_green">#97e08f</color>
+    <color name="Black">#000000</color>
+    <color name="light_gray">#d8d8d8</color>
+    <color name="backgroundaction">#d21617</color>
+    <color name="background_tab_pressed">#efffff</color>
+    <color name="tab_highlight">#ff9ecfbf</color>
+    <color name="pink">#d21617</color>
+    <color name="pink_pressed">#595959</color>
+    <color name="transperant">#00000000</color>
+</resources>
