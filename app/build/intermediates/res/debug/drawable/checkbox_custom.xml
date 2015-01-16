@@ -4,4 +4,4 @@
     <item android:drawable="@drawable/checkbox" android:state_checked="false"/>
     <item android:drawable="@drawable/checkboxselected" android:state_checked="true"/>
     <item android:drawable="@drawable/checkbox"/>    
-</selector><!-- From: file:/home/ftuser/Arunkumar/Backup/F%20Colon/Projects/HungryBell1812/app/src/main/res/drawable/checkbox_custom.xml -->
+</selector><!-- From: file:/Users/ajeetkumar/AndroidStudioProjects/clientWork/HungryBells/app/src/main/res/drawable/checkbox_custom.xml -->

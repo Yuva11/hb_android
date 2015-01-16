@@ -4,4 +4,4 @@
     android:fromAlpha="1.0"
     android:interpolator="@android:anim/accelerate_interpolator"
     android:toAlpha="0.0" />
-<!-- From: file:/home/ftuser/Arunkumar/Backup/F%20Colon/Projects/HungryBell1812/app/src/main/res/anim/fade_out.xml -->
+<!-- From: file:/Users/ajeetkumar/AndroidStudioProjects/clientWork/HungryBells/app/src/main/res/anim/fade_out.xml -->

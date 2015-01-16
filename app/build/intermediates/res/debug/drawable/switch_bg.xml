@@ -2,4 +2,4 @@
     <item android:state_enabled="false" android:drawable="@drawable/apptheme_switch_bg_disabled_holo_light" />
     <item android:state_focused="true"  android:drawable="@drawable/apptheme_switch_bg_focused_holo_light" />
     <item                               android:drawable="@drawable/apptheme_switch_bg_holo_light" />
-</selector><!-- From: file:/home/ftuser/Arunkumar/Backup/F%20Colon/Projects/HungryBell1812/app/src/main/res/drawable/switch_bg.xml -->
+</selector><!-- From: file:/Users/ajeetkumar/AndroidStudioProjects/clientWork/HungryBells/app/src/main/res/drawable/switch_bg.xml -->
