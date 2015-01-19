@@ -64,6 +64,10 @@ public class LoginActivity extends UserActivity implements OnClickListener {
                     getString(R.string.undobar_sample_message), null);
 
         }
+
+
+        getActionBar().hide();
+
         // homePageNavigation();
     }
 

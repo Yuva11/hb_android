@@ -66,6 +66,8 @@ public class SignupActivity extends UserActivity implements OnClickListener {
                 .setOnClickListener(this);
         ((TextView) findViewById(R.id.textViewtermsuse))
                 .setOnClickListener(this);
+
+        getActionBar().hide();
     }
 
     @Override
