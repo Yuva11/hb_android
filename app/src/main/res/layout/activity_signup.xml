@@ -68,7 +68,9 @@
                     android:hint="Name"
                     android:paddingLeft="5dp"
                     android:singleLine="true"
-                    android:textColorHint="@android:color/white"/>
+                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:textCursorDrawable="@drawable/color_cursor_white"/>
             </LinearLayout>
 
             <!-- Email Text Box -->
@@ -108,7 +110,9 @@
                     android:inputType="textEmailAddress"
                     android:paddingLeft="5dp"
                     android:singleLine="true"
-                    android:textColorHint="@android:color/white"/>
+                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:textCursorDrawable="@drawable/color_cursor_white"/>
             </LinearLayout>
 
             <!-- Password Text Box -->
@@ -148,7 +152,9 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:paddingLeft="5dp"
-                    android:textColorHint="@android:color/white"/>
+                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:textCursorDrawable="@drawable/color_cursor_white"/>
             </LinearLayout>
 
             <!-- Mobile Text Box -->
@@ -191,7 +197,9 @@
                     android:inputType="phone"
                     android:paddingLeft="5dp"
                     android:singleLine="true"
-                    android:textColorHint="@android:color/white"/>
+                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:textCursorDrawable="@drawable/color_cursor_white"/>
             </LinearLayout>
 
             <!-- Sign Up Button -->
