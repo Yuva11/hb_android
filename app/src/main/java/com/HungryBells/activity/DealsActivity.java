@@ -119,6 +119,8 @@ public class DealsActivity extends UserActivity implements
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
+
+        getActionBar().setHomeButtonEnabled(true);
     }
 
     public void loadDeals() throws Exception {
@@ -222,10 +224,12 @@ public class DealsActivity extends UserActivity implements
                     TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
                             .getDisplayMetrics());
             viewPager.setPageMargin(pageMargin);
-            Typeface type = Typeface.createFromAsset(getAssets(),
-                    "Pristina.ttf");
+            Typeface type = Typeface.create("sans-serif", Typeface.NORMAL);
+
 
             tabs.setTypeface(type, Typeface.NORMAL);
+            tabs.setTextSize(44);
+            //tabs.set
             tabs.setViewPager(viewPager);
             getSupportFragmentManager().executePendingTransactions();
             mAdapter.notifyDataSetChanged();
@@ -321,13 +325,16 @@ public class DealsActivity extends UserActivity implements
         if(networkChanges())
             switch (item.getItemId()) {
                 case android.R.id.home:
+                    /*
                     appState.setSelectedItem(0);
                     if (Util.checkNetworkAndLocation(this)) {
                         UserLocationDTO location = new UserLocationDTO();
                         location.setName("My Location");
                         searchByLocation(location, this);
                     }
-                    break;
+                    */
+
+                    return true;
 
                 case R.id.action_favrestaurent:
                     appState.setSelectedItem(0);
