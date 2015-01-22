@@ -88,6 +88,7 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 		((TextView) findViewById(R.id.textViewtermsuse))
 				.setOnClickListener(this);
 	}
+
     public  void submitMailId(String emailId){
         httpConnection = new ServiceListener(appState);
         String url = "mailer/forgotpassword/"
@@ -98,7 +99,8 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 
 
     }
-	@Override
+
+    @Override
 	public void onClick(View v) {
 		enableDisableClick(false);
 		switch (v.getId()) {

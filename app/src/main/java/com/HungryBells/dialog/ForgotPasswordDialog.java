@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.HungryBells.activity.LoggingInActivity;
+import com.HungryBells.activity.LoginActivity;
 import com.HungryBells.activity.OrderSummaryActivity;
 import com.HungryBells.activity.R;
 import com.HungryBells.activity.SignupActivity;
@@ -58,7 +59,7 @@ public class ForgotPasswordDialog extends Dialog implements
                     Util.customToast(dialogContext, dialogContext.getString(R.string.emailvalid));
                 } else {
                     Log.e("Context", dialogContext.getLocalClassName());
-                    ((LoggingInActivity) dialogContext)
+                    ((LoginActivity) dialogContext)
                             .submitMailId(editTextComments);
 
                     dismiss();

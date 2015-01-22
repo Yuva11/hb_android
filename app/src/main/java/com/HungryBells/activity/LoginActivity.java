@@ -10,17 +10,31 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.HungryBells.DTO.LoginRequestDto;
 import com.HungryBells.DTO.ServiceListenerType;
+import com.HungryBells.activity.intefaceImpl.LoginUpdate;
+import com.HungryBells.activity.intefaces.LoginParsing;
 import com.HungryBells.activity.subactivity.AnimationRunActivty;
+import com.HungryBells.dialog.ForgotPasswordDialog;
 import com.HungryBells.service.LoginService;
+import com.HungryBells.service.ServiceListener;
 import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.apache.commons.codec.binary.Base64;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.protocol.HTTP;
+
+import java.io.UnsupportedEncodingException;
 
 import static com.HungryBells.util.ServiceType.FACEBOOK;
 import static com.HungryBells.util.ServiceType.GOOGLEPLUS;
@@ -28,6 +42,8 @@ import static com.HungryBells.util.ServiceType.LINKEDIN;
 import static com.HungryBells.util.ServiceType.TWITTER;
 
 public class LoginActivity extends UserActivity implements OnClickListener {
+
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +75,12 @@ public class LoginActivity extends UserActivity implements OnClickListener {
                 .setOnClickListener(this);
         ((TextView) findViewById(R.id.textViewtermsuse))
                 .setOnClickListener(this);
+        ((TextView) findViewById(R.id.textViewForgetPassword)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ForgotPasswordDialog(LoginActivity.this).show();
+            }
+        });
         if (!Util.checkNetworkAndLocation(this)) {
             mUndoBarController.showUndoBar(true,
                     getString(R.string.undobar_sample_message), null);
@@ -77,8 +99,8 @@ public class LoginActivity extends UserActivity implements OnClickListener {
             mUndoBarController.showUndoBar(true,
                     getString(R.string.undobar_sample_message), null);
         } else {
-            AnimationRunActivty animations = new AnimationRunActivty(this);
-            animations.runAnimation(R.id.imageViewlogos);
+            //AnimationRunActivty animations = new AnimationRunActivty(this);
+            //animations.runAnimation(R.id.imageViewlogos);
             enableDisableClick(false);
             switch (v.getId()) {
                 case R.id.facebookbutton:
@@ -97,7 +119,7 @@ public class LoginActivity extends UserActivity implements OnClickListener {
                     singnUpTransition();
                     break;
                 case R.id.buttonSignIn:
-                    singnInTransition();
+                    loggingIn();
                     break;
                 case R.id.textViewtermsuse:
                     InputMethodManager imm = (InputMethodManager) getSystemService(
@@ -136,10 +158,73 @@ public class LoginActivity extends UserActivity implements OnClickListener {
     }
 
     private void singnInTransition() {
-        startActivitiesUser(new Intent(this, LoggingInActivity.class), this);
+        startActivitiesUser(new Intent(this, LoginActivity.class), this);
         finish();
         overridePendingTransition(0, R.anim.login_signupanimation);
 
+    }
+
+    public  void submitMailId(String emailId){
+        httpConnection = new ServiceListener(appState);
+        String url = "mailer/forgotpassword/"
+                + emailId+"/customer";
+        httpConnection.sendRequest(url, null,
+                ServiceListenerType.FEEDBACK_INSERT, SyncHandler, "GET",
+                null);
+
+
+    }
+
+    private void loggingIn() {
+        String mail = ((EditText) findViewById(R.id.editTextusersname))
+                .getText().toString().trim();
+        LoginRequestDto loginRequest = new LoginRequestDto();
+        if (mail != null && mail.length() > 0) {
+            if (Util.isValidEmailAddress(mail)) {
+                byte[] byteArray = Base64.encodeBase64(mail.getBytes());
+                String encodedString = new String(byteArray);
+                loginRequest.setUserName(encodedString);
+            } else {
+                enableDisableClick(true);
+                Util.customToastShort(this, "Username is not valid");
+                return;
+            }
+        } else {
+            enableDisableClick(true);
+            Util.customToastShort(this,"Username should not be Empty");
+            return;
+        }
+        view=(EditText) findViewById(R.id.editTextusersname);
+        String password = ((EditText) findViewById(R.id.editTextemail))
+                .getText().toString().trim();
+
+        if (password != null && password.length() > 4) {
+            byte[] byteArray = Base64.encodeBase64(password.getBytes());
+            String encodedString = new String(byteArray);
+            loginRequest.setPassWord(new String(encodedString));
+        } else {
+            enableDisableClick(true);
+            Util.customToastShort(this, "Password should not be Empty");
+            return;
+        }
+        Gson gson = new GsonBuilder().create();
+        String customerData = gson.toJson(loginRequest);
+        String url = "login/userauth";
+        StringEntity custEntity = null;
+        try {
+            custEntity = new StringEntity(customerData, HTTP.UTF_8);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        httpConnection = new ServiceListener(appState);
+        progressBar.setCancelable(false);
+        InputMethodManager im = (InputMethodManager)getSystemService(
+                INPUT_METHOD_SERVICE);
+        im.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        progressBar.show();
+        httpConnection.sendRequest(url, null,
+                ServiceListenerType.CUSTOMER_LOGIN, SyncHandler, "POST",
+                custEntity);
     }
 
     @Override
@@ -191,8 +276,42 @@ public class LoginActivity extends UserActivity implements OnClickListener {
 
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
-        // TODO Auto-generated method stub
 
+        switch (what) {
+            case CUSTOMER_LOGIN:
+                progressBar.dismiss();
+                LoginParsing login = new LoginUpdate();
+                GlobalAppState appState = (GlobalAppState) getApplication();
+                if (login.successfullLogin(message, this, mUndoBarController,
+                        appState)) {
+                    navigatePage();
+                }
+                break;
+            case FEEDBACK_INSERT:
+                progressBar.dismiss();
+                String response = message.getString(ServiceListener.RESPONSEDATA);
+                if(response.contains("true")){
+                    Util.customToastMessage(this,getString(R.string.forgotpassmessage));
+                }else{
+                    Util.customToastMessage(this,"Customer does not exist");
+                }
+                Log.e("Message", "message:" + response);
+                break;
+            case ERRORMSG:
+                try {
+                    if (Util.checkNetworkAndLocation(this)) {
+                        Util.customToast(this, getString(R.string.nonetwork));
+                    }
+                } catch (Exception e) {
+                    Util.customToast(this, getString(R.string.nonetworkconn));
+                }
+                break;
+        }
+
+    }
+
+    private void navigatePage() {
+        startActivitiesUser(new Intent(this, DealsActivity.class), this);
     }
 
     private void enableDisableClick(boolean enable) {
