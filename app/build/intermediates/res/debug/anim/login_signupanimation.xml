@@ -1,9 +1,0 @@
-<set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:zAdjustment="top" >
-
-    <translate
-        android:duration="600"
-        android:fromYDelta="0"
-        android:toYDelta="100%p" />
-
-</set><!-- From: file:/Users/ajeetkumar/AndroidStudioProjects/clientWork/HungryBells/app/src/main/res/anim/login_signupanimation.xml -->

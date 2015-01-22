@@ -70,7 +70,8 @@
                     android:singleLine="true"
                     android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
-                    android:textCursorDrawable="@drawable/color_cursor_white"/>
+                    android:textCursorDrawable="@drawable/color_cursor_white"
+                    android:background="@drawable/edit_text_custom_theme"/>
             </LinearLayout>
 
             <!-- Email Text Box -->
@@ -112,7 +113,8 @@
                     android:singleLine="true"
                     android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
-                    android:textCursorDrawable="@drawable/color_cursor_white"/>
+                    android:textCursorDrawable="@drawable/color_cursor_white"
+                    android:background="@drawable/edit_text_custom_theme"/>
             </LinearLayout>
 
             <!-- Password Text Box -->
@@ -154,7 +156,8 @@
                     android:paddingLeft="5dp"
                     android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
-                    android:textCursorDrawable="@drawable/color_cursor_white"/>
+                    android:textCursorDrawable="@drawable/color_cursor_white"
+                    android:background="@drawable/edit_text_custom_theme"/>
             </LinearLayout>
 
             <!-- Mobile Text Box -->
@@ -199,7 +202,8 @@
                     android:singleLine="true"
                     android:textColorHint="@android:color/white"
                     android:textColor="@android:color/white"
-                    android:textCursorDrawable="@drawable/color_cursor_white"/>
+                    android:textCursorDrawable="@drawable/color_cursor_white"
+                    android:background="@drawable/edit_text_custom_theme"/>
             </LinearLayout>
 
             <!-- Sign Up Button -->
