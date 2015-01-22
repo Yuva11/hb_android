@@ -1,7 +1,0 @@
-<account-authenticator xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accountType="hungrybell"
-    android:icon="@drawable/hungrybelllogo"
-    android:label="@string/app_name"
-    android:smallIcon="@drawable/hungrybellslogo" />
-
-<!-- From: file:/Users/ajeetkumar/AndroidStudioProjects/clientWork/HungryBells/app/src/main/res/xml/authenticator.xml -->
