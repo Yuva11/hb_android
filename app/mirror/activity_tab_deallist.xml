@@ -1,0 +1,45 @@
+<!-- [ Mirror metadata ] generatedAt: 1422261176958 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/activity_tab_deallist">
+        <grids>
+            <items layout="@android:layout/simple_list_item_1" >
+                <_item>
+                    <text1>Apple</text1>
+                </_item>
+                <_item>
+                    <text1>Orange</text1>
+                </_item>
+                <_item>
+                    <text1>Pear</text1>
+                </_item>
+                <_item>
+                    <text1>Grapefruit</text1>
+                </_item>
+                <_item>
+                    <text1>Banana</text1>
+                </_item>
+                <_item>
+                    <text1>Lemon</text1>
+                </_item>
+                <_item>
+                    <text1>Carrot</text1>
+                </_item>
+            </items>
+                </grids>
+        <!-- ImageView Examples:
+        <zoomImageView src="@drawable/image_resource" />
+        <zoomImageView src="relative_path/image.jpg" /> -->
+        <zoomImageView />
+        <!-- TextView Examples:
+        <textViewnoAds text="@string/string_resource" />
+        <textViewnoAds text="Text literal" textSize="14sp" /> -->
+        <textViewnoAds />
+        <textViewnoAdsTry />
+        <imageViewretrydeals />
+    </_content>
+</screen>

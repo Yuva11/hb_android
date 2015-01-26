@@ -1,0 +1,23 @@
+<!-- [ Mirror metadata ] generatedAt: 1422261176576 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/cart_view_adapter">
+        <!-- ImageView Examples:
+        <imageViewcartImage src="@drawable/image_resource" />
+        <imageViewcartImage src="relative_path/image.jpg" /> -->
+        <imageViewcartImage />
+        <!-- TextView Examples:
+        <cartItemname text="@string/string_resource" />
+        <cartItemname text="Text literal" textSize="14sp" /> -->
+        <cartItemname />
+        <cartItemdescription />
+        <cartItempriceTat />
+        <cartitempriceAmt />
+        <cartItemprice />
+        <imageViewdelete />
+    </_content>
+</screen>

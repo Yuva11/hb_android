@@ -2,158 +2,158 @@
 <items version="2" >
 
     <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.3/a85588bec3e2c4584d593d3f15df1677321bca72/universal-image-loader-1.9.3.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.3-70c4930ef278edd135ba5f9b565784e257859450.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/libs/socialauth-android-3.2.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="32bae3266a7c49bc7019ef3a868d080cb141f8d3">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/socialauth-android-3.2-890420e212bd77042b4114b1fe59ef64204d8a09.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-b890a5a74f2d9851fbec6e38d143a1cd0e70e1a9.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-0ff2e332ee2b97939651ca74779867c4be11f355.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/library-2.4.0-dcd11d968c1a997826a5beb34a223f56e2e93556.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="6530bce64dfbde38a6beceaf1cca8a0257516f51">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-6995a5d29d4dcc718013263e30dea99f3ff5dd00.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/18.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-08dc44f070dc384c25f4da96b6110bdf7ce840b8.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-79bbf788314aaef9c1d543c1c9c93ca82bc7652f.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/com.koushikdutta.ion/ion/1.3.8/1fc0413880bde2e3ffab3c5e5a243f39dd409b1c/ion-1.3.8.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="1fc0413880bde2e3ffab3c5e5a243f39dd409b1c">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/ion-1.3.8-4c5cbc1cc77d531a6eb35cafe9a486226fae9d3d.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-a77bb7231147e0f4cb0190f01cbc41e40378de28.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core/3.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="acf66033b1418ccf9e15c8e77750981e4809c4ea">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-1733e3125da81080ddc9ddd53ec5b0eebe4aa513.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.twotoasters.jazzylistview/library/1.0.1/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="57b2e2d8ba828b125939f621aa74f7edabe7aa71">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-f53a6609f61ff6caa1cc1d6b78aa93ee232b4b3e.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/libs/libGoogleAnalyticsServices.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="e887c6c9b31b39a39b0eaba981448b78902ea813">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-3bc2b697071168e6088887ac4722ff837a24fc7f.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/1.3.8/1f8e4f77d5f24179688c32b24dd5f79e889e7110/androidasync-1.3.8.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="1f8e4f77d5f24179688c32b24dd5f79e889e7110">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/androidasync-1.3.8-8f0f2a18234629deb11125d962e8a29a3f96c3fc.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/libs/socialauth-4.6.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="14c62d7fe1ba2e9cbf5a884c1815f0a9fd03890f">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/socialauth-4.6-701e6cd9961e66324db45b3f8e210a3401cf447d.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.0.1"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-750eb6de2f0246a8f5a8c5885e17b3845b7b9500.jar" />
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-3b591c8626512788b4b22152985578fa7395c013.jar" />
     </item>
     <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/libs/viewflow.jar"
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.0.1"
-        sha1="a05bf363a3be50d43434f49e1ae07ba735542ddb">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/viewflow-2cbb99cd3bc4e4d0f501e969fc6d2dbac80c406d.jar" />
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-955ccbd47022966767ee1c6b6004dc5458e1c130.jar" />
     </item>
     <item
-        jar="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="49223278ec2ede1d05d00868c5ce3e077b4016f8">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/classes-ae0804e6b12e71e4fed2898a94b5ead862894f6e.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f5df0f60aa42762a86e31e29892da07c5aaa0c71/lombok-1.12.6.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="f5df0f60aa42762a86e31e29892da07c5aaa0c71">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/lombok-1.12.6-a597d612c5415dc86137b8c1d5003cbd97480edc.jar" />
-    </item>
-    <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
         jumboMode="false"
         revision="21.0.1"
         sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/gson-2.3-03d5c9e1cf435d04acbfcfa0dc6aaeb1d11e6aa9.jar" />
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/gson-2.3-613d5bd2496aef34bc3d8483aa6ff83a82ea73d5.jar" />
     </item>
     <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar"
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/18.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-e7a7c1495c857a5b124863563bf9da0b55687a6c.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar"
         jumboMode="false"
         revision="21.0.1"
         sha1="4216af16d38465bbab0f3dff8efa14204f7a399a">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/commons-codec-1.4-b76fa42dc39b41d1d88bd27af3f862f72f1a7815.jar" />
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/commons-codec-1.4-0adc59577d1818bcc7d99618867bf47a6f99fcaf.jar" />
     </item>
     <item
-        jar="/Users/ajeetkumar/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.8.1/1eb6690b0c629d7000c77a72df5e822fb974f521/jsoup-1.8.1.jar"
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.koushikdutta.ion/ion/1.3.8/1fc0413880bde2e3ffab3c5e5a243f39dd409b1c/ion-1.3.8.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="1fc0413880bde2e3ffab3c5e5a243f39dd409b1c">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/ion-1.3.8-2cb6f475c2b9ae6a829f790d607bd07b330cd54d.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f5df0f60aa42762a86e31e29892da07c5aaa0c71/lombok-1.12.6.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="f5df0f60aa42762a86e31e29892da07c5aaa0c71">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/lombok-1.12.6-73449fd5c724826e2cb9e946fb179d6d9ab77f56.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/viewflow.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="a05bf363a3be50d43434f49e1ae07ba735542ddb">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/viewflow-5cc82ec77a29cb47e4faa078bb45878236db9f08.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/library-2.4.0-1b1e27b34c910b645333f9218c9e13f98a9a3358.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.twotoasters.jazzylistview/library/1.0.1/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="57b2e2d8ba828b125939f621aa74f7edabe7aa71">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-80b8604d531a968932f111fbc03ec8a3812b1fc7.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="6530bce64dfbde38a6beceaf1cca8a0257516f51">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-19904c212c7841e61091c709eb835d375f284b81.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.3/a85588bec3e2c4584d593d3f15df1677321bca72/universal-image-loader-1.9.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.3-a822d97538c2d35c8e679074321f634574b2bff8.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-020354e45fc9a9eb430059aaa037b076d4a1a655.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/1.3.8/1f8e4f77d5f24179688c32b24dd5f79e889e7110/androidasync-1.3.8.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="1f8e4f77d5f24179688c32b24dd5f79e889e7110">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/androidasync-1.3.8-0d2393903b24f18aa618865171f3635a7bdcd9f7.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/socialauth-4.6.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="14c62d7fe1ba2e9cbf5a884c1815f0a9fd03890f">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/socialauth-4.6-c664790208d52a92f23a8b17142f7297970834d1.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/libGoogleAnalyticsServices.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="e887c6c9b31b39a39b0eaba981448b78902ea813">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-697f2b1b7a04b5cafbd39a1d3366b11f12d6904f.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-6e503a86c7a96a4c2c00d472609953b157e3c363.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.8.1/1eb6690b0c629d7000c77a72df5e822fb974f521/jsoup-1.8.1.jar"
         jumboMode="false"
         revision="21.0.1"
         sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
-        <dex dex="/Users/ajeetkumar/AndroidStudioProjects/clientWork/hb-android/app/build/intermediates/pre-dexed/debug/jsoup-1.8.1-c812a9238a79c323c599f2e59fc0777558657dcf.jar" />
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/jsoup-1.8.1-bce6c094c520f449d796c6131cb4956b1007a3d7.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="49223278ec2ede1d05d00868c5ce3e077b4016f8">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-04bb20094e07c830a44d24a95293bfa5914ad95f.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-manipulation/3.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-6ec73f7bcaa4fbd1d7477718bd516505e56a1162.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core/3.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="acf66033b1418ccf9e15c8e77750981e4809c4ea">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-3ca420e3de17c3172c5211f9849a5b6da683cef5.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/socialauth-android-3.2.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="32bae3266a7c49bc7019ef3a868d080cb141f8d3">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/socialauth-android-3.2-06b9ed25426e78b9295954e3f9f56c7fe5e45410.jar" />
     </item>
 
 </items>

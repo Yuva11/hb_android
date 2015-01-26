@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.HungryBells.activity"
-    android:versionCode="17"
-    android:versionName="1.0.3.2">
+    android:versionCode="18"
+    android:versionName="1.0.4.2">
 
     <supports-screens
         android:anyDensity="true"
@@ -45,7 +45,7 @@
     <uses-permission android:name="com.HungryBells.activity.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.READ_OWNER_DATA" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
         android:name="com.HungryBells.activity.GlobalAppState"
@@ -60,8 +60,8 @@
         <activity
             android:name="com.HungryBells.activity.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
-
             android:launchMode="singleTask"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
             <intent-filter>
@@ -74,6 +74,7 @@
             android:name="com.HungryBells.activity.LoginActivity"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:noHistory="true" />
         <activity
             android:name="com.HungryBells.activity.ViewDealsActivity"
@@ -83,7 +84,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.HungryBells.activity.SearchCityActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.HungryBells.activity.PaymentFailedActivity"
@@ -96,50 +98,64 @@
         <activity
             android:name="com.HungryBells.activity.FavorateRestaurentActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustNothing" />
+            android:windowSoftInputMode="adjustNothing"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.CusinePreferenceActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="adjustNothing" />
+            android:windowSoftInputMode="adjustNothing"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.NotificationPreferenceSwitch"
-            android:windowSoftInputMode="adjustNothing" />
+            android:windowSoftInputMode="adjustNothing"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.FoodPreferenceSwitch"
 
-            android:windowSoftInputMode="adjustNothing" />
+            android:windowSoftInputMode="adjustNothing"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.LoggingInActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="true" />
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.SignupActivity"
-            android:noHistory="true" />
-        <activity android:name="com.HungryBells.activity.ZoomImageActivity" />
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.HungryBells.activity.ZoomImageActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.ViewCouponActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.HungryBells.activity.DealsActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.HungryBells.activity.OrderSummaryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.HungryBells.activity.FeedBackActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.MyOrdersActivity"
-            android:configChanges="orientation|screenSize" />
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.ViewAdsActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation" />
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="portrait"/>
 
         <receiver
             android:name="com.HungryBells.activity.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:permission="com.google.android.c2dm.permission.SEND"
+            >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <category android:name="com.HungryBells.activity" />
@@ -153,18 +169,23 @@
 
         <activity
             android:name="com.HungryBells.activity.UserSettingActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.ProfileActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity android:name="com.HungryBells.activity.AccountManagerActivity" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.HungryBells.activity.AccountManagerActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.TermsConditionActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.SocialAuthActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:noHistory="true" />
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
 
         <service
             android:name="com.HungryBells.activity.service.AuthenticationService"

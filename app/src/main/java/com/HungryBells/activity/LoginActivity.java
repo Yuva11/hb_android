@@ -325,7 +325,7 @@ public class LoginActivity extends UserActivity implements OnClickListener {
 
         } else {
             ((ProgressBar) findViewById(R.id.progressBarhorizontal))
-                    .setVisibility(View.VISIBLE);
+                    .setVisibility(View.INVISIBLE);
         }
         ((RelativeLayout) findViewById(R.id.facebookbutton))
                 .setClickable(enable);

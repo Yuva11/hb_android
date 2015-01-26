@@ -1,0 +1,15 @@
+<!-- [ Mirror metadata ] generatedAt: 1422261176470 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/activity_payment">
+        <!-- TextView Examples:
+        <textViewtransState text="@string/string_resource" />
+        <textViewtransState text="Text literal" textSize="14sp" /> -->
+        <textViewtransState />
+        <webViewWebpagePayment url="http://www.google.com" />
+    </_content>
+</screen>

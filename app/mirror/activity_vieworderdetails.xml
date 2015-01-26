@@ -1,0 +1,30 @@
+<!-- [ Mirror metadata ] generatedAt: 1422261176917 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/activity_vieworderdetails">
+        <!-- ImageView Examples:
+        <zoomImageView src="@drawable/image_resource" />
+        <zoomImageView src="relative_path/image.jpg" /> -->
+        <zoomImageView />
+        <!-- TextView Examples:
+        <textViewsetts text="@string/string_resource" />
+        <textViewsetts text="Text literal" textSize="14sp" /> -->
+        <textViewsetts />
+        <imageorderdeals />
+        <imageorderdealsName />
+        <quantitydata />
+        <totalOrderAmount />
+        <imageorderdealsAmt />
+        <totalOrder />
+        <totalvalue />
+        <textdineinviewdeal />
+        <texttakeawayviewdeal />
+        <textdoorviewdeal />
+        <undobar_message />
+        <imageViewerror />
+    </_content>
+</screen>

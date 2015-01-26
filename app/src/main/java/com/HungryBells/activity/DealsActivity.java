@@ -228,7 +228,7 @@ public class DealsActivity extends UserActivity implements
 
 
             tabs.setTypeface(type, Typeface.NORMAL);
-            tabs.setTextSize(44);
+            tabs.setTextSize(38);
             //tabs.set
             tabs.setViewPager(viewPager);
             getSupportFragmentManager().executePendingTransactions();
@@ -325,14 +325,14 @@ public class DealsActivity extends UserActivity implements
         if(networkChanges())
             switch (item.getItemId()) {
                 case android.R.id.home:
-                    /*
+
                     appState.setSelectedItem(0);
                     if (Util.checkNetworkAndLocation(this)) {
                         UserLocationDTO location = new UserLocationDTO();
                         location.setName("My Location");
                         searchByLocation(location, this);
                     }
-                    */
+
 
                     return true;
 

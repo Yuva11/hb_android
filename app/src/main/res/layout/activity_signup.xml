@@ -1,13 +1,13 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <RelativeLayout
+ <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg"
-        android:orientation="vertical" >
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg">
+
+
+
 
         <!-- Logo Image -->
         <ImageView
@@ -254,26 +254,30 @@
             android:id="@+id/textViewothers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_below="@+id/signup"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="By Signing up &amp; Login you agree our"
             android:textSize="12dp"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:layout_alignParentBottom="false" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewothers"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp" >
+            android:layout_marginTop="3dp"
+            android:layout_alignParentBottom="false">
 
             <TextView
                 android:id="@+id/textViewtermsuse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/textViewterms"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:layout_alignParentBottom="false" />
 
             <TextView
                 android:id="@+id/textViewterms"
@@ -288,8 +292,9 @@
                 android:id="@+id/textViewprivacy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/textViewterms" />
+                android:layout_toRightOf="@+id/textViewterms"
+                android:layout_alignParentBottom="false"
+                android:textSize="12dp"/>
         </RelativeLayout>
     </RelativeLayout>
 
-</ScrollView>

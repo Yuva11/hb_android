@@ -4,12 +4,17 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
+
+
     <com.HungryBells.util.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="48dip"
         android:background="@drawable/background_tabs"
-        app:pstsShouldExpand="true"/>
+        app:pstsShouldExpand="true"
+        />
+
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
