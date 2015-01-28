@@ -229,7 +229,7 @@ public class DealsActivity extends UserActivity implements
 
             tabs.setTypeface(type, Typeface.NORMAL);
             tabs.setTextSize(38);
-            //tabs.set
+            //tabs.setTextSize(38);
             tabs.setViewPager(viewPager);
             getSupportFragmentManager().executePendingTransactions();
             mAdapter.notifyDataSetChanged();

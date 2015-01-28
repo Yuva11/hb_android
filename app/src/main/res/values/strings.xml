@@ -104,7 +104,7 @@
     <string name="noorders">We didn\'t find any Orders from you yet!\n Would you like to make an Order?</string>
     <string name="nofavorates">Didn\'t like any restaurant till now.</string>
     <string name="deliveryaddress">Delivery Address for this item</string>
-    <string name="forgotpassword">Forgot Password</string>
+    <string name="forgotpassword">Forgot Password ?</string>
     <string name="forgotpasswordmessage">Please Enter your Email id</string>
     <string name="promotional">4</string>
     <string name="noads">Sorry\! We couldn\'t find any Contents for this location, Can you please try with someother location</string>

@@ -29,7 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageViewlogos"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="18dp"
+        android:layout_alignParentTop="false">
 
         <EditText
             android:id="@+id/editTextusersname"
@@ -71,7 +73,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="-14dp">
+
+
+            <TextView
+                android:id="@+id/textViewForgetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Forgot password?"
+                android:textSize="14dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@android:color/white"/>
+
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/buttonSignUp"
@@ -83,21 +104,10 @@
                 android:background="@android:color/transparent"
                 android:text="Sign Up"
                 android:textSize="14dp"
+
                 android:textColor="@android:color/white" />
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_weight="1"/>
 
-            <TextView
-                android:id="@+id/textViewForgetPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="Forgot Password"
-                android:layout_marginRight="20dp"
-                android:textColor="@android:color/white"/>
 
         </LinearLayout>
 
@@ -147,7 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="---------          OR LOGIN WITH          ----------"
+                android:text="---------        OR LOGIN WITH        ----------"
                 android:textColor="@android:color/white" />
 
         </RelativeLayout>

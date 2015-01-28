@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+android:id/background"
+        android:drawable="@drawable/bellbignot"/>
+    <item
+        android:id="@+android:id/secondaryProgress"
+        android:drawable="@drawable/bellbignot"/>
+    <item
+        android:id="@+android:id/progress"
+        android:drawable="@drawable/bellbig"/>
+
+</layer-list><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/drawable/ratingsbellbig1.xml -->
