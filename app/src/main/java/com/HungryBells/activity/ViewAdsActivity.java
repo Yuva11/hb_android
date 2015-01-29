@@ -47,7 +47,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 @SuppressLint("InflateParams")
-public class ViewAdsActivity extends UserActivity implements OnClickListener {
+public class ViewAdsActivity extends UserActivity implements OnClickListener
+{
 	private CustomViewPager viewPager;
 	Integer urlLoad;
 	UpdateStatus update;
@@ -57,6 +58,8 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
     RelativeLayout customLayout;
     AdvertisementViewAdapter mAdsPagerAdapter;
     private boolean isPlayVideo = false;
+
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

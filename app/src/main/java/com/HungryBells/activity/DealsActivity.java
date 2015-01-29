@@ -79,32 +79,47 @@ public class DealsActivity extends UserActivity implements
     private  boolean showProgress = false;
     ChromeHelpPopup chromeHelpPopup;
     TextView center;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_dealslayout);
+
         appState = (GlobalAppState) getApplication();
         prefs = getSharedPreferences("HB",MODE_PRIVATE);
+
         android.util.Log.d("Deals Activity", "Deals Activity onCreate");
-        if (appState != null && appState.getCity() != null&&appState.getUrl()!=null) {
-            try {
+        if (appState != null && appState.getCity() != null&&appState.getUrl()!=null)
+        {
+            try
+            {
                 httpConnection = new ServiceListener(appState);
+
+                // Custom Action bar creation
                 actionBarCreation(this);
                 android.util.Log.e("Deals Activity", "On Create Page Called");
-                mUndoBarController = new UndoBarController(
-                        findViewById(R.id.undobar), this);
+
+
+                mUndoBarController = new UndoBarController(findViewById(R.id.undobar), this);
+
                 forceShowActionBarOverflowMenu();
                 handler = new Handler();
-                viewPager = (ViewPager) findViewById(R.id.pager);
+                viewPager = (ViewPager)findViewById(R.id.pager);
+
                 getSearchLocations();
                 GooglePlayServices gs = new GooglePlayServices(this);
                 gs.start();
+
                 center = (TextView)findViewById(R.id.textViewcenter);
                 chromeHelpPopup = new ChromeHelpPopup(DealsActivity.this,getString(R.string.loadstring));
+
                 IntentFilter mIntentFilter = new IntentFilter("LOCATIONUPDATE");
                 LocationReceiver mLocationReceiver = new LocationReceiver();
-                LocalBroadcastManager.getInstance(this).registerReceiver(
-                        mLocationReceiver, mIntentFilter);
+                LocalBroadcastManager.getInstance(this).registerReceiver(mLocationReceiver, mIntentFilter);
+
                 if(!prefs.getBoolean("isProfileUpdates",false)){
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putBoolean("isProfile", true);
@@ -112,6 +127,7 @@ public class DealsActivity extends UserActivity implements
                     editor.commit();
                     updateProfile();
                 }
+
             } catch (Exception e) {
                 android.util.Log.e("Main", e.toString(), e);
             }
@@ -121,6 +137,7 @@ public class DealsActivity extends UserActivity implements
         }
 
         getActionBar().setHomeButtonEnabled(true);
+
     }
 
     public void loadDeals() throws Exception {
@@ -144,8 +161,7 @@ public class DealsActivity extends UserActivity implements
             String profile = prefs.getString("Profile", "");
             Customers customerProfile = Customers.create(profile);
             appState.setProfile(customerProfile);
-            android.util.Log.e("Getting Profile",
-                    "Getting from Shanred Preference");
+            android.util.Log.e("Getting Profile","Getting from Shanred Preference");
         }
         dealLoc.setCustomerId(appState.getProfile().getId());
         android.util.Log.i("Location", dealLoc.toString());
@@ -229,7 +245,7 @@ public class DealsActivity extends UserActivity implements
 
             tabs.setTypeface(type, Typeface.NORMAL);
             tabs.setTextSize(38);
-            //tabs.setTextSize(38);
+
             tabs.setViewPager(viewPager);
             getSupportFragmentManager().executePendingTransactions();
             mAdapter.notifyDataSetChanged();
@@ -267,8 +283,7 @@ public class DealsActivity extends UserActivity implements
     }
 
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
-        private final String[] titles = { "What's New ", " Best Pick ",
-                "  Coupons " };
+        private final String[] titles = { "What's New", "Best Pick", "Coupons" };
 
         public MyPagerAdapter(android.support.v4.app.FragmentManager fm) {
             super(fm);
@@ -411,9 +426,13 @@ public class DealsActivity extends UserActivity implements
     public void onPageSelected(int arg0) {
 
     }
+
     public void pageChanged(int currentPosition){
         tabs.setSelectedText(currentPosition);
     }
+
+
+    // OnClick Method for each item in What's new view
     public void dealsAdsViewPage(int custId) {
         Intent viewadvertisement = new Intent(this, ViewAdsActivity.class);
         Bundle bundle = new Bundle();
@@ -423,6 +442,7 @@ public class DealsActivity extends UserActivity implements
         startActivitiesUser(viewadvertisement, this);
     }
 
+    // OnClick Method for each item in Best Pick view
     public void dealsCouponViewPage(int custId) {
         Intent viewCoupons = new Intent(this, ViewCouponActivity.class);
         Bundle bundle = new Bundle();
@@ -432,6 +452,7 @@ public class DealsActivity extends UserActivity implements
         startActivitiesUser(viewCoupons, this);
     }
 
+    // OnClick Method for each item in Coupons view
     public void dealsViewPage(int custId) {
         Intent viewDeals = new Intent(this, ViewDealsActivity.class);
         Bundle bundle = new Bundle();
@@ -519,13 +540,14 @@ public class DealsActivity extends UserActivity implements
     }
 
     @Override
-    public void onStart() {
+    public void onStart()
+    {
         super.onStart();
         android.util.Log.d("Deals Activity", "Deals Activity onStart");
         if (appState.getCity() != null) {
             try {
 
-                android.util.Log.i("On Start", "On start Process called");
+
 
                 if (Util.checkNetworkAndLocation(this)) {
 
