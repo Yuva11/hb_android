@@ -60,66 +60,79 @@ import com.google.android.gms.location.LocationClient;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/* Deals Activity Page class */
 @SuppressLint("InflateParams")
 public class DealsActivity extends UserActivity implements
         ActionBar.TabListener, OnPageChangeListener {
 
-
+   /* Dealsactivity Sliding tabs*/
     PagerSlidingTabStrip tabs;
+
+
+    /* Dealsactivity swipe using viewpager*/
     private ViewPager viewPager;
+
+	/* Memember for timer task */
     Handler handler;
+
+	/* Memember variable to store on back button pressed or not */
     private boolean isBackPressed = false;
+
+	/*Timer task instacne */
     TimerTask timerTask;
+
+	/* Location timer task to get location on every timer expiry, to get current location name to displayed */
     Timer locationTimer;
+
+	/*Timer instance */
     Timer timer;
+
+	/*Timer task instacne */
     MyTimerTask myTimerTask;
+
+ 	/* Global application state Object where all contextual information is stored */
     protected GlobalAppState appState;
-    int currentPosition= 0;
-    private long time;
+
+	/* Boolean variable to share progress bar */
     private  boolean showProgress = false;
+
+    /* for showing popup animation in loading time */
     ChromeHelpPopup chromeHelpPopup;
+
+	/* Not used */
     TextView center;
-
-
+    /*
+    * Initiaizing handler,viewpager
+    *
+    * OnCreate Method for Deals Activity page
+    * This method will get the nearest location names, which having contents and deals using lat/long of the user
+    * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_dealslayout);
-
         appState = (GlobalAppState) getApplication();
         prefs = getSharedPreferences("HB",MODE_PRIVATE);
-
         android.util.Log.d("Deals Activity", "Deals Activity onCreate");
-        if (appState != null && appState.getCity() != null&&appState.getUrl()!=null)
-        {
-            try
-            {
+        if (appState != null && appState.getCity() != null&&appState.getUrl()!=null) {
+            try {
                 httpConnection = new ServiceListener(appState);
-
-                // Custom Action bar creation
                 actionBarCreation(this);
                 android.util.Log.e("Deals Activity", "On Create Page Called");
-
-
-                mUndoBarController = new UndoBarController(findViewById(R.id.undobar), this);
-
+                mUndoBarController = new UndoBarController(
+                        findViewById(R.id.undobar), this);
                 forceShowActionBarOverflowMenu();
                 handler = new Handler();
-                viewPager = (ViewPager)findViewById(R.id.pager);
-
+                viewPager = (ViewPager) findViewById(R.id.pager);
                 getSearchLocations();
                 GooglePlayServices gs = new GooglePlayServices(this);
                 gs.start();
-
                 center = (TextView)findViewById(R.id.textViewcenter);
                 chromeHelpPopup = new ChromeHelpPopup(DealsActivity.this,getString(R.string.loadstring));
-
                 IntentFilter mIntentFilter = new IntentFilter("LOCATIONUPDATE");
                 LocationReceiver mLocationReceiver = new LocationReceiver();
-                LocalBroadcastManager.getInstance(this).registerReceiver(mLocationReceiver, mIntentFilter);
-
+                LocalBroadcastManager.getInstance(this).registerReceiver(
+                        mLocationReceiver, mIntentFilter);
                 if(!prefs.getBoolean("isProfileUpdates",false)){
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putBoolean("isProfile", true);
@@ -127,7 +140,6 @@ public class DealsActivity extends UserActivity implements
                     editor.commit();
                     updateProfile();
                 }
-
             } catch (Exception e) {
                 android.util.Log.e("Main", e.toString(), e);
             }
@@ -135,11 +147,13 @@ public class DealsActivity extends UserActivity implements
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
-
-        getActionBar().setHomeButtonEnabled(true);
-
     }
-
+    /*
+    * get location longitude & latitude from user
+    * Searching deals
+    * scheduling timer
+    * This will be called from onStart Method.
+    * */
     public void loadDeals() throws Exception {
         android.util.Log.e("Inside Main", "Inside Main Activity");
         UserLocation dealLoc;
@@ -161,7 +175,8 @@ public class DealsActivity extends UserActivity implements
             String profile = prefs.getString("Profile", "");
             Customers customerProfile = Customers.create(profile);
             appState.setProfile(customerProfile);
-            android.util.Log.e("Getting Profile","Getting from Shanred Preference");
+            android.util.Log.e("Getting Profile",
+                    "Getting from Shanred Preference");
         }
         dealLoc.setCustomerId(appState.getProfile().getId());
         android.util.Log.i("Location", dealLoc.toString());
@@ -187,13 +202,19 @@ public class DealsActivity extends UserActivity implements
         }
 
     }
-
+    /*
+    * search nearest location using longitude and latitude
+    * This will be called from onCreate Method.
+    * */
     private void getSearchLocations() {
         String url = "location/getnearestlocation/" + appState.getLatitude()
                 + "/" + appState.getLongitude() + ".";
         httpConnection.sendRequest(url, null, ServiceListenerType.GET_LOCATION,
                 SyncHandler, "GET", null);
     }
+    /*
+    * Timer task class after 5 seconds , now not used.
+    * */
     class MyTimerTask extends TimerTask {
 
         @Override
@@ -210,6 +231,10 @@ public class DealsActivity extends UserActivity implements
         }
 
     }
+
+    /*
+    * Forceful menu button for menu button not appearing mobile in some mobiles
+    * */
     private void forceShowActionBarOverflowMenu() {
         try {
             ViewConfiguration config = ViewConfiguration.get(this);
@@ -223,7 +248,11 @@ public class DealsActivity extends UserActivity implements
             Log.e("Error:" + e);
         }
     }
-
+    /*
+    * Initialize adapter
+    * Setting fonts
+    * Setting viewpager fragments
+    * */
     public void setPages() {
         try {
             android.util.Log.d("Inside set Pages", "Set pages called");
@@ -240,17 +269,14 @@ public class DealsActivity extends UserActivity implements
                     TypedValue.COMPLEX_UNIT_DIP, 4, getResources()
                             .getDisplayMetrics());
             viewPager.setPageMargin(pageMargin);
+            //Typeface type = Typeface.createFromAsset(getAssets(), "Pristina.ttf");
             Typeface type = Typeface.create("sans-serif", Typeface.NORMAL);
-
 
             tabs.setTypeface(type, Typeface.NORMAL);
             tabs.setTextSize(38);
-
             tabs.setViewPager(viewPager);
             getSupportFragmentManager().executePendingTransactions();
             mAdapter.notifyDataSetChanged();
-            android.util.Log.i("sdfsdfsdf","dsfsdfdsf:"+appState.getSelectedItem());
-
             new Handler().post(new Runnable() {
                 @Override
                 public void run() {
@@ -264,7 +290,10 @@ public class DealsActivity extends UserActivity implements
             android.util.Log.e("Error in SetPages", e.toString(), e);
         }
     }
-
+    /*
+    * Parsing the JSON Deal messges and converts to Deal POJO class
+    *
+    * */
     private void allDealContents(Bundle data) {
         try {
             showProgress = false;
@@ -281,9 +310,13 @@ public class DealsActivity extends UserActivity implements
             Log.e("Error" + e);
         }
     }
-
+    /*
+    * Viewpager adapter inner class and titles for Sliding tabs (What new, Best Pick and Coupons )
+    *
+    * */
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
-        private final String[] titles = { "What's New", "Best Pick", "Coupons" };
+        private final String[] titles = { "What's New ", " Best Pick ",
+                "  Coupons " };
 
         public MyPagerAdapter(android.support.v4.app.FragmentManager fm) {
             super(fm);
@@ -315,7 +348,9 @@ public class DealsActivity extends UserActivity implements
             return super.getItemPosition(object);
         }
     }
-
+    /*
+    * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+    * */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -334,22 +369,21 @@ public class DealsActivity extends UserActivity implements
         }
         return super.onMenuOpened(featureId, menu);
     }
-
+  /*
+  * This method will be called when the action overflow button is pressed and the menu item is selected
+  * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(networkChanges())
             switch (item.getItemId()) {
                 case android.R.id.home:
-
                     appState.setSelectedItem(0);
                     if (Util.checkNetworkAndLocation(this)) {
                         UserLocationDTO location = new UserLocationDTO();
                         location.setName("My Location");
                         searchByLocation(location, this);
                     }
-
-
-                    return true;
+                    break;
 
                 case R.id.action_favrestaurent:
                     appState.setSelectedItem(0);
@@ -376,20 +410,28 @@ public class DealsActivity extends UserActivity implements
             }
         return false;
     }
-
+    /*
+    * Inflating the menus in the Action oveerflow button
+    * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.login, menu);
         return true;
     }
-
+    /*
+     * onbackpressed confirmation dialog
+      *
+      * */
     @Override
     public void onBackPressed() {
         isBackPressed = true;
         SettingsDialog exit = new SettingsDialog(this);
         exit.showExitAlert();
     }
-
+    /*
+     * Onback pressed exit or not
+      *
+      * */
     public void onBackPressed(boolean value) {
         if(value){
             finish();
@@ -398,6 +440,9 @@ public class DealsActivity extends UserActivity implements
         }
     }
 
+    /* click on the tab in dealspage
+      *
+       * */
     @Override
     public void onTabSelected(Tab tab, FragmentTransaction ft) {
         tabs.setSelectedText(tab.getPosition());
@@ -409,59 +454,66 @@ public class DealsActivity extends UserActivity implements
     public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 
     }
-
+	/*Not used */
     @Override
     public void onTabReselected(Tab tab, FragmentTransaction ft) {
     }
-
+	/*Not used */
     @Override
     public void onPageScrollStateChanged(int state) {
     }
-
+	/*Not used */
     @Override
     public void onPageScrolled(int position, float arg1, int arg2) {
     }
-
+	/*Not used */
     @Override
     public void onPageSelected(int arg0) {
 
     }
-
+	/* This function will determine which is sliding tab is selected */
     public void pageChanged(int currentPosition){
         tabs.setSelectedText(currentPosition);
     }
 
-
-    // OnClick Method for each item in What's new view
-    public void dealsAdsViewPage(int custId) {
+    /*
+* Navigate to Adsview page
+* parcelling current index to set page
+* */
+    public void dealsAdsViewPage(int index) {
         Intent viewadvertisement = new Intent(this, ViewAdsActivity.class);
         Bundle bundle = new Bundle();
         appState.setSelectedItem(0);
-        bundle.putSerializable("ADV URL", custId);
+        bundle.putSerializable("ADV URL", index);
         viewadvertisement.putExtras(bundle);
         startActivitiesUser(viewadvertisement, this);
     }
-
-    // OnClick Method for each item in Best Pick view
-    public void dealsCouponViewPage(int custId) {
+    /*
+    * Navigate to couponview  page
+    * parcelling current index to set page
+    * */
+    public void dealsCouponViewPage(int index) {
         Intent viewCoupons = new Intent(this, ViewCouponActivity.class);
         Bundle bundle = new Bundle();
         appState.setSelectedItem(0);
-        bundle.putSerializable("Coupon", custId);
+        bundle.putSerializable("Coupon", index);
         viewCoupons.putExtras(bundle);
         startActivitiesUser(viewCoupons, this);
     }
 
-    // OnClick Method for each item in Coupons view
-    public void dealsViewPage(int custId) {
+/*
+* Navigate to dealsview page
+* parcelling current index to set page
+* */
+    public void dealsViewPage(int index) {
         Intent viewDeals = new Intent(this, ViewDealsActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("Deals", custId);
+        bundle.putSerializable("Deals", index);
         viewDeals.putExtras(bundle);
         appState.setSelectedItem(0);
         startActivitiesUser(viewDeals, this);
     }
-
+  /* Concrete method from useractivity used to receive datas from HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         switch (what) {
@@ -493,6 +545,7 @@ public class DealsActivity extends UserActivity implements
 
 
     }
+    /* This method updates the profile information in shared preferences */
     private void profileUpdate(){
         android.util.Log.e("Updated","updates done");
         SharedPreferences.Editor editor = prefs.edit();
@@ -500,7 +553,10 @@ public class DealsActivity extends UserActivity implements
         editor.putBoolean("isProfile", true);
         editor.commit();
     }
-
+    /*
+    *
+    * check current location in timer task and create new task
+    * */
     private void initializeTimerTask() {
         timerTask = new TimerTask() {
             public void run() {
@@ -538,16 +594,20 @@ public class DealsActivity extends UserActivity implements
             }
         };
     }
-
+    /*
+    * initialize location timer
+    * check for every one minute
+    * if current location changed, get the deals from HB server and load the new deals , else load the existing deals which is available in cache
+    *
+    * */
     @Override
-    public void onStart()
-    {
+    public void onStart() {
         super.onStart();
         android.util.Log.d("Deals Activity", "Deals Activity onStart");
         if (appState.getCity() != null) {
             try {
 
-
+                android.util.Log.i("On Start", "On start Process called");
 
                 if (Util.checkNetworkAndLocation(this)) {
 
@@ -576,7 +636,9 @@ public class DealsActivity extends UserActivity implements
             }
         }
     }
-
+    /*
+    * canceling all timer tasks which are initialized.
+    * */
     @Override
     protected void onStop() {
         super.onStop();
@@ -619,7 +681,7 @@ public class DealsActivity extends UserActivity implements
         }
 
         // Called when the BroadcastReceiver gets an Intent it's registered to
-        // receive
+        // receive the latitude and longitude.
         @Override
         public void onReceive(Context context, Intent intent) {
             android.util.Log.i("LocationReceiver", "LocationReceiver called");
@@ -644,6 +706,12 @@ public class DealsActivity extends UserActivity implements
         }
 
     }
+
+    /*
+    * Update customer profile to shared preferences and also send
+    * GCM authentication id to server
+    *
+    * */
     private void updateProfile() {
         SharedPreferences preferencesReader = getSharedPreferences(
                 "HB", Context.MODE_PRIVATE);
@@ -674,7 +742,9 @@ public class DealsActivity extends UserActivity implements
         return context.getSharedPreferences(MainActivity.class.getSimpleName(),
                 Context.MODE_PRIVATE);
     }
-
+    /*
+    * GCM registration id for user
+    * */
     private String getRegistrationId(Context context) {
         final SharedPreferences prefs = getGCMPreferences(context);
         String registrationId = prefs.getString("registration_id", "");
@@ -684,6 +754,9 @@ public class DealsActivity extends UserActivity implements
         }
         return registrationId;
     }
+    /*
+    * Before orientation change store values
+    * */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -691,7 +764,9 @@ public class DealsActivity extends UserActivity implements
         android.util.Log.e("Saved State", "is Boolean:"+isBackPressed);
 
     }
-
+    /*
+    * After orientation change set values
+    * */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);

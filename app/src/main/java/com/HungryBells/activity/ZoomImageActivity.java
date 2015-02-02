@@ -8,9 +8,14 @@ import android.os.Parcelable;
 import com.HungryBells.DTO.ServiceListenerType;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+
+/*This class is used to zoon an image*/
 public class ZoomImageActivity extends UserActivity {
+
+    /*Image loader library for image loading*/
 	ImageLoader imageLoader;
 
+    /*Touch imageview used to zoom image and ot developed by Finatel*/
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);

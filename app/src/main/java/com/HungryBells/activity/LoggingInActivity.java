@@ -46,8 +46,17 @@ import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+
+/*This class is login activity by social media or by HB login*/
 public class LoggingInActivity extends UserActivity implements OnClickListener {
+
+
    View view;
+
+    /*
+* Initiaizing UndoBarController
+* OnCreate Method for social media login Activity page
+* */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -89,6 +98,7 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 				.setOnClickListener(this);
 	}
 
+    /*This method is used to submit mail id for forget password*/
     public  void submitMailId(String emailId){
         httpConnection = new ServiceListener(appState);
         String url = "mailer/forgotpassword/"
@@ -99,6 +109,10 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 
 
     }
+
+    /**
+     * onclick method for all social medias
+     * and also for navigation to Terms and condition page*/
 
     @Override
 	public void onClick(View v) {
@@ -141,6 +155,8 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 
 	}
 
+
+    /*This method is check if all the data filled and valid and then send datas to HB server to login user*/
 	private void loggingIn() {
 		String mail = ((EditText) findViewById(R.id.editTextusersname))
 				.getText().toString().trim();
@@ -192,14 +208,14 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 				ServiceListenerType.CUSTOMER_LOGIN, SyncHandler, "POST",
 				custEntity);
 	}
-
+    /*This method is used to enable or disable buttons when one button is clicked*/
 	public void enableDisableClick(boolean enable) {
 		((LinearLayout) findViewById(R.id.facebookbutton)).setClickable(enable);
 		((LinearLayout) findViewById(R.id.twitterbutton)).setClickable(enable);
 		((LinearLayout) findViewById(R.id.linkedinbutton)).setClickable(enable);
 		((LinearLayout) findViewById(R.id.googlebutton)).setClickable(enable);
 	}
-
+   /*not used*/
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		return true;
@@ -235,6 +251,7 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 
 	}
 
+    /* Concrete method from useractivity used to receive datas from HB Server*/
 	@Override
 	public void processMessage(Bundle message, ServiceListenerType what) {
 
@@ -270,7 +287,7 @@ public class LoggingInActivity extends UserActivity implements OnClickListener {
 		}
 
 	}
-
+    /*This method is navigate to next page after sucessful navigation*/
 	private void navigatePage() {
 		startActivitiesUser(new Intent(this, DealsActivity.class), this);
 	}

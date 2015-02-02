@@ -19,6 +19,7 @@ import android.util.Log;
  * go back to sleep in the transition. The {@code IntentService} calls
  * {@code GcmBroadcastReceiver.completeWakefulIntent()} when it is ready to
  * release the wake lock.
+ * Code from android developer page
  */
 
 public class GcmBroadcastReceiver extends WakefulBroadcastReceiver  {

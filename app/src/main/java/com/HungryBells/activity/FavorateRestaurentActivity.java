@@ -33,12 +33,30 @@ import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationA
 import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
 import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback;
 
+/**
+ *
+ *This class is used to show users favorite restaurant
+ * */
 public class FavorateRestaurentActivity extends UserActivity {
+
+    /*Third party library used to remove item in swiping on that item*/
     DynamicListView merchants;
+
+    /*not used*/
     int value = 0;
+
+    /*adapter to set list elements*/
     FavrestListAdapter favRest;
+
+    /* Global application state Object where all contextual information is stored */
     GlobalAppState appState;
 
+    /*
+  * Initiaizing custom toast(UndoBarController)
+  *
+  * OnCreate Method for Fav restaurant Activity page
+
+  * */
     @SuppressLint("InflateParams")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,24 +79,30 @@ public class FavorateRestaurentActivity extends UserActivity {
         }
 
     }
-
+      /*not used*/
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
     }
-
+    /*
+      * Inflating the menus in the Action overflow button
+      * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.favrest, menu);
         return true;
     }
-
+    /*
+        * onbackpressed method
+         *
+         * */
     @Override
     public void onBackPressed() {
         super.onBackPressed();
     }
 
+    /*calls the favorite restaurant request*/
     @Override
     public void onStart() {
         super.onStart();
@@ -98,7 +122,7 @@ public class FavorateRestaurentActivity extends UserActivity {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);
     }
-
+    /*This method is used to receive favorite restaurant request to HB server*/
     private void getAllFavRestaurent() {
         try {
             progressBar.setCancelable(false);
@@ -112,7 +136,11 @@ public class FavorateRestaurentActivity extends UserActivity {
         }
 
     }
-
+    /*
+    * Parsing the JSON favroite restaurant and converts to MerchantBranch POJO class
+    *
+    * After that it set the list in a listview
+    * */
     private void jsonParsingFavRest() {
         List<MerchantBranchDto> merchatBranch = appState.getMerchatBranch();
         merchants = (DynamicListView) findViewById(R.id.listViewfavrest);
@@ -140,6 +168,9 @@ public class FavorateRestaurentActivity extends UserActivity {
         });
 
     }
+
+
+    /*This method is used to create custom toast*/
     private void customToast(String toastMessage) {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_layout,
@@ -154,6 +185,7 @@ public class FavorateRestaurentActivity extends UserActivity {
         toast.show();
     }
 
+   /*THis method is used to send favorite restaurant remove request to HB server*/
     private void callDelete(int position) {
         String url = "customer/updaterestaurant/"
                 + appState.getProfile().getId() + "/"
@@ -169,6 +201,9 @@ public class FavorateRestaurentActivity extends UserActivity {
 
     }
 
+    /*
+  * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+  * */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -188,6 +223,10 @@ public class FavorateRestaurentActivity extends UserActivity {
         return super.onMenuOpened(featureId, menu);
     }
 
+
+    /*
+    * This method will be called when the action overflow button is pressed and the menu item is selected
+    * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(networkChanges())
@@ -214,12 +253,13 @@ public class FavorateRestaurentActivity extends UserActivity {
             }
         return false;
     }
-
+    /*onPause method*/
     @Override
     protected void onPause() {
         super.onPause();
     }
 
+    /* Concrete method from useractivity used to receive datas to HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         switch (what) {
@@ -243,12 +283,12 @@ public class FavorateRestaurentActivity extends UserActivity {
         }
 
     }
-
+    /*not used*/
     @Override
     public void onUndo(Parcelable token) {
 
     }
-
+  /*on resume method*/
     @Override
     protected void onResume() {
         super.onResume();

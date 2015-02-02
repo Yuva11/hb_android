@@ -2,6 +2,7 @@ package com.HungryBells.activity;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.lang.reflect.Constructor;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -61,21 +62,41 @@ import com.koushikdutta.ion.ProgressCallback;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.protocol.HTTP;
 
+
+ /*This class is mainly used to show bell animation*/
 public class MainActivity extends UserActivity {
 
+ /*handler method*/
     Handler handler;
+
+   /*Activity start time*/
     long startTime;
+
+   /*sub activity to show bell animation*/
     AnimationRunActivty animations;
+
+ /*Not used*/
     public static int width;
+
+     /* Global application state Object where all contextual information is stored */
     private GlobalAppState appState;
-   /* MediaPlayer mp;*/
+
+
+   /*Progressbar used to shoe on update time;*/
     ProgressWheel progressBarWheel;
+
+     /*Constructor method*/
     public MainActivity() {
         handler = new Handler();
         animations = new AnimationRunActivty(this);
         startTime = new Date().getTime();
     }
 
+     /*
+   * Initiaizing handler,ProgressWheel
+   *
+   * OnCreate Method for Main Activity page
+   * */
     @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +113,7 @@ public class MainActivity extends UserActivity {
             prefs = getSharedPreferences("HB", MODE_PRIVATE);
             easyTracker.send(MapBuilder.createEvent("Main",
                     "Animation Process", "Main", null).build());
-           /* mp = MediaPlayer.create(this, R.raw.bellsound);
-            mp.setLooping(true);
-            mp.start();
-*/
+
             animations.runAnimation(R.id.imageViewlogo);
             progressBarWheel.setVisibility(View.GONE);
             Display display = getWindowManager().getDefaultDisplay();
@@ -114,7 +132,7 @@ public class MainActivity extends UserActivity {
             android.util.Log.e("Internal error", e.toString(), e);
         }
     }
-
+   /*This method invoke after onback pressed on the time of settings page*/
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -136,6 +154,8 @@ public class MainActivity extends UserActivity {
 
 
     }
+
+     /*This method is used to regiter device for google cloud messaging*/
     private void registrations(){
         if (Util.checkNetwork(this)) {
             GCMRegistrationActivity gcm = new GCMRegistrationActivity(this);
@@ -160,6 +180,8 @@ public class MainActivity extends UserActivity {
 
         }
     }
+
+     /*This method is used to check current version in the device with HB server*/
     private void sendToNavigation(String result){
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
@@ -182,7 +204,7 @@ public class MainActivity extends UserActivity {
         }
 
     }
-
+    /*This method is used to send market place where device project version is lower than the HB server version*/
     private void updateData(String apkUrl){
         String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
         try {
@@ -192,7 +214,7 @@ public class MainActivity extends UserActivity {
         }
 
     }
-
+    /*This method is used to check wheather animation played minimum of 3 seconds*/
     private void checkData() {
         if (new Date().getTime() - startTime > 3000) {
             userNavigation();
@@ -210,6 +232,8 @@ public class MainActivity extends UserActivity {
 
         }
     }
+
+   /*This method is used to get the androdi device settings from HB server*/
     private void updateSettings() {
         try {
             httpConnection = new ServiceListener(appState);
@@ -227,7 +251,9 @@ public class MainActivity extends UserActivity {
     }
 
 
-
+     /*
+     *This method is used to check login done or not
+     * By that pages will be navigated*/
     private void userNavigation() {
         android.util.Log.e("Main Activity",
                 "userNavigation On Create Page Called");
@@ -284,7 +310,7 @@ public class MainActivity extends UserActivity {
         /*mp.stop();*/
         super.onDestroy();
     }
-
+   /*This override method is used to send to settings page*/
     @Override
     public void onUndo(Parcelable token) {
         startActivityForResult(new Intent(Settings.ACTION_SETTINGS), 0);
@@ -295,11 +321,13 @@ public class MainActivity extends UserActivity {
         // super.onBackPressed();
         finish();
     }
-
+     /* Concrete method from useractivity used to receive datas from HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         storeInSharedPreference(message);
     }
+
+     /*Parsing the JSON response from HB server and store it in shared preference*/
     private void storeInSharedPreference(Bundle message) {
         try {
             String response = message.getString(ServiceListener.RESPONSEDATA);
@@ -321,6 +349,8 @@ public class MainActivity extends UserActivity {
 
 
     }
+
+
     private class LocationReceiver extends BroadcastReceiver {
         // Prevents instantiation
         private LocationReceiver() {

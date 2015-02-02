@@ -25,12 +25,33 @@ import com.HungryBells.util.FoodPreferenceSelection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ *
+ *This class is used to show Notification Preference
+ * */
 public class NotificationPreferenceSwitch extends UserActivity {
+
+    /*notification instance*/
     Object notification;
+
+    /*SettingsDTO instance*/
     SettingsDTO settingsContent;
+
+    /*NotificationPreference list  instance*/
     List<NotificationPreference> notifications;
+
+    /*Button instance*/
     Button buttonupdate;
+
+
     String notificationText;
+
+    /*
+  * Initiaizing sharedpreferences
+  *
+  * OnCreate Method for Notification preferences Activity page
+  * This method will get the Notification parcelled from previous activity via intent
+  * */
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
@@ -50,7 +71,7 @@ public class NotificationPreferenceSwitch extends UserActivity {
         super.onStart();
 
     }
-
+   /*This method used to convert JSON parcelled for activity to notification pojo*/
     private void addPreferences() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         notificationText = (String) notification;
@@ -61,6 +82,8 @@ public class NotificationPreferenceSwitch extends UserActivity {
                 .getCustomerNotificationPreferenceDTOList();
         showList();
     }
+
+    /*This method update data into list*/
     private void showList(){
         ListView prefList = (ListView) findViewById(R.id.list_data);
         prefList.setAdapter(new NotificationPrefAdapter(notifications,this));
@@ -82,14 +105,14 @@ public class NotificationPreferenceSwitch extends UserActivity {
 
     @Override
     public void onBackPressed() {
-
             super.onBackPressed();
 
-
     }
+
     public void savePreferences(List<NotificationPreference>notificationPreference){
         notifications = notificationPreference;
     }
+
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         switch (what){
@@ -108,6 +131,8 @@ public class NotificationPreferenceSwitch extends UserActivity {
         super.onConfigurationChanged(newConfig);
         addPreferences();
     }
+
+    /*Navigate to food preference activity*/
     private void drawFoodCategoryBackground(Bundle data) {
         if(networkChanges()){
             String response = data.getString(ServiceListener.RESPONSEDATA);
@@ -120,6 +145,7 @@ public class NotificationPreferenceSwitch extends UserActivity {
         finish();
     }
 
+    /*This method used to update notification preference to HB server*/
     private void updateSettings() {
         String url = "settings/updatenotification";
         try {
@@ -139,6 +165,8 @@ public class NotificationPreferenceSwitch extends UserActivity {
         }
 
     }
+
+    /*Instance state before orientation the data will be save*/
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -148,7 +176,7 @@ public class NotificationPreferenceSwitch extends UserActivity {
 
 
     }
-
+     /*After the orientation the save datas are restored*/
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);

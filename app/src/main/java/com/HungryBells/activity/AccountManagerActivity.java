@@ -8,7 +8,10 @@ import android.accounts.AccountManager;
 import android.content.Intent;
 import android.os.Bundle;
 
-
+/**
+ *
+ *This class is used to create account in settings
+ * */
 public class AccountManagerActivity extends AccountAuthenticatorActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,12 @@ public class AccountManagerActivity extends AccountAuthenticatorActivity {
 			accountsInfo.toArray(result);
 			GlobalAppState appState = (GlobalAppState) getApplication();
 			String username = appState.getProfile().getEmail();
-			String password = "hungrybell";
+			String password = "hungrybell";//account manager password
 			String accountType = "hungrybell";
 
 			final Bundle extraData = new Bundle();
 			extraData.putString("profileData", appState.getProfile()
-					.serialize());
+					.serialize());//store the profile
 			final Account account = new Account(username, accountType);
 
 			manager.addAccountExplicitly(account, password, extraData);

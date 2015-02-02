@@ -36,6 +36,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 @SuppressLint("InflateParams")
+/*not used*/
 public class UserSettingActivity extends UserActivity implements
         OnClickListener {
     SettingsDTO settingsContent;

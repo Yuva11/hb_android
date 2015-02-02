@@ -31,40 +31,62 @@ import com.google.analytics.tracking.android.Log;
 
 import java.util.Date;
 
+/* Base class for all Activity */
 public abstract class UserActivity extends FragmentActivity implements
         UndoBarController.UndoListener {
-
+ /*
+ * abstract method for all activity
+ * */
     public abstract void processMessage(Bundle message, ServiceListenerType what);
 
+	/* Google Analytics interface object to track the activities */
     EasyTracker easyTracker = null;
+	/* To show the progress bar dialog */
     CustomProgressDialog progressBar;
+
+	/* Serverice object to send Http request to the HB server */
     public ServiceListener httpConnection;
+
+	/*Action member variable to create Action Bar */
     ActionBar actionBar;
 
+	/* getter Method */
     public UndoBarController getmUndoBarController() {
         return mUndoBarController;
     }
 
+	/* Setter Method */
     public void setmUndoBarController(UndoBarController mUndoBarController) {
         this.mUndoBarController = mUndoBarController;
     }
-
+	/* getter Method */
     public EasyTracker getEasyTracker() {
         return easyTracker;
     }
-
+	/* Setter Method */
     public void setEasyTracker(EasyTracker easyTracker) {
         this.easyTracker = easyTracker;
     }
-
+	/* Toast message with Undo customized box */
     protected UndoBarController mUndoBarController;
+
+    /* Shared preferences object to store shared preferences */
     SharedPreferences prefs;
+
+    /* Gobal application state Object where all contextual information is stored */
     protected GlobalAppState appState;
 
+    /*
+    * Constructor for Useractivity
+    * */
     public UserActivity() {
         httpConnection = new ServiceListener(appState);
     }
-
+    /*
+    * Initializing application context appstate
+    * Google analytics intialization
+    * Progressbar intialization
+    * */
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle arg0) {
@@ -78,13 +100,21 @@ public abstract class UserActivity extends FragmentActivity implements
                 "Inside on create UserActivity");
 
     }
-
+    /*
+    * onStart Method
+    * */
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
         android.util.Log.i("onStart", "On Start Called");
     }
+    /**
+     * This method will be called from any Activity page.
+     * Handler called for every http request and it will call the concrete implementation of processMessage() method of each Activity
+     * which is derived from User Activity (Base Class )
+     *
+     */
 
     @SuppressLint("HandlerLeak")
     protected Handler SyncHandler = new Handler() {
@@ -183,7 +213,6 @@ public abstract class UserActivity extends FragmentActivity implements
                             ServiceListenerType.GET_FOODCATEGORY);
                     break;
                 default:
-                    System.out.println("Inside here");
                     if (progressBar != null)
                         progressBar.dismiss();
                     processMessage(msg.getData(), ServiceListenerType.ERRORMSG);
@@ -193,11 +222,18 @@ public abstract class UserActivity extends FragmentActivity implements
 
     };
 
+	/* Not used */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
     }
-
+    /*
+    * actionbar creation for all Activity
+    * inflating the customview
+    * Get and set location in the actionbar location
+    * onclick will move to searchcity
+    *
+    * */
     @SuppressLint("InflateParams")
     public void actionBarCreation(final Activity context) {
         try {
@@ -238,7 +274,9 @@ public abstract class UserActivity extends FragmentActivity implements
         }
 
     }
-
+    /*
+    * This method will get the location name and checks if the  length exceeds more than 18 characters and it will truncate the string to 15 characters ...
+    * */
     public String getLocationString(String location) {
         try {
             if (location.length() > 18) {
@@ -249,7 +287,12 @@ public abstract class UserActivity extends FragmentActivity implements
         }
         return location;
     }
-
+    /*
+    * This method will be invoked when the used clicks the Ballon location image.
+    * Check for location names in the cache. It will display the list of location names and on choosing the location name
+    * the deals will be taken from the cache object. If time is expired,then the deals from fetched from HB server.
+    * ContentsCache is a singleton object.
+    * */
     public void searchByLocation(UserLocationDTO userLocation, Activity context) {
         try {
             UserLocation dealLoc = new UserLocation();
@@ -273,10 +316,12 @@ public abstract class UserActivity extends FragmentActivity implements
                     userLocation.getName()) == false) {
                 LoadChangeDealsActivity loadDeals = new LoadChangeDealsActivity(
                         context, progressBar, appState);
+                        /* Laod the new deals from the HB server */
                 loadDeals.loadDeals();
             } else {
                 LoadChangeDealsActivity loadDeals = new LoadChangeDealsActivity(
                         context, appState);
+                        /* Laod the  deals from the Cache*/
                 loadDeals.dealsPageChange();
             }
         } catch (Exception e) {
@@ -284,6 +329,10 @@ public abstract class UserActivity extends FragmentActivity implements
         }
 
     }
+    /**
+     * checking network connection if available and returns true or false.
+     */
+
     protected boolean networkChanges(){
         if(Util.isNetworkConnectionAvailablity(this)){
             return true;
@@ -292,6 +341,11 @@ public abstract class UserActivity extends FragmentActivity implements
             return false;
         }
     }
+    /**
+     * changing animation in every activity
+     * This animation  for moving from one acitvity to another actvity for smooth navigation.
+     */
+
     public void startActivitiesUser(Intent userIntent, Activity context) {
         try {
             if (Util.checkNetworkAndLocation(context)) {

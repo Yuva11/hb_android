@@ -42,16 +42,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Rajesh on 11/13/2014.
+ * This is the class contains all the details of app and used in the entire app
  */
 public class GlobalAppState extends Application {
-
+    /*Used to get current location*/
 	MyLocation location = new MyLocation();
 
+    /*User profile instance*/
 	private Customers profile;
     @Getter @Setter
      int selectedItem = 0;
+
+    /*SharedPreferences instance*/
      SharedPreferences sharedPreferencesLocation;
+
+
     public String getActionBarLocation() {
         return actionBarLocation;
     }
@@ -197,7 +202,7 @@ public class GlobalAppState extends Application {
 
             Log.i("MyLcoation", "Creating Mylocation object");
 		}
-
+        /*return the user current city*/
         private  String getCityFromUser(){
             if (imageLoaderConfig == false) {
                 UILWrapper.initImageLoader(getApplicationContext());
@@ -212,6 +217,8 @@ public class GlobalAppState extends Application {
           }
          return "Hungry Bells";
        }
+
+        /*return the user current Longitude */
         private double getLongitudeFromUser(){
                 sharedPreferencesLocation = getSharedPreferences("HB", MODE_PRIVATE);
                 String currentLongitude =  sharedPreferencesLocation.getString("longitude", "");
@@ -224,6 +231,8 @@ public class GlobalAppState extends Application {
                 }
                 return 0.0;
         }
+
+        /*return the user current Latitude*/
         private double getLatitudeFromUser(){
             sharedPreferencesLocation = getSharedPreferences("HB", MODE_PRIVATE);
             String currentLattitude =  sharedPreferencesLocation.getString("lattitude", "");
@@ -236,6 +245,8 @@ public class GlobalAppState extends Application {
             }
             return 0.0;
         }
+
+        /*This method is used to update the current location*/
 		public void updateLocation(Location location, Context context) {
 			if (imageLoaderConfig == false) {
 				UILWrapper.initImageLoader(getApplicationContext());

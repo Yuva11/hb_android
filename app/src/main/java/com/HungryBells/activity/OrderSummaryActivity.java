@@ -51,18 +51,40 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+
+/*This method used to get order summary after user select buy now from deals*/
 @SuppressLint("SimpleDateFormat")
 public class OrderSummaryActivity extends UserActivity implements
         OnClickListener {
+
+    /*selected deal from user*/
     Deals viewDeals;
+
+    /*number of quantity*/
     int quantity = 1;
+
+    /*number converter from double to string*/
     NumberFormat formatters;
+
+    /*background of deal delivery type*/
     ChangeBackgroundViewDeal changeBackground;
+
+
     Typeface face;
+
+    /*text of deals amount*/
     TextView dealAmt;
+
+    /*Image loader library for image loading*/
     ImageLoader imageLoader;
+
+    /*Delivery type user currntly selected*/
     DeliveryTypes deliveryTypes;
+
+ /*user current delivery address*/
     public static String deliveryAddress;
+
+    /*Initializing current appstate , background for delivery*/
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +113,10 @@ public class OrderSummaryActivity extends UserActivity implements
 
     }
 
+    /*This method will change data whenever user change delivery type or quantity
+    * If button checkout clicked it will send the data to HB server and navigate to payment
+    * If Delivery type is  HOME_DELIVERY it will ask address from user
+    * */
     private void orderSummary() {
         String url = viewDeals.getImageURL();
         ImageView imageViewItemImage = (ImageView) findViewById(R.id.imageorderdeals);
@@ -135,7 +161,7 @@ public class OrderSummaryActivity extends UserActivity implements
         datachanges();
         deliveryAvailable(viewDeals.getDeliveryType());
     }
-
+     /*This method is used to send payment attemt details to HB server*/
     public void submitChanges(String deliveryAddress) {
         OrderSummaryDTO summary = new OrderSummaryDTO();
         Customers customer = new Customers();
@@ -188,6 +214,7 @@ public class OrderSummaryActivity extends UserActivity implements
 
     }
 
+    /*This method will get the available delivery for deal and set background for that delivery*/
     private void deliveryAvailable(List<DeliveryTypeDto> deliveryType) {
         boolean valueForBackGorund = true;
         for (DeliveryTypeDto delivery : deliveryType) {
@@ -227,6 +254,7 @@ public class OrderSummaryActivity extends UserActivity implements
         datachanges();
     }
 
+    /*Checking network connection*/
     @Override
     public void onStart() {
         try {
@@ -252,6 +280,7 @@ public class OrderSummaryActivity extends UserActivity implements
         super.onResume();
     }
 
+    /*This method used to change quantity of current item*/
     public void changeQuantity(int quantity) {
         this.quantity = quantity;
         ((TextView) findViewById(R.id.quantitydata)).setText("" + quantity);
@@ -259,7 +288,7 @@ public class OrderSummaryActivity extends UserActivity implements
                 + formatters.format(quantity * viewDeals.getDealPrice()));
         datachanges();
     }
-
+   /*Whenever quantity changed the details will be changed*/
     private void datachanges() {
         TextView totalvalue = (TextView) findViewById(R.id.totalvalue);
         TextView totalOrder = (TextView) findViewById(R.id.totalOrder);
@@ -280,6 +309,9 @@ public class OrderSummaryActivity extends UserActivity implements
         super.onDestroy();
     }
 
+    /*
+ * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+ * */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -299,6 +331,9 @@ public class OrderSummaryActivity extends UserActivity implements
         return super.onMenuOpened(featureId, menu);
     }
 
+    /*
+        * This method will be called when the action overflow button is pressed and the menu item is selected
+        * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(networkChanges())
@@ -330,12 +365,16 @@ public class OrderSummaryActivity extends UserActivity implements
         return false;
     }
 
+    /*
+    * Inflating the menus in the Action overflow button
+    * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.login, menu);
         return true;
     }
 
+    /*onclick method for delivery type*/
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -358,6 +397,7 @@ public class OrderSummaryActivity extends UserActivity implements
 
     }
 
+    /* Concrete method from useractivity used to receive datas to HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         jsonParsingUrl(message);
@@ -365,6 +405,8 @@ public class OrderSummaryActivity extends UserActivity implements
 
     }
 
+    /*Parsing the data from HB server and check availabilty
+    If available Then navigate to payment else show error message*/
     private void jsonParsingUrl(Bundle data) {
         try {
             String response = data.getString(ServiceListener.RESPONSEDATA);

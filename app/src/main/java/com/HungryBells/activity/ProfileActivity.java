@@ -48,14 +48,32 @@ import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+
+/*This class is used to show profile of user*/
 @SuppressLint({ "InflateParams", "HandlerLeak", "SimpleDateFormat" })
 public class ProfileActivity extends UserActivity implements OnClickListener {
+
+    /*User profile*/
     Customers profile;
+
+    /*birth date*/
     private int year, month, day;
+
+    /*calendar instance*/
     private Calendar calendar;
+
+    /*Text for vithdate instance*/
     TextView bDate;
+
+    /*Nitification instance*/
     private Notifications notify;
+
+    /*string instance*/
     String notificationData;
+
+    /*initializing appstate ,httpConnection and mUndoBarController
+    * get profile from shared preference
+    * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +110,7 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         }
     }
 
+   /*This method is used to set the profile data to text bo =x*/
     private void updateProfile() {
         ((EditText) findViewById(R.id.textViewprofirstname)).setText(profile
                 .getFirstName());
@@ -111,6 +130,8 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         ((TextView) findViewById(R.id.textViewprodob)).setOnClickListener(this);
 
     }
+
+    /* This method is used to convert date format into dd-MM-yyyy*/
     private String getDate(String deliveryDate) {
         Log.e("Date", deliveryDate);
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
@@ -128,6 +149,8 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         return "";
     }
 
+
+    /*This method is used to create dialog for birthdate*/
     @Override
     protected Dialog onCreateDialog(int id) {
         switch (id) {
@@ -136,7 +159,7 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         }
         return null;
     }
-
+   /*This methos is date picker dialog*/
     private DatePickerDialog.OnDateSetListener pickerListener = new DatePickerDialog.OnDateSetListener() {
 
         @Override
@@ -150,11 +173,13 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         }
     };
 
+    /*This method is used to set date on text box*/
     private void showDate(int year, int month, int day) {
         bDate.setText(new StringBuilder().append(day).append("/").append(month)
                 .append("/").append(year));
     }
 
+    /*This method is used to send updated profile to HB server*/
     @SuppressLint("SimpleDateFormat")
     protected void updateCustomer() {
         ProfileUpdate updateProfile = new ProfileUpdateStatus();
@@ -167,6 +192,7 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         super.onResume();
     }
 
+    /*This method is used to parse the updated profile to HB server and used to shore it in shared preference*/
     protected void jsonParsing(Bundle data) {
         try {
             GsonBuilder gsonBuilder = new GsonBuilder();
@@ -201,6 +227,9 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
 
     }
 
+    /*
+ * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+ * */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -220,6 +249,9 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         return super.onMenuOpened(featureId, menu);
     }
 
+    /*
+  * This method will be called when the action overflow button is pressed and the menu item is selected
+  * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(networkChanges())
@@ -247,12 +279,17 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         return false;
     }
 
+    /*
+     * Inflating the menus in the Action overflow button
+     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.profile, menu);
         return true;
     }
 
+    /*This method is used to set initial birthdate to text box
+    */
     @Override
     public void onStart() {
         try {
@@ -299,6 +336,9 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
     protected void onDestroy() {
         super.onDestroy();
     }
+
+    /*This method is used to navigate to food preference page
+            This method parcell the data to next page using intent*/
     private void drawFoodCategoryBackground(Bundle data) {
         if(networkChanges()){
             String response = data.getString(ServiceListener.RESPONSEDATA);
@@ -310,6 +350,8 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
             startActivity(settings);}
 
     }
+
+    /* Concrete method from useractivity used to receive datas to HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         getWindow().setSoftInputMode(
@@ -345,6 +387,9 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         }
 
     }
+
+    /*This method is used to navigate to cusine preference page
+           This method parcell the data to next page using intent*/
     private void drawCusineBackground(Bundle data) {
         if(networkChanges()){
             String response = data.getString(ServiceListener.RESPONSEDATA);
@@ -356,6 +401,8 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
             startActivity(settings);
         }
     }
+
+    /*This method is used to parse json response from server and change to pojo*/
 
     private void jsonParsingNotificationPreference(Bundle data) {
         notificationData = data.getString(ServiceListener.RESPONSEDATA);
@@ -396,7 +443,7 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         // TODO Auto-generated method stub
 
     }
-
+ /*On click method for button*/
     @SuppressWarnings("deprecation")
     @Override
     public void onClick(View v) {
@@ -436,6 +483,8 @@ public class ProfileActivity extends UserActivity implements OnClickListener {
         }
 
     }
+
+    /*This method is used to get settings from HB server*/
     private void notificationPreference() {
         progressBar.setCancelable(false);
         progressBar.show();

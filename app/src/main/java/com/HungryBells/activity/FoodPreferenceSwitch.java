@@ -28,14 +28,40 @@ import com.HungryBells.util.Util;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ *
+ *This class is used to show Notification Preference
+ * */
 public class FoodPreferenceSwitch extends UserActivity {
-	Object notification;
-	SettingsDTO settingsContent;
+
+
+    /*notification instance*/
+    Object notification;
+
+    /*SettingsDTO instance*/
+    SettingsDTO settingsContent;
+
+    /*string instance*/
 	String category;
+
+   /*food preference list instance*/
 	List<FoodPreferenceSelection> foodPref;
+
+ /*button instance*/
     Button buttonupdate;
+
+/*string instance*/
     String notificationText;
+
+    /*gson instance*/
     GsonBuilder gsonBuilder;
+
+    /*
+  * Initiaizing sharedpreferences
+  *
+  * OnCreate Method for food  preferences Activity page
+  * This method will get the food and notifications parcelled from previous activity via intent
+  * */
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
@@ -55,6 +81,7 @@ public class FoodPreferenceSwitch extends UserActivity {
 		super.onStart();
 	}
 
+    /*This method is used to check selected food item and not selected food items and store it in list*/
 	private void addPreferences() {
 		List<FoodTypeDto> notifications, foodTypeNotifications;
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -76,6 +103,8 @@ public class FoodPreferenceSwitch extends UserActivity {
         showList();
 
 	}
+
+    /*This method update data into list*/
  private void showList(){
      ListView prefList = (ListView) findViewById(R.id.list_data);
      prefList.setAdapter(new FoodPrefAdapter(foodPref,this));
@@ -88,6 +117,8 @@ public class FoodPreferenceSwitch extends UserActivity {
          });
 
  }
+
+    /*This method returns true if the current item is elected else false*/
 	private boolean getChecked(FoodType foodType) {
 		for (int i = 0; i < settingsContent.getFoodtypeDTOList().size(); i++) {
 			if (foodType == settingsContent.getFoodtypeDTOList().get(i)
@@ -97,6 +128,7 @@ public class FoodPreferenceSwitch extends UserActivity {
 		}
 		return false;
 	}
+
  public void savePreferences(List<FoodPreferenceSelection>notificationPreference){
      foodPref = notificationPreference;
  }
@@ -123,6 +155,8 @@ public class FoodPreferenceSwitch extends UserActivity {
                     super.onBackPressed();
         }
 	}
+
+    /*Navigate to cusine preference activity*/
     private void drawCusineBackground(Bundle data) {
         if(networkChanges()){
             String response = data.getString(ServiceListener.RESPONSEDATA);
@@ -135,6 +169,8 @@ public class FoodPreferenceSwitch extends UserActivity {
             finish();
 
     }
+
+    /*This method is used to send updated request to HB server*/
 	private void updateSettings() {
 
 		String url = "settings/updatefoodtype";
@@ -178,7 +214,7 @@ public class FoodPreferenceSwitch extends UserActivity {
     protected void onStop() {
         super.onStop();
     }
-
+    /*Instance state before orientation the data will be save*/
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
@@ -186,7 +222,7 @@ public class FoodPreferenceSwitch extends UserActivity {
         String data = gson.toJson(foodPref);
         savedInstanceState.putSerializable("values",data);
     }
-
+    /*After the orientation the save datas are restored*/
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);

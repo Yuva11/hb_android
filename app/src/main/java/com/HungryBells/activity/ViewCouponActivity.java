@@ -43,16 +43,36 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+
+/*This class is used to view coupons*/
 public class ViewCouponActivity extends UserActivity implements OnClickListener {
 
+    /*Image loader library for image loading*/
 	ImageLoader imageLoader;
+
+    /*Interface for status update*/
 	UpdateStatus update;
+
+    /*User coupon current index*/
 	Integer currentPage;
+
+    /* Global application state Object where all contextual information is stored */
 	GlobalAppState appState;
+
+    /*Coupons page adapter*/
 	ViewPromosPagerAdapter mCustomPagerAdapter;
+
+    /* ViewCouponsactivity swipe using viewpager*/
 	ViewPager mViewPager;
+
+    /*list of coupons elements*/
 	List<Deals> deals;
 
+    /*
+ * Initiaizing httpConnection,viewpager
+ *
+ * OnCreate Method for View coupons Activity page
+ * */
 	@SuppressLint("InflateParams")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +105,9 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 		super.onResume();
 	}
 
+    /*  This method is used to create adapter
+    And set that adapter to Viewpager
+    Set animation for swipe using  DepthPageTransformer*/
     public void couponsView() {
 		mCustomPagerAdapter = new ViewPromosPagerAdapter(
 				getSupportFragmentManager(), this, deals);
@@ -126,6 +149,10 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 		super.onDestroy();
 	}
 
+
+    /*
+  * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+  * */
 	@Override
 	public boolean onMenuOpened(int featureId, Menu menu) {
 		if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -145,6 +172,9 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 		return super.onMenuOpened(featureId, menu);
 	}
 
+    /*
+  * This method will be called when the action overflow button is pressed and the menu item is selected
+  * */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -174,6 +204,9 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 		return false;
 	}
 
+    /*
+   * Inflating the menus in the Action overflow button
+   * */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.login, menu);
@@ -182,6 +215,7 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 
 	int value = 0;
 
+    /* Concrete method from useractivity used to receive datas to HB Server*/
 	@Override
 	public void processMessage(Bundle message, ServiceListenerType what) {
         if(networkChanges())
@@ -214,7 +248,7 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 			break;
 		}
 	}
-
+     /*This method is used to load the coupon page again*/
 	private void loadMainpage() {
 		if (value == 2) {
 			progressBar.dismiss();
@@ -237,6 +271,7 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 
 	}
 
+    /*This method check the user deal liked or not and change background and show toast to user*/
 	private void checkAndChange() {
 		boolean like = false;
 		progressBar.dismiss();
@@ -259,6 +294,7 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 				.put(appState.getActionBarLocation(), contentsNew);
 	}
 
+    /*on click method to the button*/
 	@Override
 	public void onClick(View v) {
 
@@ -297,6 +333,7 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 
 	}
 
+    /*This method is used to send feedback for current coupon user viewing to HB server*/
 	public void submitFeedback(String editTextComments) {
 		try {
 			String url = "deal/feedback";
@@ -324,6 +361,7 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 
 	}
 
+    /*Check if the current deal is liked by user or not*/
 	public boolean checkIsLiked(int position) {
 		currentPage = position;
 		if (appState.getAllPromos().get(position).getIsliked()) {
@@ -339,6 +377,7 @@ public class ViewCouponActivity extends UserActivity implements OnClickListener 
 
 	}
 
+    /*This method will send the like request to HB server*/
 	private void addCouponLike() {
 		progressBar.setCancelable(false);
 		progressBar.show();

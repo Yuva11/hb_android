@@ -22,10 +22,14 @@ import com.HungryBells.util.ContentsCache;
 import com.HungryBells.util.Util;
 import com.google.gson.Gson;
 
+/*This class will call after sucessful payment*/
 public class PaymentReturnActivity extends UserActivity {
+
+    /*payment response from HB server*/
 	PaymentResponse paymentResponse;
 	String data;
 
+    /*This method initialize app state and get data from payment page*/
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
@@ -52,6 +56,8 @@ public class PaymentReturnActivity extends UserActivity {
 		responseListion();
 	}
 
+    /*This method check the response from HB server
+     Then the result will be shown as datas*/
 	private void responseListion() {
 		Typeface face = Typeface.createFromAsset(getAssets(), "forte.ttf");
 		TextView textEnjoy = (TextView) findViewById(R.id.textViewenjoy);
@@ -95,6 +101,7 @@ public class PaymentReturnActivity extends UserActivity {
 				});
 	}
 
+ /*parsing json response from HB server and change it to payment pojo */
 	private boolean getAllResponse(String data) {
 		String response = "{\"paymentResponse\":" + data + "}";
 		response.replace("\n", "");

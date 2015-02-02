@@ -28,9 +28,21 @@ import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/*This class is used to send feedback to the HB server*/
 public class FeedBackActivity extends UserActivity implements OnClickListener {
+
+    /*
+ * Not used
+ * */
 	int value = 0;
 
+
+    /*
+  * Initiaizing custom toast(UndoBarController)
+  *
+  * OnCreate Method for Feedback Activity page
+
+  * */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,11 +67,15 @@ public class FeedBackActivity extends UserActivity implements OnClickListener {
 		}
 
 	}
-
+        /*
+           * onbackpressed method
+            *
+            * */
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
 	}
+
 
 	@Override
 	public void onStart() {
@@ -90,6 +106,11 @@ public class FeedBackActivity extends UserActivity implements OnClickListener {
 		super.onDestroy();
 	}
 
+    /*
+    * Check the feedback user entered is not null
+    * Then it send the feedback to the HB server
+    *
+    * */
 	private void feedbackSubmit() {
 		EditText feedback = (EditText) findViewById(R.id.editTextComments);
 		FeedbackDTO feedBackDTO = new FeedbackDTO();
@@ -121,13 +142,16 @@ public class FeedBackActivity extends UserActivity implements OnClickListener {
 				custEntity);
 
 	}
-
+     /*Parsing the json data from HB server*/
 	private void jsonParsingFavRest(Bundle data) {
 		Util.customToast(this, getString(R.string.feedbackscuess));
 		startActivity(new Intent(this, DealsActivity.class));
 		finish();
 	}
 
+    /*
+  * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+  * */
 	@Override
 	public boolean onMenuOpened(int featureId, Menu menu) {
 		if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -147,6 +171,10 @@ public class FeedBackActivity extends UserActivity implements OnClickListener {
 		return super.onMenuOpened(featureId, menu);
 	}
 
+
+    /*
+    * This method will be called when the action overflow button is pressed and the menu item is selected
+    * */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
         if(networkChanges())
@@ -174,12 +202,15 @@ public class FeedBackActivity extends UserActivity implements OnClickListener {
 		return false;
 	}
 
+    /*
+     * Inflating the menus in the Action overflow button
+     * */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.feedback, menu);
 		return true;
 	}
-
+ /*on click method for buttonfeedbacksubmit*/
 	@Override
 	public void onClick(View v) {
 		if (Util.checkNetworkAndLocation(this)) {
@@ -193,6 +224,7 @@ public class FeedBackActivity extends UserActivity implements OnClickListener {
 		super.onResume();
 	}
 
+    /* Concrete method from useractivity used to receive datas to HB Server*/
 	@Override
 	public void processMessage(Bundle message, ServiceListenerType what) {
 
@@ -213,7 +245,9 @@ public class FeedBackActivity extends UserActivity implements OnClickListener {
 		}
 
 	}
-
+ /*
+ * Not used
+ * */
 	@Override
 	public void onUndo(Parcelable token) {
 		// TODO Auto-generated method stub

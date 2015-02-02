@@ -24,29 +24,51 @@ import com.HungryBells.service.ServiceListener;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/**
+ *
+ *This class is used to show Cusines
+ * */
 public class CusinePreferenceActivity extends UserActivity implements
         OnClickListener {
+    /*notification object*/
     Object notification;
+
+    /*Dto for settings*/
     SettingsDTO settingsContent;
+
+    /*string variable*/
     String category;
+
+    /*list of elements in cusines*/
     List<CusineNotification> cusineNotification, cusines;
+
+
     Button buttonupdate;
+
+    /*
+  * Initiaizing sharedpreferences
+  *
+  * OnCreate Method for cusine preferences Activity page
+  * This method will get the ncusines and notifications parcelled from previous activity via intent
+  * */
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         setContentView(R.layout.activity_cusinelist);
         prefs = getSharedPreferences("HB", MODE_PRIVATE);
-        notification = getIntent().getExtras().getSerializable("Notific");
-        category = (String) getIntent().getExtras().getSerializable("cusine");
+        notification = getIntent().getExtras().getSerializable("Notific");//received from previous activity
+        category = (String) getIntent().getExtras().getSerializable("cusine");//received from previous activity
+
         buttonupdate = (Button)findViewById(R.id.buttonupdate);
     }
-
+ /*onstart method*/
     @Override
     protected void onStart() {
         super.onStart();
         createNotification();
     }
 
+    /*This method is used to create cusine notifications*/
     private void createNotification() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         String notificationText = (String) notification;
@@ -62,6 +84,7 @@ public class CusinePreferenceActivity extends UserActivity implements
         for (CusineNotification cusine : cusines) {
             String cusineName = cusine.getName();
             if (!cusineName.isEmpty()) {
+                /*items add to container in a viewgroup*/
                 flowContainer
                         .addView(
                                 createDummyTextView(position, cusineName,
@@ -98,7 +121,7 @@ public class CusinePreferenceActivity extends UserActivity implements
             });
 
     }
-
+    /*This method is used to create textview inside the viewgroup*/
     private View createDummyTextView(int position, String text,
                                      ViewGroup flowContainer) {
         View hiddenInfo = getLayoutInflater().inflate(R.layout.adapt_cusines,
@@ -119,18 +142,17 @@ public class CusinePreferenceActivity extends UserActivity implements
 
     @Override
     public void onBackPressed() {
-
             super.onBackPressed();
 
 
     }
-
+  /*concreate method for user activity*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
                super.onBackPressed();
 
     }
-
+    /*This method is used to send updated request to HB server*/
     private void updateSettings() {
         String url = "settings/updatecuisine";
         try {
@@ -150,7 +172,7 @@ public class CusinePreferenceActivity extends UserActivity implements
         }
 
     }
-
+ /*onclick action for layout of cusine*/
     @Override
     public void onClick(View v) {
         // v.get
@@ -158,10 +180,9 @@ public class CusinePreferenceActivity extends UserActivity implements
         int index = parent.indexOfChild(v);
         parent.removeView(v);
         int id = v.getId();
-        Log.e("Size", "Back:"
-                + cusineBackGround(cusines.get(v.getId()).getName()));
+       /*check if cusine is already selected*/
         if (cusineBackGround(cusines.get(v.getId()).getName())) {
-            Log.e("Cusiine",removeCusine(cusines.get(v.getId()).getName())+"");
+            removeCusine(cusines.get(v.getId()).getName());
             v = getLayoutInflater().inflate(R.layout.adapt_cusines, parent,
                     false);
             TextView textLayout = (TextView) v.findViewById(R.id.textViewlays);
@@ -177,9 +198,12 @@ public class CusinePreferenceActivity extends UserActivity implements
         v.setId(id);
         v.setOnClickListener(this);
         parent.addView(v, index);
-        Log.e("On Click", "Clicked on:" + id);
+
+
 
     }
+
+    /*remove cusine from selection*/
     private boolean removeCusine(String name){
         for (int i = 0; i < cusineNotification.size(); i++) {
             if (cusineNotification.get(i).getName().equals(name)) {
@@ -189,6 +213,8 @@ public class CusinePreferenceActivity extends UserActivity implements
         }
         return false;
     }
+
+    /*returns true if cusine is already selected else false*/
     private boolean cusineBackGround(String name) {
         for (int i = 0; i < cusineNotification.size(); i++) {
 

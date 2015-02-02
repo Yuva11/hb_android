@@ -24,16 +24,30 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Arunkumar on 02/12/2014.
+ * This class is used to create search location
  */
 public class SearchCityActivity extends UserActivity implements AdapterView.OnItemClickListener {
 
+    /*listview used to show location*/
     ListView listPlace;
+
+    /*textbox used to search location*/
     EditText placeSearchText;
+
+    /*searched location list*/
     List<UserLocationDTO> array_sort = new ArrayList<UserLocationDTO>();
+
+    /*total text length*/
     int textlength = 0;
+
+    /*all location elements */
     List<UserLocationDTO> allLocations = new ArrayList<UserLocationDTO>();
+
+    /*adapter to set in listview*/
     PlaceListAdapter placeAdapter;
+    /*
+    Initializing action bar
+    initializing app state*/
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
@@ -62,13 +76,16 @@ public class SearchCityActivity extends UserActivity implements AdapterView.OnIt
             finish();
         }
     }
-
+ /*used to call listview*/
     @Override
     protected void onStart() {
         super.onStart();
         listViewCreation();
     }
 
+
+   /* Initialze the listview
+    search will change the listview in runtime*/
     private void listViewCreation() {
         listPlace = (ListView) findViewById(R.id.ListView01);
 
@@ -139,6 +156,8 @@ public class SearchCityActivity extends UserActivity implements AdapterView.OnIt
 
     }
 
+    /*This method will call when an item clicked
+            This will show the deals on the location*/
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             long id) {

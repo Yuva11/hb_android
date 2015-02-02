@@ -26,18 +26,31 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by Arunkumar on 24/11/2014.
+ * This method is used to create GCM notification
  */
 public class GCMReceiver extends IntentService {
 
+    /*GCM notifivation id*/
     public static final int NOTIFICATION_ID = 101;
+
     Intent intent;
+
+    /*Notification builder to create notification*/
     NotificationCompat.Builder mBuilder;
+
+    /*DTO gcm notification*/
     GCMNotification gcmMessage;
+
 
     public GCMReceiver() {
         super("hb-prod-1");
     }
+
+    /**
+     *  main method
+     * get gcm message from intent
+     * check for pre notification
+     **/
     @Override
     protected void onHandleIntent(Intent intent) {
         this.intent = intent;
@@ -71,6 +84,8 @@ public class GCMReceiver extends IntentService {
         }
         GcmBroadcastReceiver.completeWakefulIntent(intent);
     }
+
+    /*This method is used to create notification in the device and send ack to HB server*/
     private void sendNotification(String msg) {
         NotificationManager mNotificationManager = (NotificationManager)
                 getSystemService(NOTIFICATION_SERVICE);
@@ -101,7 +116,7 @@ public class GCMReceiver extends IntentService {
     }
 
 
-
+    /*This method is used to find current longitude and lattitude from device and send to HB server*/
     private void findLocation(double  latitude,double  longitude,
                               final GCMNotification gcmMessage) {
 

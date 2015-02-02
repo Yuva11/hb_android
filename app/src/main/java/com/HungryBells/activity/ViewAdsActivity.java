@@ -46,20 +46,40 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+/*This class is used to view Advertisement*/
 @SuppressLint("InflateParams")
-public class ViewAdsActivity extends UserActivity implements OnClickListener
-{
+public class ViewAdsActivity extends UserActivity implements OnClickListener {
+
+   /*Viewpager instance*/
 	private CustomViewPager viewPager;
+
+    /*User ads current index*/
 	Integer urlLoad;
+
+    /*Interface for status update*/
 	UpdateStatus update;
+
+    /*Ads page adapter*/
 	ViewAdsPagerAdapter mCustomPagerAdapter;
+
+    /* Global application state Object where all contextual information is stored */
 	GlobalAppState appState;
+
+/*Viewflow instance*/
     private ViewFlowEX viewFlow;
+
+    /*Relativelayout instance*/
     RelativeLayout customLayout;
+
+   /*adapter instance*/
     AdvertisementViewAdapter mAdsPagerAdapter;
+
+    /*check for playvideo*/
     private boolean isPlayVideo = false;
 
-
+    /*Check for version and change to different layout
+    * Layout for more than 18 view pager and other viewflow
+    * */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -93,6 +113,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 
 	}
 
+    /*  This method is used to create adapter using viewpager
+    And set that adapter to Viewpager
+    Set animation for swipe using  DepthPageTransformer*/
 	public void setViewPagerAdapter() {
 		try {
 			mCustomPagerAdapter = new ViewAdsPagerAdapter(
@@ -126,6 +149,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
         urlLoad = position;
     }
 
+    /*  This method is used to create adapter using viewflow*/
     private void setViewFlowAdapter() {
         try {
             prefs = getSharedPreferences("HB", MODE_PRIVATE);
@@ -162,6 +186,8 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
             Log.e("Error", e.toString(), e);
         }
     }
+
+    /*Check if the current deal is liked by user or not*/
 	public boolean checkIsLiked(int position) {
 		urlLoad = position;
 		if (appState.getAdvertisements().get(position).getIsliked()) {
@@ -181,9 +207,15 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 	protected void onResume() {
 		super.onResume();
 	}
+
+    /*this method cloteol viewpager scroll*/
  public void pageScrollAds(boolean scroll){
      viewPager.setPagingEnabled(scroll);
  }
+
+    /*
+* This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+* */
 	@Override
 	public boolean onMenuOpened(int featureId, Menu menu) {
 		if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -203,6 +235,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 		return super.onMenuOpened(featureId, menu);
 	}
 
+    /*
+    * This method will be called when the action overflow button is pressed and the menu item is selected
+    * */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
         if(networkChanges())
@@ -233,6 +268,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 		return false;
 	}
 
+    /*
+    * Inflating the menus in the Action overflow button
+    * */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.login, menu);
@@ -261,9 +299,13 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 	protected void onDestroy() {
 		super.onDestroy();
 	}
+
+    /*This method is used to check videoplay*/
     public void playVideo(boolean value){
         isPlayVideo = value;
     }
+
+    /*on backpressed check*/
 	@Override
 	public void onBackPressed() {
         if(isPlayVideo){
@@ -276,6 +318,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 		super.onBackPressed();
 	}
 
+    /* Concrete method from useractivity used to receive datas to HB Server*/
 	@Override
 	public void processMessage(Bundle message, ServiceListenerType what) {
 		switch (what) {
@@ -298,6 +341,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 			break;
 		}
 	}
+    /*reload the adapter*/
   private void dataChange(){
       int currentApiVersion = android.os.Build.VERSION.SDK_INT;
       if(currentApiVersion>18) {
@@ -307,6 +351,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
           mAdsPagerAdapter.notifyDataSetChanged();
       }
   }
+
+
+    /*This method check the user ad liked or not and change background and show toast to user*/
 	private void checkAndChange() {
 		boolean like = false;
 		progressBar.dismiss();
@@ -335,7 +382,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 	public void onUndo(Parcelable token) {
 
 	}
-
+    /*on click method to the button*/
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -357,11 +404,12 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 		// TODO Auto-generated method stub
 
 	}
+    /*This method is used to create dialog box for feedback*/
    public void adFeedBack(){
        Log.e("Ads","Ad changed feedback");
        new FeedbackAdDialog(this).show();
    }
-
+    /*Used to call the status update*/
     public void updateStatus(SocialAuthAdapter.Provider provider){
         progressBar = new CustomProgressDialog(this);
         progressBar.show();
@@ -370,7 +418,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
         dataChange();
     }
 
-
+    /*This method is used to send feedback for current ad user viewing to HB server*/
 	public void submitFeedback(String editTextComments) {
         StringEntity custEntity = null;
 		try {
@@ -397,7 +445,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener
 		}
 
 	}
-
+    /*This method is used to send like request to HB server*/
 	public void addAdvertisementLike() {
 		progressBar.setCancelable(false);
 		progressBar.show();

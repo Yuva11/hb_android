@@ -47,9 +47,16 @@ import com.koushikdutta.ion.Ion;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 @SuppressLint("InflateParams")
+
+/*This class is used to show the past orders from user*/
 public class MyOrdersActivity extends UserActivity {
+
+    /*list of elements in Deal summary*/
     List<DealSummaryDto> orders;
 
+
+   /* Initializing app state
+    initializing mUndoBarController*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +116,8 @@ public class MyOrdersActivity extends UserActivity {
         super.onDestroy();
     }
 
+
+    /*This method is used to receive last 5 orders from HB server*/
     private void getMyOrders() {
         progressBar.setCancelable(false);
         progressBar.show();
@@ -122,6 +131,7 @@ public class MyOrdersActivity extends UserActivity {
         }
     }
 
+    /*This method is used to parse JSON response from HB server and convert to list of orders*/
     private void jsonParsingMyOrders(Bundle data) {
         String response = data.getString(ServiceListener.RESPONSEDATA);
         Log.e("Json Resp:",response);
@@ -142,6 +152,15 @@ public class MyOrdersActivity extends UserActivity {
         super.onResume();
     }
 
+    /*This method is used to show summary of past orders from HB server
+    * Check for order size if order size is zero then show message no orders and button to make new order
+    *
+    *
+    * Else there load the orders in layout
+    *
+    * if order already rated then show rating else there will be abutton to rate
+    *
+    * */
     private void showSummary() {
         ImageLoader images = ImageLoader.getInstance();
         LinearLayout itemsSummary = (LinearLayout) findViewById(R.id.myIdValue);
@@ -238,11 +257,15 @@ public class MyOrdersActivity extends UserActivity {
 
         }
     }
+
+    /*This method is used to navigate to deals page if there are no past orders and user select make order*/
     public void clickonOrders(View v){
         Log.e("On Click","Clicked");
         appState.setSelectedItem(1);
         startActivity(new Intent(this,DealsActivity.class));
     }
+
+    /*This method is used to send rating to the HB server*/
     public void getDeals(OrderDetailsDTO dealsRatings){
         String url = getString(R.string.serverurl_test)
                 + "deal/rating";
@@ -255,6 +278,10 @@ public class MyOrdersActivity extends UserActivity {
                     }
                 });
     }
+
+    /*
+     * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+     * */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -274,12 +301,17 @@ public class MyOrdersActivity extends UserActivity {
         return super.onMenuOpened(featureId, menu);
     }
 
+
+    /*
+     * Inflating the menus in the Action overflow button
+     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.myorders, menu);
         return true;
     }
 
+   /* This method is used to convert date format into MMM dd, yyyy hh:mm a*/
     @SuppressLint("SimpleDateFormat")
     private String getDate(String deliveryDate) {
         Log.e("Date", deliveryDate);
@@ -296,6 +328,10 @@ public class MyOrdersActivity extends UserActivity {
         return deliveryDate;
     }
 
+
+    /*
+     * This method will be called when the action overflow button is pressed and the menu item is selected
+     * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(networkChanges())
@@ -322,6 +358,7 @@ public class MyOrdersActivity extends UserActivity {
         return false;
     }
 
+    /* Concrete method from useractivity used to receive datas to HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         switch (what) {

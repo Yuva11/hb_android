@@ -23,13 +23,30 @@ import com.HungryBells.service.ServiceListener;
 import com.HungryBells.util.Util;
 import com.google.gson.Gson;
 
+
+/*This class is payment activity where user need to pay for deals*/
 public class PaymentActivity extends UserActivity {
+
+    /*web page view user need to navigate for payment*/
 	WebView _mwebView;
+
+    /*Payment dto for HB server need to load*/
 	PaymentDTO urlLoad;
+
+    /*parsiong of webview page interface*/
 	JIFace iface = new JIFace();
+
+    /*After sucessful/failed payment  return url*/
 	private String responseUrl;
+
+
+    /*Payment response from HB server*/
 	PaymentResponse paymentResponse;
+
+    /*Current deal user try to buy*/
     Deals viewDeals;
+
+    /*Initializing app state ,server connection and get current deal*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,6 +70,7 @@ public class PaymentActivity extends UserActivity {
 		}
 	}
 
+    /*get all data from the webview page*/
 	class JIFace {
 		public void print(String data) {
 			data = "<html>" + data + "</html>";
@@ -65,11 +83,12 @@ public class PaymentActivity extends UserActivity {
 			}
 		}
 	}
-
+    /*convert html text to string*/
 	private String html2text(String html) {
 		return Jsoup.parse(html).text();
 	}
 
+    /*This method convert the json response from HB server and convert to payment response pojo*/
 	private boolean getAllResponse(String data) {
 		String response = "{\"paymentResponse\":" + data + "}";
 		response.replace("\n", "");
@@ -86,6 +105,7 @@ public class PaymentActivity extends UserActivity {
 		return false;
 	}
 
+    /*This method navigate when response received from server after payment attempted by user*/
 	private void callNewPage(String data) {
 		if (responseUrl.contains("ssl_session_expired_response")) {
 			Intent intent = new Intent(this, PaymentFailedActivity.class);
@@ -114,6 +134,7 @@ public class PaymentActivity extends UserActivity {
 		}
 	}
 
+    /*This method is used to call payment page in webview where url given by HB server*/
 	@SuppressLint("SetJavaScriptEnabled")
 	private void callPayment() {
 		progressBar.show();
@@ -147,6 +168,7 @@ public class PaymentActivity extends UserActivity {
 				EncodingUtils.getBytes(urlLoad.getPaymentPOSTURL(), "UTF-8"));
 	}
 
+    /*Webview client that always waiting the webpage loading finished*/
 	private class PaymentWebViewClient extends WebViewClient {
 
 		@Override
@@ -165,6 +187,7 @@ public class PaymentActivity extends UserActivity {
 		}
 	}
 
+    /* Concrete method from useractivity used to receive datas from HB Server*/
 	@Override
 	public void processMessage(Bundle message, ServiceListenerType what) {
 		progressBar.dismiss();
@@ -178,12 +201,14 @@ public class PaymentActivity extends UserActivity {
 
 	}
 
+    /*on back pressed confirmation dialog*/
 	@Override
 	public void onBackPressed() {
 		SettingsDialog exit = new SettingsDialog(this);
 		exit.showExitTransaction();
 	}
 
+    /*this method will send payment cancellation request to HB server*/
 	public void onBackPressed(boolean b) {
 		progressBar.setCancelable(false);
 		progressBar.show();

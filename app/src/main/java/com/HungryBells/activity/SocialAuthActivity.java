@@ -36,17 +36,39 @@ import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
 
 @SuppressLint("SetJavaScriptEnabled")
+
+
 public class SocialAuthActivity extends UserActivity {
+
+    /*progressbar for loading*/
 	ProgressBar progressBar;
+
+    /*web page loading view*/
 	WebView mWebView;
+
+    /*Timer instance */
 	Timer timer;
+
+    /*url for authentication*/
 	String authenticationUrl;
+
+    /*activity starttime*/
 	long startTime;
+
+    /* Memember for timer task */
 	final Handler handler = new Handler();
+
+    /*Timertask instance */
 	TimerTask timerTask;
+
+    /*parsiong of webview page interface*/
 	JIFace iface = new JIFace();
+
+    /*After sucessful login social media return url*/
 	String returnUrl = "http://hbells.finateltech.com:7070";
 
+   /*initialize timer task
+    get authenticaition from previous activity*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -80,6 +102,7 @@ public class SocialAuthActivity extends UserActivity {
 		mWebView.addJavascriptInterface(iface, "droid");
 	}
 
+    /*get all data from the webview page in the from of string */
 	class JIFace {
 		public void print(String data) {
 			data = "<html>" + data + "</html>";
@@ -100,6 +123,7 @@ public class SocialAuthActivity extends UserActivity {
 
 
 
+    /*Webview client that always waiting the webpage loading finished*/
 	private class SocialAuthWebViewClient extends WebViewClient {
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -155,6 +179,9 @@ public class SocialAuthActivity extends UserActivity {
         finish();;
 	}
 
+    /*This method is used to convert the HB profile response to profile pojo and store it in shared preference
+    * After that navigating to deals page
+    * */
 	private void callProfile(String data) {
 		Customers myData = new Customers();
 		String response = "{\"profile\":" + data + "}";
@@ -179,6 +206,7 @@ public class SocialAuthActivity extends UserActivity {
 
 	}
 
+    /*This method is used to used to initialze timer for connection checking*/
 	public void initializeTimerTask() {
 
 		timerTask = new TimerTask() {
@@ -194,6 +222,7 @@ public class SocialAuthActivity extends UserActivity {
 		};
 	}
 
+    /*This method is used to show alert dialog after a time interval because of slow connection*/
 	private void showSettingsAlert() {
 		if (timer != null) {
 			timer.cancel();

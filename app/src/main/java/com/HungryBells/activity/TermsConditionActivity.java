@@ -19,11 +19,17 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*This class is used to show terms and conditions */
 public class TermsConditionActivity extends UserActivity {
+
+    /*List of terms elements*/
     List<TermsConditions> terms;
     String data;
     String navigate;
 
+    /*Initializing tappstate
+    get data parcelled from previous activity*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +47,7 @@ public class TermsConditionActivity extends UserActivity {
 
     }
 
+    /*This methos is used to set the given text to webview*/
     private void setText() {
         WebView wv = (WebView) findViewById(R.id.textViewcondition);
         String mimeType = "text/html";
@@ -70,7 +77,7 @@ public class TermsConditionActivity extends UserActivity {
             android.util.Log.e("Error", e.toString(), e);
         }
     }
-
+    /*This method is used to receive the terms from HB server*/
     private void getTermsAndCondition() {
         progressBar.setCancelable(false);
         progressBar.show();
@@ -97,6 +104,7 @@ public class TermsConditionActivity extends UserActivity {
         super.onPause();
     }
 
+    /*This method is used to navigate to previous page*/
     @Override
     public void onBackPressed() {
         if (navigate.equalsIgnoreCase("signup"))
@@ -108,12 +116,14 @@ public class TermsConditionActivity extends UserActivity {
         }
         finish();
     }
-
+    /* Concrete method from useractivity used to receive datas to HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         jsonParsing(message);
     }
 
+
+    /*Parsing the json data from HB server*/
     private void jsonParsing(Bundle message) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         String response = message.getString(ServiceListener.RESPONSEDATA);

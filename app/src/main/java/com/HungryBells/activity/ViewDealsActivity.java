@@ -9,7 +9,6 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.protocol.HTTP;
 import org.brickred.socialauth.android.SocialAuthAdapter;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -30,7 +29,6 @@ import com.HungryBells.DTO.DealStatus;
 import com.HungryBells.DTO.Deals;
 import com.HungryBells.DTO.MerchantBranchDto;
 import com.HungryBells.DTO.ServiceListenerType;
-import com.HungryBells.DTO.Status;
 import com.HungryBells.activity.adapter.CircularViewPagerHandler;
 import com.HungryBells.activity.adapter.ViewDealsPagerAdapter;
 import com.HungryBells.activity.subactivity.ChangeBackgroundViewDeal;
@@ -49,18 +47,39 @@ import com.google.gson.GsonBuilder;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
-@SuppressLint("InflateParams")
+/*This class is used to view deals*/
 public class ViewDealsActivity extends UserActivity implements
         UndoBarController.UndoListener, OnClickListener {
+
+    /*Custome toast with undo*/
     UndoBarController mUndoBarController;
+
+    /*not used*/
     ChangeBackgroundViewDeal changeBackground;
+
+    /*Interface for status update*/
     UpdateStatus update;
+
+    /*User deals current index*/
     int currentPage;
+
+    /*list of deals elements*/
     List<Deals> deals;
+
+    /* Global application state Object where all contextual information is stored */
     public static GlobalAppState appState;
+
+    /*Deals page adapter*/
     ViewDealsPagerAdapter mCustomPagerAdapter;
+
+    /* ViewDealsactivity swipe using viewpager*/
     ViewPager mViewPager;
 
+    /*
+  * Initiaizing httpConnection,viewpager
+  *
+  * OnCreate Method for Deals Activity page
+  * */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +137,9 @@ public class ViewDealsActivity extends UserActivity implements
         super.onDestroy();
     }
 
+  /*  This method is used to create adapter
+    And set that adapter to Viewpager
+    Set animation for swipe using  DepthPageTransformer*/
     public void viewDealDetails() {
         try {
             mCustomPagerAdapter = new ViewDealsPagerAdapter(
@@ -145,7 +167,7 @@ public class ViewDealsActivity extends UserActivity implements
         }
 
     }
-
+    /*Check if the current deal is liked by user or not*/
     public boolean checkIsLiked(int position) {
         currentPage = position;
         if (appState.getAllDeals().get(position).getIsliked()) {
@@ -161,6 +183,7 @@ public class ViewDealsActivity extends UserActivity implements
 
     }
 
+    /*This method is used to send feedback for current deal user viewing to HB server*/
     public void submitFeedback(String editTextComments) {
         try {
             String url = "deal/feedback";
@@ -188,6 +211,7 @@ public class ViewDealsActivity extends UserActivity implements
 
     }
 
+    /*This method is used to set current deals restaurant into favorite*/
     public void addToFavRestaurent(Deals deals) {
         try {
             progressBar = new CustomProgressDialog(this);
@@ -207,7 +231,7 @@ public class ViewDealsActivity extends UserActivity implements
             Log.e("Error", e.toString(), e);
         }
     }
-
+    /*This method return true if the current restaurant is favorite for user*/
     private boolean getIsFavorate(Deals item) {
         try {
             for (MerchantBranchDto merchatBranch : ViewDealsActivity.appState
@@ -227,6 +251,7 @@ public class ViewDealsActivity extends UserActivity implements
 
     }
 
+    /*This method is used to favorite the restaurant or removes*/
     private void jsonParsinginDeals(Bundle data) {
         String response = data.getString(ServiceListener.RESPONSEDATA);
         if (response.contains("true")) {
@@ -241,6 +266,8 @@ public class ViewDealsActivity extends UserActivity implements
         }
     }
 
+    /*This method navigate the used to order the deal
+    And also this method is used to get last order address for m the HB server*/
     public void buyNowThisDeal(Deals item) {
         if (item.getOpeningQuantity() == 0||!getStatus(item)) {
             return;
@@ -269,6 +296,8 @@ public class ViewDealsActivity extends UserActivity implements
 
 
     }
+
+    /*This method is used to send current status of the deal*/
     private boolean getStatus(Deals item){
         DealStatus currentStatus = item.getStatus();
         switch(currentStatus){
@@ -285,6 +314,10 @@ public class ViewDealsActivity extends UserActivity implements
         }
         return false;
     }
+
+    /*
+  * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+  * */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -304,6 +337,9 @@ public class ViewDealsActivity extends UserActivity implements
         return super.onMenuOpened(featureId, menu);
     }
 
+    /*
+   * This method will be called when the action overflow button is pressed and the menu item is selected
+   * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -333,6 +369,9 @@ public class ViewDealsActivity extends UserActivity implements
         return false;
     }
 
+    /*
+    * Inflating the menus in the Action overflow button
+    * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.login, menu);
@@ -344,8 +383,7 @@ public class ViewDealsActivity extends UserActivity implements
 
     }
 
-    int value = 0;
-
+    /* Concrete method from useractivity used to receive datas to HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
         if(networkChanges())
@@ -374,6 +412,7 @@ public class ViewDealsActivity extends UserActivity implements
 
     }
 
+    /*This method check the user deal liked or not and change background and show toast to user*/
     private void checkAndChange() {
         progressBar.dismiss();
         boolean like = false;
@@ -401,6 +440,7 @@ public class ViewDealsActivity extends UserActivity implements
         super.onBackPressed();
     }
 
+    /*on click method to the button*/
     @Override
     public void onClick(View v) {
 
@@ -443,6 +483,7 @@ public class ViewDealsActivity extends UserActivity implements
 
     }
 
+    /*This method will send the like request to HB server*/
     private void addCouponLike() {
         progressBar.setCancelable(false);
         progressBar.show();
@@ -454,6 +495,7 @@ public class ViewDealsActivity extends UserActivity implements
 
     }
 
+    /*This method will remove the like from appstate favorite restaurant*/
     private void removeMerchantBranch(MerchantBranchDto merchantBranchDto) {
         List<MerchantBranchDto> favMerchants = appState.getMerchatBranch();
         favMerchants.remove(merchantBranchDto);
@@ -461,6 +503,7 @@ public class ViewDealsActivity extends UserActivity implements
         mCustomPagerAdapter.notifyDataSetChanged();
     }
 
+    /*This method used to add like to favorite restaurant in cache*/
     private void addMerchantBranch(MerchantBranchDto merchantBranchDto) {
         if (appState.getMerchatBranch() == null) {
             appState.setMerchatBranch(new ArrayList<MerchantBranchDto>());

@@ -22,10 +22,18 @@ import com.HungryBells.util.ContentsCache;
 import com.HungryBells.util.Util;
 import com.google.gson.Gson;
 
+
+/*This class will call after failed payment*/
 public class PaymentFailedActivity extends UserActivity {
+
+    /*payment response from HB server*/
 	PaymentResponse paymentResponse;
 	String data;
+
+    /*current deal try to buy  by user*/
     Deals viewDeals;
+
+    /*This method initialize app state and get data from payment page*/
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
@@ -49,8 +57,9 @@ public class PaymentFailedActivity extends UserActivity {
 		responseListion();
 	}
 
+    /*This method check the response from HB server
+   Then the result will be shown as datas*/
 	private void responseListion() {
-
 		if (getAllResponse(data)) {
 			((TextView) findViewById(R.id.textView2))
 					.setText("Payment Cancelled");
@@ -89,6 +98,7 @@ public class PaymentFailedActivity extends UserActivity {
 				});
 	}
 
+    /*parsing json response from HB server and change it to payment pojo */
 	private boolean getAllResponse(String data) {
        try {
         String response = "{\"paymentResponse\":" + data + "}";
