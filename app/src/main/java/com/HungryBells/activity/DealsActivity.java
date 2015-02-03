@@ -339,6 +339,7 @@ public class DealsActivity extends UserActivity implements
 
             if (currentPage == 0) {
                 return new WhatsNewFragment();
+
             } else if (currentPage == 1)
                 return new DealsListFragment();
             else

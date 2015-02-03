@@ -9,10 +9,10 @@
         android:id="@+id/grids"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:horizontalSpacing="10dp"
         android:numColumns="1"
-        android:verticalSpacing="10dp" >
+        android:verticalSpacing="4dp" >
     </GridView>
 
     <RelativeLayout
