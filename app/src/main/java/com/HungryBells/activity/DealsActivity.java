@@ -109,11 +109,13 @@ public class DealsActivity extends UserActivity implements
     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dealslayout);
         appState = (GlobalAppState) getApplication();
         prefs = getSharedPreferences("HB",MODE_PRIVATE);
         android.util.Log.d("Deals Activity", "Deals Activity onCreate");
+
         if (appState != null && appState.getCity() != null&&appState.getUrl()!=null) {
             try {
                 httpConnection = new ServiceListener(appState);

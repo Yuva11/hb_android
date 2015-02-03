@@ -66,38 +66,52 @@ public class DealsPageAdapter extends BaseAdapter {
 		ViewHolder holder;
 		int theType = getItemViewType(position);
 		if (convertView == null) {
-			if (theType == 1)
-				convertView = mInflater.inflate(R.layout.fragment_imagelayout,
-						null);
-			else
-				convertView = mInflater.inflate(
-						R.layout.fragment_dealwithpercentage, null);
+			if (theType == 1) {
+                convertView = mInflater.inflate(R.layout.fragment_imagelayout,null);
+            }
+			else {
+                convertView = mInflater.inflate(R.layout.fragment_dealwithpercentage, null);
+            }
+
 			holder = new ViewHolder();
 			holder.imageDealId = (RelativeLayout) convertView
 					.findViewById(R.id.imagedealback);
+
 			holder.imageLayout = (ImageView) convertView
 					.findViewById(R.id.imagelinearBack);
+
 			holder.textName = (TextView) convertView
 					.findViewById(R.id.textViewimgname);
-			holder.textdesc = (TextView) convertView
-					.findViewById(R.id.textViewimgdesc);
+
+			//holder.textdesc = (TextView) convertView
+			//		.findViewById(R.id.textViewimgdesc);
+
 			holder.textoldPrice = (TextView) convertView
 					.findViewById(R.id.textViewamt);
+
 			holder.textNewPrice = (TextView) convertView
 					.findViewById(R.id.textViewnewamt);
+
 			holder.textViewvaluedis = (TextView) convertView
 					.findViewById(R.id.textViewvaluedis);
-			holder.textDiscount = (TextView) convertView
-					.findViewById(R.id.textViewdiscount);
+
+			//holder.textDiscount = (TextView) convertView
+			//		.findViewById(R.id.textViewdiscount);
+
 			holder.logoImg = (ImageView) convertView
 					.findViewById(R.id.logoImage);
+
 			holder.soldout = (ImageView) convertView
 					.findViewById(R.id.imageViewsoldout);
+
 			holder.linear = (LinearLayout) convertView
 					.findViewById(R.id.linearview);
-			holder.ratings = (RatingBar) convertView
-					.findViewById(R.id.ratingBar1);
-			convertView.setTag(holder);
+
+			//holder.ratings = (RatingBar) convertView
+			//		.findViewById(R.id.ratingBar1);
+
+
+            convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
@@ -106,8 +120,10 @@ public class DealsPageAdapter extends BaseAdapter {
 		imageLoader.displayImage(url, holder.imageLayout);
 		holder.imageLayout.setMaxHeight(20);
 		holder.textName.setText(deal.getName());
-		holder.textdesc.setText(deal.getDetails());
-		holder.textViewvaluedis.setText(Util.getDistance(deal.getDistance()));
+
+       // holder.textdesc.setText(deal.getDetails());
+
+        holder.textViewvaluedis.setText(Util.getDistance(deal.getDistance()));
 		String value = "";
 		NumberFormat formatters = new DecimalFormat("#0");
 		if (deal.getOriginalPrice() != null)
@@ -129,14 +145,22 @@ public class DealsPageAdapter extends BaseAdapter {
 					+ formatters.format(deal.getDealPrice()));
 		}
 
+        /*
 		if (deal.getRating() != null) {
 			holder.ratings.setRating(deal.getRating());
 		} else {
 			holder.ratings.setRating(0f);
 		}
-       if(deal.getDealDiscountPercent()!=null)
-		holder.textDiscount.setText(formatters.format(deal
-				.getDealDiscountPercent()) + "%");
+		*/
+
+       /*
+       if(deal.getDealDiscountPercent()!=null) {
+           holder.textDiscount.setText(formatters.format(deal
+                   .getDealDiscountPercent()) + "%");
+       }
+       */
+
+
 		String merchantUrl = deal.getMerchantbranch().getMerchant()
 				.getLogoUrl();
 		imageLoader.displayImage(merchantUrl, holder.logoImg);
@@ -171,15 +195,19 @@ public class DealsPageAdapter extends BaseAdapter {
 		RelativeLayout imageDealId;
 		ImageView imageLayout;
 		TextView textName;
-		TextView textdesc;
+
+		//TextView textdesc;
+
 		TextView textoldPrice;
 		TextView textNewPrice, textViewnewamtValue;
 		TextView textViewvaluedis;
-		TextView textDiscount;
-		ImageView logoImg;
+
+        //TextView textDiscount;
+
+        ImageView logoImg;
 		ImageView soldout;
 		LinearLayout linear;
-		RatingBar ratings;
+		//RatingBar ratings;
 	}
 
 }
