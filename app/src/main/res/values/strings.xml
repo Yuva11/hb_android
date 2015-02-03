@@ -123,7 +123,12 @@
      <string name="serverurl_test">http://hbservice.finateltech.com:9090/</string>
     -->
 
+    <!--
     <string name="serverurl_test">http://service.hungrybells.in:9090/</string>
+    -->
+    <!-- Test URL -->
+     <string name="serverurl_test">http://service.hungrybells.in:9090/</string>
+
    <!-- <string name="facebookauth">http://hbservice.finateltech.com:9090/auth/facebook?scope=public_profile,email</string>
    <string name="paymentcallback">http://hbservice.finateltech.com:9090/paymentresponse/addresponse</string>
     <string name="twitterauth">http://hbservice.finateltech.com:9090/auth/twitter</string>

@@ -67,7 +67,8 @@ public class DealsPageAdapter extends BaseAdapter {
 		int theType = getItemViewType(position);
 		if (convertView == null) {
 			if (theType == 1) {
-                convertView = mInflater.inflate(R.layout.fragment_imagelayout,null);
+                //convertView = mInflater.inflate(R.layout.fragment_imagelayout,null);
+                convertView = mInflater.inflate(R.layout.fragment_bestpick_list_item ,null);
             }
 			else {
                 convertView = mInflater.inflate(R.layout.fragment_dealwithpercentage, null);
@@ -104,8 +105,8 @@ public class DealsPageAdapter extends BaseAdapter {
 			holder.soldout = (ImageView) convertView
 					.findViewById(R.id.imageViewsoldout);
 
-			holder.linear = (LinearLayout) convertView
-					.findViewById(R.id.linearview);
+			//holder.linear = (LinearLayout) convertView
+			//		.findViewById(R.id.linearview);
 
 			//holder.ratings = (RatingBar) convertView
 			//		.findViewById(R.id.ratingBar1);
@@ -166,13 +167,15 @@ public class DealsPageAdapter extends BaseAdapter {
 		imageLoader.displayImage(merchantUrl, holder.logoImg);
 		if (deal.getAvailability() != null && deal.getAvailability() == 0) {
 			holder.soldout.setVisibility(View.VISIBLE);
-			holder.linear.setAlpha(0.5f);
+
+            //holder.linear.setAlpha(0.5f);
 			if (theType == 1) {
 				holder.imageLayout.setAlpha(0.5f);
 			}
 		} else {
 			holder.soldout.setVisibility(View.GONE);
-			holder.linear.setAlpha(1.0f);
+
+            //holder.linear.setAlpha(1.0f);
 			if (theType == 1) {
 				holder.imageLayout.setAlpha(1.0f);
 			}
@@ -206,7 +209,8 @@ public class DealsPageAdapter extends BaseAdapter {
 
         ImageView logoImg;
 		ImageView soldout;
-		LinearLayout linear;
+
+        //LinearLayout linear;
 		//RatingBar ratings;
 	}
 
