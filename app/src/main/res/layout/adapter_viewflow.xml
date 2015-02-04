@@ -67,7 +67,9 @@
                             android:adjustViewBounds="false"
                             android:contentDescription="@string/app_name"
                             android:layout_marginLeft="10dp"
-                            android:background="#ffff16d7" />
+                            android:background="#ffff16d7"
+                            android:paddingTop="2dp"
+                            android:scaleType="centerCrop"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -121,7 +123,7 @@
                                     android:paddingTop="16dp"
                                     android:singleLine="true"
                                     android:textColor="#ff2b2b2b"
-                                    android:textSize="12sp"
+                                    android:textSize="13sp"
                                     android:textStyle="normal"
                                     android:layout_alignParentRight="true"
                                     android:layout_marginTop="20dp"
@@ -145,7 +147,8 @@
                             android:baselineAligned="false"
                             android:orientation="vertical"
                             android:layout_alignParentTop="true"
-                            android:layout_alignParentLeft="true">
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="20dp">
 
                             <TextView
                                 android:id="@+id/textViewdiscription"
@@ -154,13 +157,14 @@
                                 android:layout_alignParentBottom="true"
                                 android:maxLines="3"
                                 android:paddingBottom="5dp"
-                                android:paddingLeft="15dp"
+                                android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
                                 android:paddingTop="5dp"
                                 android:textColor="#ff757575"
-                                android:textSize="15sp"
+                                android:textSize="14sp"
                                 android:text="this is a dummy text decription"
-                                android:layout_gravity="center" />
+                                android:layout_gravity="center|left"
+                                android:textStyle="italic" />
 
                             <TextView
                                 android:id="@+id/textViewviewnewprice"
@@ -185,18 +189,30 @@
                                 android:text="Rs 499"
                                 android:textAlignment="center"/>
 
-                            <TextView
-                                android:id="@+id/textViewdiscount"
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentTop="true"
-                                android:padding="5dp"
-                                android:textColor="#ffff16d7"
-                                android:textSize="20sp"
-                                android:textStyle="normal"
-                                android:layout_gravity="center"
-                                android:text="0%" />
+                                android:background="@drawable/round_rect_off_percentage"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:id="@+id/textViewdiscount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentTop="true"
+                                    android:textColor="#ffffff"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center"
+                                    android:text="12%"
+                                    android:padding="2dp" />
+
+
+                                </LinearLayout>
+
+
 
 
                         </LinearLayout>

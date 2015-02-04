@@ -69,6 +69,7 @@ public class ViewDealsFragment extends Fragment {
 			TextView availabileTime;
 			textViewQuantity = (TextView) rootView.findViewById(R.id.textViewquantity);
 			ImageView imageViewfavrest = (ImageView) rootView.findViewById(R.id.imageViewfavrest);
+
 			TextView textViewDescription;
 			RelativeLayout buythisdeal = (RelativeLayout) rootView.findViewById(R.id.buythisdeal);
 			ImageView logoImage = (ImageView) rootView.findViewById(R.id.imageViewviewlogo);
@@ -76,10 +77,9 @@ public class ViewDealsFragment extends Fragment {
 			ImageView imageViewitemimg = (ImageView) rootView.findViewById(R.id.imageViewitemimg);
 
 			imageLoader.displayImage(deals.getImageURL(), imageViewitemimg);
-			TextView findDistance = (TextView) rootView
-					.findViewById(R.id.findDistance);
-			((TextView) rootView.findViewById(R.id.textViewRestName))
-					.setText(deals.getMerchantbranch().getMerchant().getName());
+
+            TextView findDistance = (TextView) rootView.findViewById(R.id.findDistance);
+			((TextView) rootView.findViewById(R.id.textViewRestName)).setText(deals.getMerchantbranch().getMerchant().getName());
 			((TextView) rootView.findViewById(R.id.textViewRestaddress))
 					.setText(deals.getMerchantbranch().getBranchName() + "\n"
 							+ deals.getMerchantbranch().getAddress());
