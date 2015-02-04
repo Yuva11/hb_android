@@ -64,21 +64,16 @@ public class ViewDealsFragment extends Fragment {
 
 	private void addViews(View rootView) {
 		try {
+
 			TextView textViewQuantity, textOldPrice, textNewPrice;
 			TextView availabileTime;
-			textViewQuantity = (TextView) rootView
-					.findViewById(R.id.textViewquantity);
-			ImageView imageViewfavrest = (ImageView) rootView
-					.findViewById(R.id.imageViewfavrest);
+			textViewQuantity = (TextView) rootView.findViewById(R.id.textViewquantity);
+			ImageView imageViewfavrest = (ImageView) rootView.findViewById(R.id.imageViewfavrest);
 			TextView textViewDescription;
-			RelativeLayout buythisdeal = (RelativeLayout) rootView
-					.findViewById(R.id.buythisdeal);
-			ImageView logoImage = (ImageView) rootView
-					.findViewById(R.id.imageViewviewlogo);
-			imageLoader.displayImage(deals.getMerchantbranch().getMerchant()
-					.getLogoUrl(), logoImage);
-			ImageView imageViewitemimg = (ImageView) rootView
-					.findViewById(R.id.imageViewitemimg);
+			RelativeLayout buythisdeal = (RelativeLayout) rootView.findViewById(R.id.buythisdeal);
+			ImageView logoImage = (ImageView) rootView.findViewById(R.id.imageViewviewlogo);
+			imageLoader.displayImage(deals.getMerchantbranch().getMerchant().getLogoUrl(), logoImage);
+			ImageView imageViewitemimg = (ImageView) rootView.findViewById(R.id.imageViewitemimg);
 
 			imageLoader.displayImage(deals.getImageURL(), imageViewitemimg);
 			TextView findDistance = (TextView) rootView
@@ -142,6 +137,10 @@ public class ViewDealsFragment extends Fragment {
 			} else {
 				textViewQuantity.setText(deals.getOpeningQuantity() + "");
 			}
+
+            /**  Ratings Commented
+            **********************************
+
 			RatingBar ratingBar = (RatingBar) rootView
 					.findViewById(R.id.ratingBar1);
 			if (deals.getRating() != null) {
@@ -149,6 +148,9 @@ public class ViewDealsFragment extends Fragment {
 			} else {
 				ratingBar.setRating(0.0f);
 			}
+
+             */
+
 			TextView dealEndTime = (TextView) rootView
 					.findViewById(R.id.dealendtime);
 			dealEndTime.setText("Till " + getDate(deals.getEndDate()));

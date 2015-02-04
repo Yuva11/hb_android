@@ -150,6 +150,8 @@ public class DealsActivity extends UserActivity implements
             finish();
         }
     }
+
+
     /*
     * get location longitude & latitude from user
     * Searching deals
@@ -491,6 +493,23 @@ public class DealsActivity extends UserActivity implements
         viewadvertisement.putExtras(bundle);
         startActivitiesUser(viewadvertisement, this);
     }
+
+
+
+    /*
+    * Navigate to dealsview page
+    * parcelling current index to set page
+    * */
+    public void dealsViewPage(int index) {
+        Intent viewDeals = new Intent(this, ViewDealsActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Deals", index);
+        viewDeals.putExtras(bundle);
+        appState.setSelectedItem(0);
+        startActivitiesUser(viewDeals, this);
+    }
+
+
     /*
     * Navigate to couponview  page
     * parcelling current index to set page
@@ -504,18 +523,7 @@ public class DealsActivity extends UserActivity implements
         startActivitiesUser(viewCoupons, this);
     }
 
-/*
-* Navigate to dealsview page
-* parcelling current index to set page
-* */
-    public void dealsViewPage(int index) {
-        Intent viewDeals = new Intent(this, ViewDealsActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("Deals", index);
-        viewDeals.putExtras(bundle);
-        appState.setSelectedItem(0);
-        startActivitiesUser(viewDeals, this);
-    }
+
   /* Concrete method from useractivity used to receive datas from HB Server*/
     @Override
     public void processMessage(Bundle message, ServiceListenerType what) {
