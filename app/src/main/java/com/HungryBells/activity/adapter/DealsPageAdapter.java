@@ -146,6 +146,31 @@ public class DealsPageAdapter extends BaseAdapter {
 					+ formatters.format(deal.getDealPrice()));
 		}
 
+
+        holder.textoldPrice.setVisibility(View.INVISIBLE);
+
+        // Check if old price = new price then hide old price
+        /*
+        if(deal.getOriginalPrice() == deal.getDealPrice())
+        {
+            holder.textoldPrice.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            holder.textoldPrice.setVisibility(View.VISIBLE);
+        }
+
+        if (holder.textNewPrice.toString() == holder.textoldPrice.toString() )
+        {
+            holder.textoldPrice.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            holder.textoldPrice.setVisibility(View.VISIBLE);
+        }
+        */
+
+
         /*
 		if (deal.getRating() != null) {
 			holder.ratings.setRating(deal.getRating());

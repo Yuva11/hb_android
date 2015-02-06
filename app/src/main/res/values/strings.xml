@@ -125,7 +125,7 @@
 
 
 
-    <string name="serverurl_test">http://testservice.hungrybells.in:9091/</string>
+    <string name="serverurl_test">http://service.hungrybells.in:9090/</string>
 
     <!-- Test URL -->
 

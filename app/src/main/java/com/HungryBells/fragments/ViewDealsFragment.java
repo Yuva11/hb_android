@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -35,6 +36,7 @@ import com.HungryBells.activity.ZoomImageActivity;
 import com.HungryBells.util.Util;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+/*This method is used to view delas in the fragment*/
 @SuppressLint("SimpleDateFormat")
 public class ViewDealsFragment extends Fragment {
 	ImageLoader imageLoader;
@@ -55,6 +57,7 @@ public class ViewDealsFragment extends Fragment {
 		return rootView;
 	}
 
+    /*This method is updated evey change in deal or user change favorite*/
 	public void update() {
 		ImageView imageViewfavrest = (ImageView) rootView
 				.findViewById(R.id.imageViewfavrest);
@@ -62,11 +65,14 @@ public class ViewDealsFragment extends Fragment {
 		imageBackground(deals.isFavourite(), imageViewfavrest);
 	}
 
+    /*This method set the details of deals in fragment*/
 	private void addViews(View rootView) {
 		try {
 
 			TextView textViewQuantity, textOldPrice, textNewPrice;
 			TextView availabileTime;
+            LinearLayout discountLayout;
+
 			textViewQuantity = (TextView) rootView.findViewById(R.id.textViewquantity);
 			ImageView imageViewfavrest = (ImageView) rootView.findViewById(R.id.imageViewfavrest);
 
@@ -87,6 +93,8 @@ public class ViewDealsFragment extends Fragment {
 					.findViewById(R.id.imageViewviewsoldout);
 
             String distance = Util.getDistance(deals.getDistance());
+
+            //Set distance from url received
             Log.e("Distances","Distant:"+deals.getDistance()+"::"+distance);
             if(distance.equals("0 m")){
                 findDistance.setVisibility(View.INVISIBLE);
@@ -114,6 +122,8 @@ public class ViewDealsFragment extends Fragment {
 
 						}
 					});
+
+                    //  click on the buy now navigate to buyNowThisDeal  in View Deals Activity
 					buythisdeal.setOnClickListener(new OnClickListener() {
 
 						@Override
@@ -123,6 +133,8 @@ public class ViewDealsFragment extends Fragment {
 
 						}
 					});
+
+                    //  click on the buy now navigate to addToFavRestaurent  in View Deals Activity
 					imageViewfavrest.setOnClickListener(new OnClickListener() {
 
 						@Override
@@ -160,15 +172,20 @@ public class ViewDealsFragment extends Fragment {
 			textViewDiscount.setText(formatters.format(deals
 					.getDealDiscountPercent()) + "%");
 
+
+
 			textOldPrice = (TextView) rootView
 					.findViewById(R.id.textViewvieworiginaltext);
 			textNewPrice = (TextView) rootView
 					.findViewById(R.id.textViewviewnewprice);
 
+            discountLayout = (LinearLayout) rootView.findViewById(R.id.discountLinearLayout);
+
 			Typeface face = Typeface.createFromAsset(getActivity().getAssets(),
 					"Rupee_Foradian.ttf");
 			textOldPrice.setTypeface(face);
 			textNewPrice.setTypeface(face);
+
 			String amount = "`";
 			availabileTime = (TextView) rootView
 					.findViewById(R.id.availabiletime);
@@ -180,6 +197,23 @@ public class ViewDealsFragment extends Fragment {
 					| Paint.STRIKE_THRU_TEXT_FLAG);
 			textNewPrice.setText(amount
 					+ formatters.format(deals.getDealPrice()));
+
+            // Check if discount percentage is 0 then hide old price and % discount
+            if (deals.getDealDiscountPercent() == 0)
+            {
+                textViewDiscount.setVisibility(View.GONE);
+                textOldPrice.setVisibility(View.GONE);
+                discountLayout.setVisibility(View.GONE);
+
+            }
+            else{
+                textViewDiscount.setVisibility(View.VISIBLE);
+                textOldPrice.setVisibility(View.VISIBLE);
+                discountLayout.setVisibility(View.VISIBLE);
+
+            }
+
+
 			List<DeliveryTypeDto> deliveryType = deals.getDeliveryType();
 			if (deliveryType == null) {
 				deliveryType = new ArrayList<DeliveryTypeDto>();
@@ -196,6 +230,7 @@ public class ViewDealsFragment extends Fragment {
 
 	}
 
+    /*This method returns string date hour and min*/
 	private String getTime(String dateParam) {
 		String dateFind = "";
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -210,6 +245,7 @@ public class ViewDealsFragment extends Fragment {
 
 	}
 
+    /*This method used to show delivery method available*/
 	private void deliveryAvailable(List<DeliveryTypeDto> deliveryType,
 			View convertView) {
 		for (DeliveryTypeDto delivery : deliveryType) {
@@ -232,6 +268,7 @@ public class ViewDealsFragment extends Fragment {
 
 	}
 
+    /*This method returns string date month and day*/
 	private String getDate(String dateParam) {
 		String dateFind = "";
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -246,7 +283,22 @@ public class ViewDealsFragment extends Fragment {
 
 	}
 
+    /*This method set imageview for favorite restaurant*/
 	private void imageBackground(boolean value, ImageView viewImage) {
+
+        if (value) {
+            Bitmap bImage = BitmapFactory.decodeResource(getActivity()
+                    .getResources(), R.drawable.bookmark_yellow);
+            viewImage.setImageBitmap(bImage);
+        } else {
+            Bitmap bImage = BitmapFactory.decodeResource(getActivity()
+                    .getResources(), R.drawable.bookmark);
+            viewImage.setImageBitmap(bImage);
+        }
+
+
+
+        /*
 		if (value) {
 			Bitmap bImage = BitmapFactory.decodeResource(getActivity()
 					.getResources(), R.drawable.favstar);
@@ -256,8 +308,10 @@ public class ViewDealsFragment extends Fragment {
 					.getResources(), R.drawable.favunstar);
 			viewImage.setImageBitmap(bImage);
 		}
+		*/
 	}
 
+    /*This method returns true if the restaurent of current deal is favorite else false*/
 	private boolean getIsFavorate(Deals item) {
 		try {
 			for (MerchantBranchDto merchatBranch : ViewDealsActivity.appState

@@ -81,6 +81,13 @@
 
         </LinearLayout>
 
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/location_pin_blue"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="10dp" />
+
             <TextView
                 android:id="@+id/textViewvaluedis"
                 android:layout_width="wrap_content"
@@ -89,9 +96,9 @@
                 android:layout_alignParentRight="false"
                 android:layout_marginBottom="5dp"
                 android:text="20 Km"
-                android:textColor="#ff48b3ff"
+                android:textColor="#4A90E2"
                 android:textSize="16sp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="6dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="6dp" />
 
