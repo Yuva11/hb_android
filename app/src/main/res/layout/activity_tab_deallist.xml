@@ -34,11 +34,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/zoomImageView"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/nodealstext"
             android:textColor="#969696"
-            android:textSize="20sp" />
+            android:textSize="16sp"
+            android:layout_margin="10dp" />
 
         <TextView
             android:id="@+id/textViewnoAdsTry"

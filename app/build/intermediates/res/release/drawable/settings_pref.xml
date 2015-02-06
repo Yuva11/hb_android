@@ -1,6 +1,0 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle" >
-
-    <solid android:color="#555555" />
-
-</shape><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/drawable/settings_pref.xml -->

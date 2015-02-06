@@ -1,10 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/linearview"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:background="#ffffff"
     android:baselineAligned="false" >
+
+    <ImageView
+        android:id="@+id/imagelinearBack"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="140dp"
+        android:alpha="0.95"
+        android:background="@drawable/gradiant_black_to_transparent"/>
+
+
+
+
+
+    <TextView
+        android:id="@+id/textViewimgname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="dummy text 1"/>
+
+
+    <TextView
+        android:id="@+id/textViewimgdesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewimgname"
+        android:layout_marginTop="6dp"
+        android:maxLines="2"
+        android:minLines="2"
+        android:textColor="#ffa3a3a3"
+        android:textSize="14sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="dummy text 2"/>
+
+
+
+
+    <Button
+        android:id="@+id/buttoncouponcode"
+        android:layout_width="78dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="268dp"
+        android:background="@drawable/get_btn"
+        android:textColor="#fff"
+        />
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:background="@color/sa_green"
+        android:visibility="gone"/>
+
+    <!-- android:background="@drawable/couponcode_bg" -->
+
+
+    <!--
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,11 +86,8 @@
         android:paddingBottom="10dp"
         android:paddingRight="10dp" >
 
-        <ImageView
-            android:id="@+id/imagelinearBack"
-            android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop" />
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +98,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:scaleType="fitStart" />
+                android:scaleType="fitStart"
+                android:background="@color/sa_green"/>
         </LinearLayout>
     </RelativeLayout>
 
@@ -49,7 +119,8 @@
             android:singleLine="true"
             android:textColor="#d01714"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="dummy text 1"/>
 
         <TextView
             android:id="@+id/textViewimgdesc"
@@ -60,7 +131,8 @@
             android:maxLines="2"
             android:minLines="2"
             android:textColor="#505050"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:text="dummy text 2"/>
 
         <Button
             android:id="@+id/buttoncouponcode"
@@ -74,4 +146,6 @@
             android:textColor="#fff" />
     </RelativeLayout>
 
-</LinearLayout>
+    -->
+
+</RelativeLayout>

@@ -20,57 +20,60 @@ import com.HungryBells.activity.R;
 import com.HungryBells.activity.SearchCityActivity;
 import com.HungryBells.activity.adapter.CouponAdapter;
 
+
+/*This is the fragment for coupon*/
 public class CouponsFragment extends Fragment {
-	View rootView;
-	GlobalAppState appState;
+    View rootView;
+    GlobalAppState appState;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setRetainInstance(true);
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-		rootView = inflater.inflate(R.layout.fragment_grids, container, false);
+        rootView = inflater.inflate(R.layout.fragment_grids, container, false);
 
-		return rootView;
-	}
+        return rootView;
+    }
 
-	@Override
-	public void onDestroy() {
-		// TODO Auto-generated method stub
-		super.onDestroy();
-		rootView = null;
-	}
+    @Override
+    public void onDestroy() {
+        // TODO Auto-generated method stub
+        super.onDestroy();
+        rootView = null;
+    }
 
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		viewAllDetails();
-	}
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        viewAllDetails();
+    }
 
-	private void viewAllDetails() {
-		appState = (GlobalAppState) getActivity().getApplication();
-		List<Deals> allPromos = new ArrayList<Deals>();
-		if (appState.getAllPromos() != null) {
-			allPromos = appState.getAllPromos();
-		} else {
-			allPromos = new ArrayList<Deals>();
-		}
-		GridView grid = (GridView) getActivity().findViewById(R.id.gridcoup);
-		if (allPromos.size() > 0) {
-			grid.setVisibility(View.VISIBLE);
-			((RelativeLayout) getActivity().findViewById(R.id.nocouponvalue))
-					.setVisibility(View.GONE);
-		} else {
-			grid.setVisibility(View.GONE);
-			((RelativeLayout) getActivity().findViewById(R.id.nocouponvalue))
-					.setVisibility(View.VISIBLE);
+    /*This method is used to show coupon in the list*/
+    private void viewAllDetails() {
+        appState = (GlobalAppState) getActivity().getApplication();
+        List<Deals> allPromos = new ArrayList<Deals>();
+        if (appState.getAllPromos() != null) {
+            allPromos = appState.getAllPromos();
+        } else {
+            allPromos = new ArrayList<Deals>();
+        }
+        GridView grid = (GridView) getActivity().findViewById(R.id.gridcoup);
+        if (allPromos.size() > 0) {
+            grid.setVisibility(View.VISIBLE);
+            ((RelativeLayout) getActivity().findViewById(R.id.nocouponvalue))
+                    .setVisibility(View.GONE);
+        } else {
+            grid.setVisibility(View.GONE);
+            ((RelativeLayout) getActivity().findViewById(R.id.nocouponvalue))
+                    .setVisibility(View.VISIBLE);
 
-		}
+        }
         if(appState.getCity().equals("Hungry Bells")) {
             ((TextView) rootView.findViewById(R.id.textViewnoAds)).setText("Location services not enabled");
             ((TextView) rootView.findViewById(R.id.textViewnoAdsTry)).setText("Please Enable locations");
@@ -95,9 +98,9 @@ public class CouponsFragment extends Fragment {
                     });
         }
 
-		CouponAdapter couponAdapter = new CouponAdapter(getActivity(),
-				allPromos,appState);
-		grid.setAdapter(couponAdapter);
-		couponAdapter.notifyDataSetChanged();
-	}
+        CouponAdapter couponAdapter = new CouponAdapter(getActivity(),
+                allPromos,appState);
+        grid.setAdapter(couponAdapter);
+        couponAdapter.notifyDataSetChanged();
+    }
 }
