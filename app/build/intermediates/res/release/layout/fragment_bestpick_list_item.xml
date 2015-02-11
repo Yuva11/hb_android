@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:id="@+id/imagedealback"
+    android:background="#ffffff">
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:id="@+id/imagelinearBack"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/bg"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_height="40dp"
+            android:layout_width="140dp"
+            android:layout_marginLeft="10dp">
+
+
+            <TextView
+                android:id="@+id/textViewnewamt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:gravity="bottom"
+                android:textColor="#4A4A4A"
+                android:text="Rs"
+                android:textSize="22sp"
+                android:textStyle="normal"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/textViewnewamtValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="0dp"
+                android:gravity="bottom"
+                android:textColor="#4A4A4A"
+                android:textSize="22sp"
+                android:text="349"
+                android:textStyle="normal"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/textViewamt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="2dp"
+                android:gravity="bottom"
+                android:textColor="#979797"
+                android:textSize="16sp"
+                android:text="500"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+
+
+
+
+
+        </LinearLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/location_pin_blue"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/textViewvaluedis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="false"
+                android:layout_marginBottom="5dp"
+                android:text="20 Km"
+                android:textColor="#4A90E2"
+                android:textSize="16sp"
+                android:layout_marginLeft="6dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="115dp"
+        android:alpha="0.95"
+        android:background="@drawable/gradiant_black_to_transparent"/>
+
+    <TextView
+        android:id="@+id/textViewimgname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="132dp"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:text="Dummy Title"
+        android:layout_alignParentBottom="false"
+        android:layout_marginBottom="44dp" />
+
+    <ImageView
+        android:id="@+id/imageViewsoldout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/sold_out"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="266dp"
+        android:layout_marginTop="126dp"
+        android:scaleType="centerCrop"/>
+
+
+</RelativeLayout>
+<!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/layout/fragment_bestpick_list_item.xml -->

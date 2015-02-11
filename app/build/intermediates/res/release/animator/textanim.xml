@@ -1,0 +1,7 @@
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:propertyName="textColor"
+    android:duration="5000"
+    android:valueFrom="#ff0000"
+    android:valueTo="#0000ff"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse" /><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/animator/textanim.xml -->

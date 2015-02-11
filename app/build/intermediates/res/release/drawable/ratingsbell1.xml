@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+android:id/background"
+        android:drawable="@drawable/bellnotselected"/>
+    <item
+        android:id="@+android:id/secondaryProgress"
+        android:drawable="@drawable/bellnotselected"/>
+    <item
+        android:id="@+android:id/progress"
+        android:drawable="@drawable/bell_icon"/>
+
+</layer-list><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/drawable/ratingsbell1.xml -->

@@ -29,17 +29,44 @@ import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+
+/*This method is used to show advertisement*/
 public class AdvertisementAdapter extends BaseAdapter {
+
+    /*user context*/
 	private Context mContext;
+
+    /*Application context */
 	private Application mAppContext;
+
+    /*Stores the advertisement*/
 	private List<ContentDealDTO> mItems = new ArrayList<ContentDealDTO>();
+
+    /*background color for layout*/
 	String backColor;
+
+    /*text color for text layout*/
 	String textColor;
+
+
+    /*text size used to show*/
 	float textSize;
+
+    /*font to show advertisement*/
 	String fontName;
+
+
+    /*Image loader library for image loading*/
 	ImageLoader imageLoader;
+
+    /*size of layout */
     int sizeOfLayout;
+
+    /* Gobal application state Object where all contextual information is stored */
+
     GlobalAppState appState;
+
+    /*adapter constructor*/
 	public AdvertisementAdapter(Context context, Application app,
 			List<ContentDealDTO> mItems2, String backColor, String textColor,
 			float textSize, String fontName,int sizeOfLayout,GlobalAppState appState) {
@@ -55,21 +82,25 @@ public class AdvertisementAdapter extends BaseAdapter {
         this.appState = appState;
 	}
 
+    /* count of items */
 	@Override
 	public int getCount() {
 		return mItems == null ? 0 : mItems.size();
 	}
 
+   /*Base adapter override methods*/
 	@Override
 	public Object getItem(int position) {
 		return null;
 	}
 
+    /*Base adapter override methods*/
 	@Override
 	public long getItemId(int position) {
 		return 0;
 	}
 
+    /*Base adapter override methods*/
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		View view = null;
@@ -160,6 +191,7 @@ public class AdvertisementAdapter extends BaseAdapter {
 		return view;
 	}
 
+    /*Holder method */
 	class Holder {
 		LinearLayout advertisementLayout;
 		ImageView imageViewImageWithVideo, imageViewImagesOnly,
@@ -167,6 +199,8 @@ public class AdvertisementAdapter extends BaseAdapter {
 		RelativeLayout textLayout, imageLayout;
 		TextView textOnlyContent, imageWithText;
 	}
+
+    /*used to send details of advertisement viewd to server*/
     private void sendDelasList(ContentDealDTO deals){
         Customers customer = appState.getProfile();
         AdViewsDTO deal = new AdViewsDTO();

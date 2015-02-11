@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3e3e3f" >
+
+    <ImageView
+        android:id="@+id/imageViewback"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/imageViewurl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/hbmain" />
+
+    <ImageView
+        android:id="@+id/imageViewlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageViewurl"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logobighb" />
+    <com.HungryBells.StaggeredGridView.ProgressWheel
+        android:id="@+id/progressBarTwo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        ProgressWheel:textColorWheel="#ffffff"
+        ProgressWheel:textSizeWheel="25dp"
+        ProgressWheel:rimColorWheel="#ffffff"
+        ProgressWheel:barColorWheel="#d21617"
+        ProgressWheel:barWidthWheel="5dp"
+        ProgressWheel:rimWidthWheel="5dp"
+        android:layout_below="@+id/imageViewurl"
+        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:id="@+id/undobar"
+        style="@style/UndoBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/undobar_message"
+                style="@style/UndoBarMessage" />
+
+            <ImageView
+                android:id="@+id/zoomImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:src="@drawable/error" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/undobar_button"
+            style="@style/UndoBarButton" />
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/layout-large-land/activity_main.xml -->

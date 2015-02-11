@@ -11,11 +11,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+/*Viewpager adapter for Deals*/
 public class ViewDealsPagerAdapter extends FragmentStatePagerAdapter {
 
+    /*user context*/
 	protected Context mContext;
+
+    /*Deals in the adapter*/
 	List<Deals> deals;
 
+    /*constructor method*/
 	public ViewDealsPagerAdapter(FragmentManager fm, Context context,
 			List<Deals> deals) {
 		super(fm);
@@ -23,6 +28,9 @@ public class ViewDealsPagerAdapter extends FragmentStatePagerAdapter {
 		this.deals = deals;
 	}
 
+    /* *
+   * Creating fragments using ViewDealsFragment
+   *Base adapter override methods*/
 	@Override
 	public Fragment getItem(int position) {
 
@@ -35,12 +43,13 @@ public class ViewDealsPagerAdapter extends FragmentStatePagerAdapter {
 
 		return fragment;
 	}
-
+   /* adapter override method*/
 	@Override
 	public int getCount() {
 		return deals.size();
 	}
 
+    /*if any change in the fragment then this method called*/
 	@Override
 	public int getItemPosition(Object object) {
 		ViewDealsFragment f = (ViewDealsFragment) object;

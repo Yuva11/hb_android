@@ -15,18 +15,25 @@ import android.widget.TextView;
 import com.HungryBells.DTO.NotificationPreference;
 import com.HungryBells.activity.R;
 
+/*This adapter is used to show the settings form server*/
 public class SettingsAdapter extends ArrayAdapter<NotificationPreference> {
-	Context con;
-	ArrayList<NotificationPreference> countryList;
 
+    /*user context*/
+	Context con;
+
+    /*Notification preference list from the server*/
+	ArrayList<NotificationPreference> notificationsList;
+
+    /*adapter constructor*/
 	public SettingsAdapter(Context context, int textViewResourceId,
 			List<NotificationPreference> notifications) {
 		super(context, textViewResourceId, notifications);
 		con = context;
-		this.countryList = new ArrayList<NotificationPreference>();
-		this.countryList.addAll(notifications);
+		this.notificationsList = new ArrayList<NotificationPreference>();
+		this.notificationsList.addAll(notifications);
 	}
 
+    /*View holder for base adapter*/
 	private class ViewHolder {
 		CheckBox name;
 		TextView namePref;
@@ -50,14 +57,14 @@ public class SettingsAdapter extends ArrayAdapter<NotificationPreference> {
 			holder.timePref = (TextView) convertView
 					.findViewById(R.id.textViewtime);
 			convertView.setTag(holder);
-
+            /* check box for selecting notifications*/
 			holder.name.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					CheckBox cb = (CheckBox) v;
 
-					NotificationPreference country = (NotificationPreference) cb
+					NotificationPreference notification = (NotificationPreference) cb
 							.getTag();
-					country.setTypeStatus(cb.isChecked());
+                    notification.setTypeStatus(cb.isChecked());
 
 				}
 			});
@@ -65,7 +72,7 @@ public class SettingsAdapter extends ArrayAdapter<NotificationPreference> {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		NotificationPreference prefs = countryList.get(position);
+		NotificationPreference prefs = notificationsList.get(position);
 		holder.namePref.setText(prefs.getPreferenceType());
 		holder.name.setChecked(prefs.isTypeStatus());
 		if (prefs.getTiming() != null)

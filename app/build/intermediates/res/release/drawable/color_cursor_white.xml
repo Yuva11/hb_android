@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <size android:width="2dp" />
+    <solid android:color="#FFFFFF"  />
+</shape><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/drawable/color_cursor_white.xml -->

@@ -13,11 +13,17 @@ import com.HungryBells.DTO.ContentDealDTO;
 import com.HungryBells.activity.ViewAdsActivity;
 import com.HungryBells.fragments.ViewAdsFragment;
 
+
+/*Viewpager adapter for Advertisement*/
 public class ViewAdsPagerAdapter extends FragmentStatePagerAdapter {
 
+    /*user context*/
 	protected Context mContext;
+
+    /*Advertisement in the adapter*/
 	List<ContentDealDTO> contents;
 
+    /*constructor method*/
 	public ViewAdsPagerAdapter(FragmentManager fm, Context context,
 			List<ContentDealDTO> contents) {
 		super(fm);
@@ -25,6 +31,10 @@ public class ViewAdsPagerAdapter extends FragmentStatePagerAdapter {
 		this.contents = contents;
 	}
 
+
+    /* *
+   * Creating fragments using ViewAdsFragment
+   *Base adapter override methods*/
 	@Override
 	public Fragment getItem(int position) {
 
@@ -37,12 +47,13 @@ public class ViewAdsPagerAdapter extends FragmentStatePagerAdapter {
 
 		return fragment;
 	}
-
+    /* adapter override method*/
 	@Override
 	public int getCount() {
 		return contents.size();
 	}
 
+    /*if any change in the fragment then this method called*/
 	@Override
 	public int getItemPosition(Object object) {
 		ViewAdsFragment f = (ViewAdsFragment) object;

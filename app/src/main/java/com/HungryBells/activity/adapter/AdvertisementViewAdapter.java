@@ -45,20 +45,43 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import lombok.Getter;
 import lombok.Setter;
 
+
+/*This method is used to view advertisement*/
 @SuppressLint("InflateParams")
 public class AdvertisementViewAdapter extends BaseAdapter {
+
+    /*user context*/
 	Context ct;
+
+    /*inflater method called*/
 	private LayoutInflater mInflater;
+
+    /*list of advertisement elements*/
+
 	List<ContentDealDTO> advertisement;
+
+    /*Application context */
 	Application mAppContext;
+
+   /*Display size of device*/
 	Display display;
+
+     /*Third party library*/
 	ViewFlowEX views;
+
+   /* front and back view of advertisement*/
     View mFrontView,mBackView;
+
+    /*Image loader library for image loading*/
 	ImageLoader imageLoader;
+
+    /*boolean variable for front page or not*/
     @Getter
     @Setter
     boolean frontPage = true;
 
+
+    /*adapter constructor*/
 	public AdvertisementViewAdapter(Context context, Application application,
 			Display display, List<ContentDealDTO> advertisement,
 			ViewFlowEX viewFlow) {
@@ -79,15 +102,15 @@ public class AdvertisementViewAdapter extends BaseAdapter {
 	}
 
 	public int getCount() {
-		return advertisement.size();
+		return advertisement.size();// total number of elements in the list
 	}
 
 	public ContentDealDTO getItem(int position) {
-		return advertisement.get(position);
+		return advertisement.get(position);// single item in the list
 	}
 
 	public long getItemId(int position) {
-		return position;
+		return position; // index number
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -99,42 +122,45 @@ public class AdvertisementViewAdapter extends BaseAdapter {
 			holder.advertisementLayout = (LinearLayout) convertView
 					.findViewById(R.id.advertisementLayout);
 			holder.textLayout = (RelativeLayout) convertView
-					.findViewById(R.id.textLayout);
+					.findViewById(R.id.textLayout);//text advertisement layout
 			holder.imageLayout = (RelativeLayout) convertView
-					.findViewById(R.id.imageLayout);
+					.findViewById(R.id.imageLayout);//image advertisement layout
 			holder.textOnlyContent = (WebView) convertView
-					.findViewById(R.id.textOnlyContent);
+					.findViewById(R.id.textOnlyContent);//having only text
 			holder.zoomImageView = (TouchImageView) convertView
-					.findViewById(R.id.zoomImageView);
+					.findViewById(R.id.zoomImageView);//image is used here
+            //TouchImageView is thirdparty library used to zoom an image
 			holder.imageViewPlaybutton = (ImageView) convertView
-					.findViewById(R.id.imageViewPlaybutton);
+					.findViewById(R.id.imageViewPlaybutton);//play button image
 			holder.imageWithText = (TextView) convertView
-					.findViewById(R.id.imageWithText);
+					.findViewById(R.id.imageWithText);//textview with imagelayout
 			holder.videoView = (VideoViewCustom) convertView
-					.findViewById(R.id.videoView1);
+					.findViewById(R.id.videoView1);//videoview in advertisement
             holder.textViewAdslike = (ImageView) convertView
                     .findViewById(R.id.textViewAdslike);
             holder.textViewfeedback = (ImageView) convertView
-                    .findViewById(R.id.textViewfeedback);
+                    .findViewById(R.id.textViewfeedback);//feedback button image
             holder.imageViewtw = (ImageView) convertView
-                    .findViewById(R.id.imageViewtw);
+                    .findViewById(R.id.imageViewtw);//twitter button image
             holder.imageViewli = (ImageView) convertView
-                    .findViewById(R.id.imageViewli);
+                    .findViewById(R.id.imageViewli);//linkedin button image
             holder.imageViewfb = (ImageView) convertView
-                    .findViewById(R.id.imageViewfb);
+                    .findViewById(R.id.imageViewfb);//facebook button image
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
 		final ContentDealDTO item = advertisement.get(position);
-
+          //checking content template
 		if (item.getContentTemplate() == ContentTemplate.IMAGE_ONLY
 				|| item.getContentTemplate() == ContentTemplate.VIDEO_AND_TEXT) {
 			holder.imageLayout.setVisibility(View.VISIBLE);
 			holder.textLayout.setVisibility(View.GONE);
 
 			if (item.getContentTemplate() == ContentTemplate.VIDEO_AND_TEXT) {
+
+                //playbutton visible
 				holder.imageViewPlaybutton.setVisibility(View.VISIBLE);
 				// new AQuery(act)
 				holder.zoomImageView.setOnClickListener(new OnClickListener() {
@@ -237,6 +263,11 @@ public class AdvertisementViewAdapter extends BaseAdapter {
 		TextView imageWithText;
 		VideoViewCustom videoView;
 	}
+
+    /*
+    * This method is called every time share button clicked
+    * when fragment is in back page scroll will be disabled
+    * */
     public void pageChange(int position){
        View v = views.getSelectedView();
         mFrontView = v.findViewById(R.id.front);
@@ -249,6 +280,11 @@ public class AdvertisementViewAdapter extends BaseAdapter {
         }
 
     }
+
+    /*
+    * share page and advertisement page animation
+    * frontpage is advertisement page and back is that advertisement
+    * */
     public void pageChange(final View front, final View back, final int duration) {
         if (front==null){
             Log.e("front","front changes");
@@ -278,6 +314,13 @@ public class AdvertisementViewAdapter extends BaseAdapter {
         }
 
     }
+
+    /*
+    * video view called in this method
+    *url is already set in the item contentdto
+    * OnCompletionListener called when the video successfully completed
+    *
+    * */
 	private void setUrlForUser(final RelativeLayout img_content2,
 			RelativeLayout img_contents, final VideoViewCustom videoView,
 			ContentDealDTO item) {

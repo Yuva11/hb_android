@@ -28,6 +28,7 @@ import com.HungryBells.activity.adapter.DealsPageAdapter;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
+/*This is the fragment for deals list*/
 public class DealsListFragment extends Fragment {
 	List<Deals> tempDeals;
 	View rootView;
@@ -62,6 +63,7 @@ public class DealsListFragment extends Fragment {
 		return rootView;
 	}
 
+    /*This method is used to show deals in the list*/
 	private void viewAllDetails() {
 		appState = (GlobalAppState) getActivity().getApplication();
 		tempDeals = new ArrayList<Deals>();
@@ -135,6 +137,8 @@ public class DealsListFragment extends Fragment {
 		adapter.notifyDataSetChanged();
 
 	}
+
+    /*If the used click on deals the data will send to HBserver*/
      private void sendDelasList(Deals deals){
          Customers customer = appState.getProfile();
          DealViewsDTO deal = new DealViewsDTO();

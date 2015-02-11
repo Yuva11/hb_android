@@ -25,14 +25,28 @@ import com.HungryBells.activity.R;
 import com.HungryBells.util.Util;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+
+/*This method is used to view deals*/
 @SuppressLint("InflateParams")
 public class DealsPageAdapter extends BaseAdapter {
-	List<Deals> list;
+
+    /*list of deals elements*/
+    List<Deals> list;
+
+    /*Inflater elements*/
 	private LayoutInflater mInflater;
+
+    /*user context*/
 	Activity activity;
-	ImageLoader imageLoader;
+
+    /*Image loader library for image loading*/
+    ImageLoader imageLoader;
+
+
+    /* Gobal application state Object where all contextual information is stored */
 	GlobalAppState appState;
 
+    /*adapter constructor*/
 	public DealsPageAdapter(Activity _MyContext, List<Deals> _list,
 			GlobalAppState appState) {
 		activity = _MyContext;
@@ -48,18 +62,18 @@ public class DealsPageAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return list.size();
+		return list.size(); // total number of elements in the list
 	}
 
 	@Override
 	public int getViewTypeCount() {
-		return 2;
+		return 2; //number of item view type
 	}
 
 	@Override
 	public int getItemViewType(int position) {
 		return (list.get(position).getDealTemplate() == DealTemplateDTO.FULL_IMAGE) ? 1
-				: 0;
+				: 0; // Type of view
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -68,9 +82,12 @@ public class DealsPageAdapter extends BaseAdapter {
 		if (convertView == null) {
 			if (theType == 1) {
                 //convertView = mInflater.inflate(R.layout.fragment_imagelayout,null);
+
+                //full background image layout
                 convertView = mInflater.inflate(R.layout.fragment_bestpick_list_item ,null);
             }
 			else {
+                //Half image view background
                 convertView = mInflater.inflate(R.layout.fragment_dealwithpercentage, null);
             }
 
@@ -211,12 +228,12 @@ public class DealsPageAdapter extends BaseAdapter {
 
 	@Override
 	public Deals getItem(int arg0) {
-		return list.get(arg0);
+		return list.get(arg0); // single item in the list
 	}
 
 	@Override
 	public long getItemId(int arg0) {
-		return arg0;
+		return arg0; // index number
 	}
 
 	class ViewHolder {

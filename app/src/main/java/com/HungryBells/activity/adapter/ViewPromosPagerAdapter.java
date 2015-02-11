@@ -11,18 +11,25 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.HungryBells.DTO.Deals;
 import com.HungryBells.fragments.ViewPromosFragment;
 
+/*Viewpager adapter for coupons*/
 public class ViewPromosPagerAdapter extends FragmentStatePagerAdapter {
-
+    /*user context*/
 	protected Context mContext;
+
+    /*Deals in the adapter*/
 	List<Deals> deals;
 
+   /*constructor method*/
 	public ViewPromosPagerAdapter(FragmentManager fm, Context context,
 			List<Deals> deals) {
 		super(fm);
 		mContext = context;
 		this.deals = deals;
 	}
-
+    /*
+    *
+    * Creating fragments using ViewPromosFragment
+    *Base adapter override methods*/
 	@Override
 	public Fragment getItem(int position) {
 
@@ -35,12 +42,13 @@ public class ViewPromosPagerAdapter extends FragmentStatePagerAdapter {
 
 		return fragment;
 	}
-
+    /*adapter override methods*/
 	@Override
 	public int getCount() {
 		return deals.size();
 	}
 
+    /*if any change in the fragment then this method called*/
 	@Override
 	public int getItemPosition(Object object) {
 		ViewPromosFragment f = (ViewPromosFragment) object;

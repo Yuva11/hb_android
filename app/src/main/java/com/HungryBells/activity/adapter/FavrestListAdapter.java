@@ -16,12 +16,22 @@ import com.HungryBells.DTO.MerchantBranchDto;
 import com.HungryBells.activity.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+/*This method is used to view favorite restaurent*/
 public class FavrestListAdapter extends BaseAdapter {
+
+    /*list of favorite restaurent elements*/
     List<MerchantBranchDto> dealsList;
+
+    /*user context*/
     Context context;
+
+    /*Inflater elements*/
     private LayoutInflater mInflater;
+
+    /*Image loader library for image loading*/
     ImageLoader imageLoader;
 
+    /*adapter constructor*/
     public FavrestListAdapter(Context context, List<MerchantBranchDto> dealsList) {
         this.dealsList = dealsList;
         this.context = context;
@@ -35,17 +45,17 @@ public class FavrestListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return dealsList.size();
+        return dealsList.size();// total number of elements in the list
     }
 
     @Override
     public MerchantBranchDto getItem(int position) {
-        return dealsList.get(position);
+        return dealsList.get(position);// single item in the list
     }
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return position; // index number
     }
 
     @SuppressLint("InflateParams")
@@ -56,9 +66,9 @@ public class FavrestListAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.favrest_adapters, null);
             holder = new ViewHolder();
             holder.logoImage = (ImageView) convertView
-                    .findViewById(R.id.imageViewmerchant);
+                    .findViewById(R.id.imageViewmerchant);//Merchant logo image
             holder.storeName = (TextView) convertView
-                    .findViewById(R.id.textMerchant);
+                    .findViewById(R.id.textMerchant);//Merchant name
             holder.textMerchantBranch = (TextView) convertView
                     .findViewById(R.id.textMerchantBranch);
             holder.ratingBar1=(RatingBar) convertView

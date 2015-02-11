@@ -41,6 +41,7 @@ public abstract class UserActivity extends FragmentActivity implements
 
 	/* Google Analytics interface object to track the activities */
     EasyTracker easyTracker = null;
+
 	/* To show the progress bar dialog */
     CustomProgressDialog progressBar;
 
@@ -95,6 +96,8 @@ public abstract class UserActivity extends FragmentActivity implements
         super.onCreate(arg0);
         appState = (GlobalAppState) getApplication();
         easyTracker = EasyTracker.getInstance(this);
+
+
         progressBar = new CustomProgressDialog(this);
         android.util.Log.d("Inside UserActivity",
                 "Inside on create UserActivity");

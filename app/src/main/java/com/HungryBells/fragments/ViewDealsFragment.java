@@ -36,7 +36,7 @@ import com.HungryBells.activity.ZoomImageActivity;
 import com.HungryBells.util.Util;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-/*This method is used to view delas in the fragment*/
+/*This method is used to view deals in the fragment*/
 @SuppressLint("SimpleDateFormat")
 public class ViewDealsFragment extends Fragment {
 	ImageLoader imageLoader;

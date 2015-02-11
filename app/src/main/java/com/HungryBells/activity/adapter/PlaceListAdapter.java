@@ -17,11 +17,22 @@ import com.HungryBells.DTO.UserLocationDTO;
 import com.HungryBells.activity.R;
 import com.HungryBells.activity.UserActivity;
 
+/*This method is used to show list of nearest locations*/
 public class PlaceListAdapter extends BaseAdapter {
+
+    /*nearest locations list*/
 	List<UserLocationDTO> placeTitle;
+
+    /*user context*/
 	Activity context;
+
+   /*layout for background*/
     RelativeLayout listviews;
+
+    /*Textview to show location names*/
     TextView title;
+
+    /*adapter constructor*/
 	public PlaceListAdapter(Activity context, List<UserLocationDTO> text) {
 		placeTitle = text;
 		this.context = context;
@@ -29,10 +40,11 @@ public class PlaceListAdapter extends BaseAdapter {
 
 	public int getCount() {
 		return placeTitle.size();
+        // total number of elements in the list
 	}
 
 	public Object getItem(int arg0) {
-		return null;
+		return null;// single item in the list
 	}
 
 	public long getItemId(int position) {
@@ -43,7 +55,7 @@ public class PlaceListAdapter extends BaseAdapter {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		View row;
 		LayoutInflater inflater = context.getLayoutInflater();
-
+        /*layout for nearest locations is listview_background*/
 		row = inflater.inflate(R.layout.listview_background, parent, false);
 
         ImageView imageView = (ImageView)row.findViewById(R.id.imageView);
@@ -51,7 +63,9 @@ public class PlaceListAdapter extends BaseAdapter {
 		title.setText(placeTitle.get(position).getName());
          listviews
                 = (RelativeLayout)row.findViewById(R.id.listviews);
-
+         /*
+         *  my location is with different color
+         * */
         if(placeTitle.get(position).getName().contains("My Location")){
             imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_home_1));
             listviews.setBackgroundColor(Color.parseColor("#10000000"));
@@ -60,6 +74,7 @@ public class PlaceListAdapter extends BaseAdapter {
             imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_action_back));
             listviews.setBackgroundColor(Color.parseColor("#ffffff"));
         }
+        /*onclick listener for click on the list*/
         listviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
