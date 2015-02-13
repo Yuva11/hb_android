@@ -478,6 +478,7 @@ public class DealsActivity extends UserActivity implements
     }
 	/* This function will determine which is sliding tab is selected */
     public void pageChanged(int currentPosition){
+
         tabs.setSelectedText(currentPosition);
     }
 

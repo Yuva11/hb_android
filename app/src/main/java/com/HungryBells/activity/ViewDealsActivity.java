@@ -146,9 +146,12 @@ public class ViewDealsActivity extends UserActivity implements
                     getSupportFragmentManager(), this, deals);
 
             mViewPager.setAdapter(mCustomPagerAdapter);
+
+            /*
             mViewPager.setOnPageChangeListener(new CircularViewPagerHandler(
                     mViewPager, this));
             mViewPager.setPageTransformer(true, new DepthPageTransformer());
+            */
             mViewPager.setCurrentItem(currentPage);
             update = new UpdateStatus(this);
             ((ImageView) findViewById(R.id.textViewlike))
