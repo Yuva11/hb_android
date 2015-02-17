@@ -4,6 +4,7 @@
 /Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/release/classes-80b8604d531a968932f111fbc03ec8a3812b1fc7.jar
 /Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/release/classes-3ca420e3de17c3172c5211f9849a5b6da683cef5.jar
 /Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/release/classes-19904c212c7841e61091c709eb835d375f284b81.jar
+/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/release/classes-0c5e35cd732c0a02c1fef3248c546e673cf82eed.jar
 /Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/release/socialauth-android-3.2-06b9ed25426e78b9295954e3f9f56c7fe5e45410.jar
 /Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/release/classes-6ec73f7bcaa4fbd1d7477718bd516505e56a1162.jar
 /Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/release/commons-codec-1.4-0adc59577d1818bcc7d99618867bf47a6f99fcaf.jar

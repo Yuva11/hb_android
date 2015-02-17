@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dip"
         app:pstsShouldExpand="true"
-        app:pstsDividerColor="@android:color/white"
+        app:pstsDividerColor="#DB4437"
         android:background="#DB4437"
         app:pstsIndicatorColor="@android:color/white"/>
 

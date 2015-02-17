@@ -104,6 +104,11 @@
     <eat-comment/>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
+    <!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.felipecsl.asymmetricgridview/library/1.1.0/res/values/values.xml -->
+    <eat-comment/>
+    <color name="dark_red">#ffa02d38</color>
+    <!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/values/color.xml -->
+    <eat-comment/>
     <color name="light_gray">#d8d8d8</color>
     <color name="list_background">#303030</color>
     <color name="list_background_pressed">#992416</color>
@@ -111,6 +116,11 @@
     <color name="list_item_title">#fff</color>
     <color name="pink">#d21617</color>
     <color name="pink_pressed">#595959</color>
+    <!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.felipecsl.asymmetricgridview/library/1.1.0/res/values/values.xml -->
+    <eat-comment/>
+    <color name="red">#F2837B</color>
+    <!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/values/color.xml -->
+    <eat-comment/>
     <color name="redtab">#d21615</color>
     <color name="sa_green">#ffffff</color>
     <color name="stacked_green">#f4f4f4</color>
@@ -407,13 +417,16 @@
     <eat-comment/>
     <style name="ActionBarThemes" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@drawable/headerandfooter</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
     <style name="ActionButtonStyle" parent="@android:style/Widget.Holo.Light.ActionButton">
         <item name="android:minWidth">0dip</item>
         <item name="android:paddingLeft">6dip</item>
         <item name="android:paddingRight">6dip</item>
     </style>
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar"/>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
     <style name="AppTheme" parent="AppBaseTheme">
             <item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
         <!--
@@ -424,12 +437,19 @@
 
 
         -->
+
+
+        <item name="android:windowContentOverlay">@null</item>
+
         <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
         <item name="android:actionBarTabTextStyle">@style/MyTheme.ActionBar.TabText</item>
         <item name="android:actionBarStyle">@style/ActionBarThemes</item>
     </style>
-    <style name="AppThemeMain" parent="Theme.AppCompat.Light"/>
-    <style name="AppThemeMains" parent="Theme.AppCompat.Light"/>
+    <style name="AppThemeMain" parent="Theme.AppCompat.Light">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="AppThemeMains" parent="Theme.AppCompat.Light">
+    </style>
     <style name="ChromeStylePopup" parent="android:Widget.TextView">
         <item name="android:gravity">center</item>
         <item name="android:minHeight">50dp</item>

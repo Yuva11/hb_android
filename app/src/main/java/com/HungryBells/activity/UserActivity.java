@@ -277,6 +277,49 @@ public abstract class UserActivity extends FragmentActivity implements
         }
 
     }
+
+
+    public void actionBarDetailsCreation(final Activity context) {
+        try {
+            actionBar = getActionBar();
+            actionBar.setIcon(R.drawable.applogo);
+            actionBar.setTitle("");
+            LayoutInflater mInflater = LayoutInflater.from(this);
+            View mCustomView = mInflater.inflate(R.layout.actionbar_custom_detailview,
+                    null);
+            android.util.Log.i("Action bar ", "Action bar created:"
+                    + new Date());
+            actionBar.setCustomView(mCustomView);
+
+            actionBar.setDisplayShowCustomEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+            /*
+            if(!context.getLocalClassName().contains("DealsActivity")||context.getLocalClassName().contains("ViewDealsActivity")){
+                actionBar.setDisplayHomeAsUpEnabled(true);
+            }else
+                actionBar.setDisplayHomeAsUpEnabled(false);
+            actionBar.setDisplayShowTitleEnabled(true);
+            String location = appState.getCity();
+            android.util.Log.i("Inside Search Locations", "Location data");
+            if (appState.isSearchByLocation() == true)
+                location = getLocationString(appState.getActionBarLocation());
+            ((TextView) findViewById(R.id.textViewlocation)).setText(location);
+            ImageView img = (ImageView) findViewById(R.id.imageViewicaction);
+            if (!appState.getCity().equals("Hungry Bells"))
+                img.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(UserActivity.this,SearchCityActivity.class));
+                        overridePendingTransition(0,0);
+                    }
+                });
+                */
+
+        } catch (Exception e) {
+            android.util.Log.e("Error", e.toString());
+        }
+
+    }
     /*
     * This method will get the location name and checks if the  length exceeds more than 18 characters and it will truncate the string to 15 characters ...
     * */

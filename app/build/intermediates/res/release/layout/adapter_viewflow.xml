@@ -160,6 +160,7 @@
                                         android:textStyle="normal"
                                         android:layout_alignParentRight="true"
                                         android:text="3.2 Km"
+                                        android:background="@color/accent_green"
                                         android:layout_marginLeft="4dp"
                                         android:layout_marginTop="1dp" />
                                 </LinearLayout>
@@ -233,6 +234,7 @@
                                     android:textStyle="bold"
                                     android:layout_gravity="center"
                                     android:text="12%"
+
                                     android:paddingLeft="2dp"
                                     android:paddingTop="1dp"
                                     android:paddingRight="2dp"
