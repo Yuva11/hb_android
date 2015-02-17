@@ -329,7 +329,7 @@
     <string name="forgotpasswordmessage">Please Enter your Email id</string>
     <!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/values/analytics.xml -->
     <eat-comment/>
-    <string name="ga_trackingId">UA-53442399-2</string>
+    <string name="ga_trackingId">UA-55723283-2</string>
     <!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="gplus_text">Google Plus</string>
