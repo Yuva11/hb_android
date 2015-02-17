@@ -17,11 +17,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.provider.CalendarContract;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
@@ -33,6 +35,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.Window;
 
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.HungryBells.DTO.Customers;
@@ -54,6 +57,7 @@ import com.HungryBells.util.JsonParsing;
 import com.HungryBells.util.PagerSlidingTabStrip;
 import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
+import com.felipecsl.asymmetricgridview.library.Utils;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Log;
 import com.google.android.gms.location.LocationClient;
@@ -67,6 +71,7 @@ public class DealsActivity extends UserActivity implements
 
    /* Dealsactivity Sliding tabs*/
     PagerSlidingTabStrip tabs;
+    LinearLayout mTabsLinearLayout;
 
 
     /* Dealsactivity swipe using viewpager*/
@@ -277,23 +282,43 @@ public class DealsActivity extends UserActivity implements
             Typeface type = Typeface.create("sans-serif", Typeface.NORMAL);
 
             tabs.setTypeface(type, Typeface.NORMAL);
-            tabs.setTextSize(38);
+            tabs.setTextSize(Utils.dpToPx(this, 14));
+            tabs.setTextColor(Color.WHITE);
             tabs.setViewPager(viewPager);
             getSupportFragmentManager().executePendingTransactions();
             mAdapter.notifyDataSetChanged();
             new Handler().post(new Runnable() {
                 @Override
                 public void run() {
-                    viewPager.setCurrentItem(appState.getSelectedItem());; //Where "2" is the position you want to go
+                    viewPager.setCurrentItem(appState.getSelectedItem()); //Where "2" is the position you want to go
                 }
             });
+
             tabs.setSelectedText(appState.getSelectedItem());
             viewPager.setOnPageChangeListener(new CircularViewPagerHandler(viewPager,this));
 
         } catch (Exception e) {
             android.util.Log.e("Error in SetPages", e.toString(), e);
         }
+        setUpTabStrip(0);
     }
+
+    public void setUpTabStrip(int index) {
+
+        //your other customizations related to tab strip...blahblah
+        // Set first tab selected
+        mTabsLinearLayout = ((LinearLayout) tabs.getChildAt(0));
+        for (int i = 0; i < mTabsLinearLayout.getChildCount(); i++) {
+            TextView tv = (TextView) mTabsLinearLayout.getChildAt(i);
+
+            if (i == index) {
+                tv.setTextColor(Color.WHITE);
+            } else {
+                tv.setTextColor(Color.DKGRAY);
+            }
+        }
+    }
+
     /*
     * Parsing the JSON Deal messges and converts to Deal POJO class
     *
@@ -319,7 +344,7 @@ public class DealsActivity extends UserActivity implements
     *
     * */
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
-        private final String[] titles = { "What's New ", " Best Pick ",
+        private final String[] titles = { " Best Pick ", "What's New ",
                 "  Coupons " };
 
         public MyPagerAdapter(android.support.v4.app.FragmentManager fm) {
@@ -340,10 +365,9 @@ public class DealsActivity extends UserActivity implements
         public android.support.v4.app.Fragment getItem(int currentPage) {
 
             if (currentPage == 0) {
-                return new WhatsNewFragment();
-
-            } else if (currentPage == 1)
                 return new DealsListFragment();
+            } else if (currentPage == 1)
+                return new WhatsNewFragment();
             else
                 return new CouponsFragment();
         }
@@ -453,6 +477,7 @@ public class DealsActivity extends UserActivity implements
         tabs.setSelectedText(tab.getPosition());
         viewPager.setCurrentItem(tab.getPosition());
 
+        setUpTabStrip(tab.getPosition());
     }
 
     @Override
@@ -480,6 +505,7 @@ public class DealsActivity extends UserActivity implements
     public void pageChanged(int currentPosition){
 
         tabs.setSelectedText(currentPosition);
+        setUpTabStrip(currentPosition);
     }
 
     /*

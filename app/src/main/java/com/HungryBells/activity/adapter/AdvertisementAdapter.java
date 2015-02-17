@@ -10,7 +10,10 @@ import android.graphics.Typeface;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.GridLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -188,6 +191,7 @@ public class AdvertisementAdapter extends BaseAdapter {
                 LinearLayout.LayoutParams.MATCH_PARENT, sizeOfLayout);
 		LinearLayout topLayout = new LinearLayout(mContext);
 		holder.advertisementLayout.addView(topLayout, rlp);
+
 		return view;
 	}
 

@@ -10,10 +10,10 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="48dip"
-        android:background="@drawable/background_tabs"
         app:pstsShouldExpand="true"
-
-        />
+        app:pstsDividerColor="@android:color/white"
+        android:background="#DB4437"
+        app:pstsIndicatorColor="@android:color/white"/>
 
 
 

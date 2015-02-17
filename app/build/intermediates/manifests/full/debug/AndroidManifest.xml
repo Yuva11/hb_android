@@ -13,7 +13,7 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
-        android:xlargeScreens="false" />
+        android:xlargeScreens="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

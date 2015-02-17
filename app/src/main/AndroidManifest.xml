@@ -111,7 +111,6 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name="com.HungryBells.activity.FoodPreferenceSwitch"
-
             android:windowSoftInputMode="adjustNothing"
             android:screenOrientation="portrait"/>
         <activity
@@ -129,7 +128,6 @@
             android:name="com.HungryBells.activity.ViewCouponActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"/>
-
         <activity
             android:name="com.HungryBells.activity.DealsActivity"
             android:launchMode="singleTask"
@@ -138,7 +136,6 @@
             android:name="com.HungryBells.activity.OrderSummaryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"/>
-
         <activity
             android:name="com.HungryBells.activity.FeedBackActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
