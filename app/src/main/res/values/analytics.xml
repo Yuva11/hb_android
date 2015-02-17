@@ -15,7 +15,7 @@
     -->
 
 
-    <string name="ga_trackingId">UA-53442399-2</string>
+    <string name="ga_trackingId">UA-55723283-2</string>
     <!-- Enable automatic activity tracking -->
     <bool name="ga_autoActivityTracking">true</bool>
 
