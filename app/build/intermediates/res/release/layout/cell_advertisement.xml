@@ -3,63 +3,76 @@
     android:id="@+id/advertisementLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ddd"
-    android:orientation="horizontal" >
+    android:background="@android:color/white"
+    android:orientation="horizontal"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
 
-    <RelativeLayout
-        android:id="@+id/textLayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#881719"
-        android:visibility="gone" >
+        android:orientation="horizontal"
+        android:background="#34000000"
+        android:padding="1dp">
 
-        <TextView
-            android:id="@+id/textOnlyContent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="10dp"
-            android:textColor="#fff"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/imageLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" >
-
-        <ImageView
-            android:id="@+id/imageViewImageWithVideo"
+        <RelativeLayout
+            android:id="@+id/textLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/default_deal_image" />
+            android:background="#881719"
+            android:visibility="gone" >
 
-        <ImageView
-            android:id="@+id/imageViewPlayButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerInParent="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/play_video" />
+            <TextView
+                android:id="@+id/textOnlyContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/imageWithText"
+        <RelativeLayout
+            android:id="@+id/imageLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#60000000"
-            android:maxLines="2"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            />
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/imageViewImageWithVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_deal_image" />
+
+            <ImageView
+                android:id="@+id/imageViewPlayButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/play_video" />
+
+            <TextView
+                android:id="@+id/imageWithText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#60000000"
+                android:maxLines="2"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
 
 </LinearLayout><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/layout/cell_advertisement.xml -->

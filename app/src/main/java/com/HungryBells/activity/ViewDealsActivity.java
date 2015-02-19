@@ -117,6 +117,7 @@ public class ViewDealsActivity extends UserActivity implements
     public void onStart() {
         super.onStart();
         actionBarCreation(this);
+        //actionBarDetailsCreation(this);
         viewDealDetails();
         EasyTracker.getInstance(this).activityStart(this); // Add this method.
     }
@@ -321,7 +322,9 @@ public class ViewDealsActivity extends UserActivity implements
     /*
   * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
   * */
-    @Override
+
+    /*
+     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
             if (menu.getClass().getSimpleName().equals("MenuBuilder")) {
@@ -339,6 +342,7 @@ public class ViewDealsActivity extends UserActivity implements
         }
         return super.onMenuOpened(featureId, menu);
     }
+    */
 
     /*
    * This method will be called when the action overflow button is pressed and the menu item is selected
@@ -365,6 +369,12 @@ public class ViewDealsActivity extends UserActivity implements
             case R.id.action_myorders:
                 Intent myOrders = new Intent(this, MyOrdersActivity.class);
                 startActivitiesUser(myOrders, this);
+                break;
+
+            /// custom things
+            case R.id.favButtonImage:
+                break;
+            case R.id.shareButtonImage:
                 break;
             default:
                 return super.onOptionsItemSelected(item);

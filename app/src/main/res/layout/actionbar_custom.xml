@@ -15,7 +15,8 @@
         android:singleLine="true"
         android:textColor="#fff"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <ImageView
         android:id="@+id/imageViewicaction"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/textViewlocation"
-        android:src="@drawable/ic_action_place" />
+        android:src="@drawable/ic_action_place"
+        />
 
 </RelativeLayout>

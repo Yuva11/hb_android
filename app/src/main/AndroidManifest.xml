@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.HungryBells.activity"
-    android:versionCode="22"
-    android:versionName="1.0.5.1">
+    android:versionCode="23"
+    android:versionName="1.0.5.5">
 
     <supports-screens
         android:anyDensity="true"
@@ -84,7 +84,9 @@
             android:noHistory="true" />
         <activity
             android:name="com.HungryBells.activity.ViewDealsActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name="com.HungryBells.activity.PaymentActivity"
             android:screenOrientation="portrait" />

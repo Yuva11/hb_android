@@ -303,6 +303,7 @@ public class DealsActivity extends UserActivity implements
         setUpTabStrip(0);
     }
 
+
     public void setUpTabStrip(int index) {
 
         //your other customizations related to tab strip...blahblah
@@ -314,7 +315,7 @@ public class DealsActivity extends UserActivity implements
             if (i == index) {
                 tv.setTextColor(Color.WHITE);
             } else {
-                tv.setTextColor(Color.DKGRAY);
+                tv.setTextColor(Color.parseColor("#E0E0E0"));
             }
         }
     }
