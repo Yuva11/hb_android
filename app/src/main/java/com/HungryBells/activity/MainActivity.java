@@ -62,6 +62,12 @@ import com.koushikdutta.ion.ProgressCallback;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.protocol.HTTP;
 
+import com.mobileapptracker.MobileAppTracker;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
+import android.provider.Settings.Secure;
+
+
 
  /*This class is mainly used to show bell animation*/
 public class MainActivity extends UserActivity {
@@ -84,6 +90,8 @@ public class MainActivity extends UserActivity {
 
    /*Progressbar used to shoe on update time;*/
     ProgressWheel progressBarWheel;
+
+     public MobileAppTracker mobileAppTracker = null;
 
      /*Constructor method*/
     public MainActivity() {
@@ -126,6 +134,42 @@ public class MainActivity extends UserActivity {
             LocalBroadcastManager.getInstance(this).registerReceiver(
                     mLocationReceiver, mIntentFilter);
             registrations();
+
+
+            // Initialize MAT
+            MobileAppTracker.init(getApplicationContext(), "174262", "0275ecc3449ce2aed43bcfd5bd8cc6de");
+            mobileAppTracker = MobileAppTracker.getInstance();
+
+            // If your app already has a pre-existing user base before you implement the MAT SDK, then
+            // identify the pre-existing users with this code snippet.
+            // Otherwise, MAT counts your pre-existing users as new installs the first time they run your app.
+            // Omit this section if you're upgrading to a newer version of the MAT SDK.
+            // This section only applies to NEW implementations of the MAT SDK.
+            //boolean isExistingUser = ...
+            //if (isExistingUser) {
+            //    mobileAppTracker.setExistingUser(true);
+            //}
+
+            // Collect Google Play Advertising ID; REQUIRED for attribution of Android apps distributed via Google Play
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    // See sample code at http://developer.android.com/google/play-services/id.html
+                    try {
+                        Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
+                        mobileAppTracker.setGoogleAdvertisingId(adInfo.getId(), adInfo.isLimitAdTrackingEnabled());
+                    } catch (Exception e) {
+                        // Encountered an error getting Google Advertising Id, use ANDROID_ID
+                        mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
+                    }
+
+                    // Check if deferred deeplink can be opened
+                    // Uncomment this line if your MAT account has enabled deferred deeplinks
+                    //mobileAppTracker.checkForDeferredDeeplink(750);
+                }
+            }).start();
+
+
 
         } catch (Exception e) {
             Util.customToast(this, getString(R.string.internalerror));
@@ -248,6 +292,11 @@ public class MainActivity extends UserActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        // Get source of open for app re-engagement
+        mobileAppTracker.setReferralSources(this);
+        // MAT will not function unless the measureSession call is included
+        mobileAppTracker.measureSession();
     }
 
 
