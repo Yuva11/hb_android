@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.HungryBells.activity"
-    android:versionCode="23"
-    android:versionName="1.0.5.5" >
+    android:versionCode="24"
+    android:versionName="1.0.6" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -56,6 +56,14 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name="com.mobileapptracker.Tracker"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name="com.HungryBells.activity.MainActivity"

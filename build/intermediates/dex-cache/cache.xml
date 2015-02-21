@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/MobileAppTracker-3.7.1.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="0a8fe75b11861fd9e7d4814ef77c174b8c5baf53">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/MobileAppTracker-3.7.1-df8bbf0c71ea7e9a146679a96557a4b28d4b3a1c.jar" />
+    </item>
+
+</items>

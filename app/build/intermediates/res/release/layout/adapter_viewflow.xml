@@ -160,7 +160,6 @@
                                         android:textStyle="normal"
                                         android:layout_alignParentRight="true"
                                         android:text="3.2 Km"
-                                        android:background="@color/accent_green"
                                         android:layout_marginLeft="4dp"
                                         android:layout_marginTop="1dp" />
                                 </LinearLayout>
