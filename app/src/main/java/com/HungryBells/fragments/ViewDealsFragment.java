@@ -230,20 +230,101 @@ public class ViewDealsFragment extends Fragment {
 
 	}
 
+
+    /*This method returns string date hour and min -- NEW */
+
+    private String getTime(String dateParam) {
+
+        Log.d("Ritesh", "time string is " + dateParam );
+
+        String dateFind = "";
+        String timeWithAmPM ="";
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String dateStr = "";
+
+
+
+        //SimpleDateFormat  format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        try {
+
+
+
+            Date date = formatter.parse(dateParam);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("HH");
+            dateStr = sdf.format(date);
+
+
+            int hr = Integer.parseInt(dateStr);
+
+            if (hr < 12)
+            {
+                if(hr == 0)
+                {
+                    // if hr is 0 then write as 12
+                    hr = 12;
+                }
+                dateStr ="";
+                dateStr = hr + " AM";
+            }
+            else
+            {
+                hr = hr - 12;
+                dateStr ="";
+                dateStr = hr + " PM";
+            }
+
+
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+
+        }
+
+
+
+
+
+        return dateStr;
+
+    }
+
+
+
     /*This method returns string date hour and min*/
+    /*
 	private String getTime(String dateParam) {
+
+        Log.d("Ritesh", "time string is " + dateParam );
+
 		String dateFind = "";
+        String testResult = "";
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+        //test
+        SimpleDateFormat testFormat = new SimpleDateFormat("hh a");
+
 		try {
 			Date date = formatter.parse(dateParam);
 			DateFormat dateFormat = new SimpleDateFormat("hh a");
-			dateFind = dateFormat.format(date);
+
+
+            dateFind = dateFormat.format(date);
+
+            testResult = testFormat.parse(dateParam).toString();
+            Log.d("Ritesh", "result is " + dateFind );
+            Log.d("Ritesh", "result is *" + testResult );
 		} catch (Exception e) {
 			Log.e("Date Conversion", e.toString(), e);
+
 		}
+
 		return dateFind;
 
 	}
+	*/
+
 
     /*This method used to show delivery method available*/
 	private void deliveryAvailable(List<DeliveryTypeDto> deliveryType,
