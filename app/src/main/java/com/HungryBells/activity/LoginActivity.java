@@ -161,7 +161,6 @@ public class LoginActivity extends UserActivity implements OnClickListener {
         startActivitiesUser(new Intent(this, LoginActivity.class), this);
         finish();
         overridePendingTransition(0, R.anim.login_signupanimation);
-
     }
 
     public  void submitMailId(String emailId){

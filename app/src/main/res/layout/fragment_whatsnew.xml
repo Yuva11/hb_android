@@ -17,6 +17,7 @@
         android:focusable="false"
         android:gravity="center"
         android:dividerHeight="0dp"
+        android:background="@android:color/white"
         />
 
      <com.twotoasters.jazzylistview.JazzyGridView

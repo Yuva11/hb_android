@@ -147,6 +147,8 @@ public class DealsActivity extends UserActivity implements
                     editor.commit();
                     updateProfile();
                 }
+
+                //setPages();
             } catch (Exception e) {
                 android.util.Log.e("Main", e.toString(), e);
             }
@@ -257,6 +259,7 @@ public class DealsActivity extends UserActivity implements
             Log.e("Error:" + e);
         }
     }
+
     /*
     * Initialize adapter
     * Setting fonts

@@ -188,7 +188,7 @@ public class AdvertisementAdapter extends BaseAdapter {
 			imageLoader.displayImage(item.getThumbNailURL(), holder.imageViewImageWithVideo);
 		}
 		LinearLayout.LayoutParams rlp = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, sizeOfLayout);
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
 		LinearLayout topLayout = new LinearLayout(mContext);
 		holder.advertisementLayout.addView(topLayout, rlp);
 
