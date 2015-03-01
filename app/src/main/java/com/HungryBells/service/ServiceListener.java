@@ -1,13 +1,20 @@
 package com.HungryBells.service;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.net.URI;
-import java.util.Date;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.HungryBells.DTO.ServiceListenerType;
+import com.HungryBells.activity.GlobalAppState;
+import com.HungryBells.activity.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -20,27 +27,14 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.telephony.TelephonyManager;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.HungryBells.DTO.ServiceListenerType;
-import com.HungryBells.activity.GlobalAppState;
-import com.HungryBells.activity.R;
-import com.HungryBells.util.Util;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.URI;
+import java.util.Date;
 
 public class ServiceListener {
 	public static final String RESPONSEDATA = "RESPONSEDATA";
@@ -155,10 +149,12 @@ public class ServiceListener {
 		}.start();
 
 	}
+
     public NetworkInfo getNetworkInfo(){
         ConnectivityManager cm = (ConnectivityManager) appState.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         return cm.getActiveNetworkInfo();
     }
+
     private  void customToast(GlobalAppState con) {
         SharedPreferences pref = appState.getApplicationContext().getSharedPreferences("HB", Context.MODE_PRIVATE);
         long lastOne = pref.getLong("HBToast",0l);
@@ -169,6 +165,7 @@ public class ServiceListener {
             Toast.makeText(con.getApplicationContext(), con.getApplicationContext().getString(R.string.errorinnetwork), Toast.LENGTH_LONG).show();
         }
     }
+
     private String networkType() {
         TelephonyManager telephone = (TelephonyManager)
                 appState.getSystemService(Context.TELEPHONY_SERVICE);
@@ -193,6 +190,7 @@ public class ServiceListener {
         }
         throw new RuntimeException("New type of network");
     }
+
 	private HttpResponse requestType(URI website, String method,
 			StringEntity entity) {
 		HttpResponse response = null;

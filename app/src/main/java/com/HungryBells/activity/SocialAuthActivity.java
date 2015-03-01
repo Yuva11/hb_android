@@ -1,11 +1,5 @@
 package com.HungryBells.activity;
 
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import org.jsoup.Jsoup;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -21,19 +15,24 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.HungryBells.DTO.Customers;
 import com.HungryBells.DTO.ServiceListenerType;
 import com.HungryBells.util.CustomProgressDialog;
-import com.HungryBells.util.GifAnimationDrawable;
 import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
+import com.mobileapptracker.MobileAppTracker;
+
+import org.jsoup.Jsoup;
+
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 @SuppressLint("SetJavaScriptEnabled")
 
@@ -183,12 +182,20 @@ public class SocialAuthActivity extends UserActivity {
     * After that navigating to deals page
     * */
 	private void callProfile(String data) {
+
 		Customers myData = new Customers();
 		String response = "{\"profile\":" + data + "}";
 		response.replace("\n", "");
 		Util.Sink datas = new Gson().fromJson(response, Util.Sink.class);
 		try {
 			myData = datas.profile;
+
+            // Registering successful event with the MAT server
+            MobileAppTracker mobileAppTracker = MobileAppTracker.getInstance();
+            if (!myData.getEmail().isEmpty()) mobileAppTracker.setUserEmail(myData.getEmail());
+            if (!myData.getAuthenticationId().isEmpty()) mobileAppTracker.setUserId(myData.getAuthenticationId());
+            mobileAppTracker.measureAction("login");
+
 		} catch (Exception e) {
 			Log.e("Json Parsing", e.toString(), e);
 		}
