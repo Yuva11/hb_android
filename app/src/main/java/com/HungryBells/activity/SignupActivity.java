@@ -34,6 +34,7 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.mobileapptracker.MobileAppTracker;
 
 public class SignupActivity extends UserActivity implements OnClickListener {
 
@@ -174,6 +175,13 @@ public class SignupActivity extends UserActivity implements OnClickListener {
     }
 
     private void responseFromServer() {
+
+        // Registering successful event with the MAT server
+        MobileAppTracker mobileAppTracker = MobileAppTracker.getInstance();
+        //if (!myData.getEmail().isEmpty()) mobileAppTracker.setUserEmail(myData.getEmail());
+        //if (!myData.getAuthenticationId().isEmpty()) mobileAppTracker.setUserId(myData.getAuthenticationId());
+        mobileAppTracker.measureAction("login");
+
            startActivitiesUser(new Intent(this, DealsActivity.class), this);
     }
 
