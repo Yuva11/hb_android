@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <!--
+
     <com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/asymetricGridView"
@@ -18,7 +18,7 @@
         android:gravity="center"
         android:dividerHeight="0dp"
         />
--->
+
     <com.twotoasters.jazzylistview.JazzyGridView
         android:id="@+id/stgv"
         android:layout_width="match_parent"
