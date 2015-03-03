@@ -181,6 +181,7 @@ public class SignupActivity extends UserActivity implements OnClickListener {
         //if (!myData.getEmail().isEmpty()) mobileAppTracker.setUserEmail(myData.getEmail());
         //if (!myData.getAuthenticationId().isEmpty()) mobileAppTracker.setUserId(myData.getAuthenticationId());
         mobileAppTracker.measureAction("login");
+        //mobileAppTracker.measureAction("registration");
 
            startActivitiesUser(new Intent(this, DealsActivity.class), this);
     }

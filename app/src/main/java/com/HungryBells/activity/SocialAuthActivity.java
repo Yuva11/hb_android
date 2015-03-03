@@ -195,6 +195,7 @@ public class SocialAuthActivity extends UserActivity {
             if (!myData.getEmail().isEmpty()) mobileAppTracker.setUserEmail(myData.getEmail());
             if (!myData.getAuthenticationId().isEmpty()) mobileAppTracker.setUserId(myData.getAuthenticationId());
             mobileAppTracker.measureAction("login");
+            //mobileAppTracker.measureAction("registration");
 
 		} catch (Exception e) {
 			Log.e("Json Parsing", e.toString(), e);
