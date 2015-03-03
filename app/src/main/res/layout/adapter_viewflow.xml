@@ -84,7 +84,7 @@
                             android:layout_height="60dp"
                             android:contentDescription="@string/app_name"
                             android:layout_marginLeft="10dp"
-                            android:background="#ffff16d7"
+
                             android:paddingTop="2dp"
                             android:scaleType="fitCenter"
                             android:adjustViewBounds="true"/>
