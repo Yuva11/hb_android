@@ -314,17 +314,27 @@ public class MainActivity extends UserActivity {
             finish();
 
         } else {
-            Log.e("Profile","Profile:");
-            String profileSerialized = prefs.getString("Profile", "");
-            Customers profile = Customers.create(profileSerialized);
-            if(profile.getAuthenticationId().length()==0){
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putBoolean("isProfileUpdates", false);
-                editor.commit();
+            try {
+
+                Log.e("Profile","Profile:");
+                String profileSerialized = prefs.getString("Profile", "");
+                Customers profile = Customers.create(profileSerialized);
+                if(profile.getAuthenticationId().length()==0){
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean("isProfileUpdates", false);
+                    editor.commit();
+                }
+                startActivitiesUser(new Intent(this,
+                        DealsActivity.class), this);
+                finish();
+
             }
-            startActivitiesUser(new Intent(this,
-                    DealsActivity.class), this);
-            finish();
+            catch (Exception e) {
+
+                Log.e("Profile","null pointer crash");
+
+            }
+
         }
 
     }
