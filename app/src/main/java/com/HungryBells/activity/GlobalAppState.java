@@ -2,6 +2,7 @@ package com.HungryBells.activity;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -35,6 +36,9 @@ import com.HungryBells.DTO.MerchantBranchDto;
 import com.HungryBells.DTO.UserLocation;
 import com.HungryBells.DTO.UserLocationDTO;
 import com.HungryBells.activity.subactivity.UILWrapper;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Logger;
+import com.google.android.gms.analytics.Tracker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -55,6 +59,38 @@ public class GlobalAppState extends Application {
 
     /*SharedPreferences instance*/
      SharedPreferences sharedPreferencesLocation;
+
+
+    /* Code Related to google analytics v4 */
+    // ------ satrt of google anaytilcs code ------//
+    private static final String PROPERTY_ID = "UA-55723283-2";
+
+    public static int GENERAL_TRACKER = 0;
+
+    public enum TrackerName {
+        APP_TRACKER,
+        GLOBAL_TRACKER,
+        ECOMMERCE_TRACKER,
+    }
+
+    HashMap<TrackerName, Tracker> mTrackers = new HashMap<TrackerName, Tracker>();
+
+    public synchronized Tracker getTracker(TrackerName trackerId) {
+        if (!mTrackers.containsKey(trackerId)) {
+
+            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+            analytics.getLogger().setLogLevel(Logger.LogLevel.VERBOSE);
+            Tracker t = (trackerId == TrackerName.APP_TRACKER) ? analytics.newTracker(PROPERTY_ID)
+                    : (trackerId == TrackerName.GLOBAL_TRACKER) ? analytics.newTracker(
+                    R.xml.global_tracker)
+                    : analytics.newTracker(R.xml.ecommerce_tracker);
+            t.enableAdvertisingIdCollection(true);
+            mTrackers.put(trackerId, t);
+        }
+        return mTrackers.get(trackerId);
+    }
+
+    // ---- End of Google analytics code -- //
 
 
     public String getActionBarLocation() {
@@ -156,7 +192,7 @@ public class GlobalAppState extends Application {
     }
 
     public GlobalAppState() {
-		//
+        super();
 	}
 
 	public double getLatitude() {

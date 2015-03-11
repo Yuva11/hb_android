@@ -37,7 +37,9 @@ import android.view.Window;
 
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.HungryBells.Analytics;
 import com.HungryBells.DTO.Customers;
 import com.HungryBells.DTO.ServiceListenerType;
 import com.HungryBells.DTO.User;
@@ -60,6 +62,9 @@ import com.HungryBells.util.Util;
 import com.felipecsl.asymmetricgridview.library.Utils;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Log;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.location.LocationClient;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -155,6 +160,29 @@ public class DealsActivity extends UserActivity implements
         } else {
             startActivity(new Intent(this, MainActivity.class));
             finish();
+        }
+
+
+        // New google analytics v4
+        //***************************//
+        try
+        {
+            // Get tracker.
+            Tracker t = ((GlobalAppState) getApplication()).getTracker(
+                    GlobalAppState.TrackerName.APP_TRACKER);
+
+            // Set screen name.
+            t.setScreenName("Landing Screen");
+
+            // Send a screen view.
+            t.send(new HitBuilders.AppViewBuilder().build());
+
+            // Enable Advertising Features.
+            t.enableAdvertisingIdCollection(true);
+        }
+        catch(Exception  e)
+        {
+            Toast.makeText(getApplicationContext(), "Error" + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -672,7 +700,9 @@ public class DealsActivity extends UserActivity implements
                         loadDeals();
                     }
                 }
-                EasyTracker.getInstance(this).activityStart(this);
+
+               // EasyTracker.getInstance(this).activityStart(this);
+                GoogleAnalytics.getInstance(this).reportActivityStart(this);
             } catch (Exception e) {
                 android.util.Log.e("Error", e.toString(), e);
             }
@@ -687,7 +717,8 @@ public class DealsActivity extends UserActivity implements
         if (timerTask != null)
             timerTask.cancel();
         android.util.Log.i("On Stop", "Cancelling Timer");
-        EasyTracker.getInstance(this).activityStop(this);
+        //EasyTracker.getInstance(this).activityStop(this);
+        GoogleAnalytics.getInstance(this).reportActivityStop(this);
     }
 
     @Override

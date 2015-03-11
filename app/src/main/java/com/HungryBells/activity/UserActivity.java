@@ -28,6 +28,7 @@ import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Log;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.Date;
 
@@ -41,6 +42,9 @@ public abstract class UserActivity extends FragmentActivity implements
 
 	/* Google Analytics interface object to track the activities */
     EasyTracker easyTracker = null;
+
+    /* New Google analytics v4 */
+    Tracker t = null;
 
 	/* To show the progress bar dialog */
     CustomProgressDialog progressBar;

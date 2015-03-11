@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.HungryBells.DTO.LoginRequestDto;
 import com.HungryBells.DTO.ServiceListenerType;
@@ -27,6 +28,9 @@ import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -91,6 +95,29 @@ public class LoginActivity extends UserActivity implements OnClickListener {
         getActionBar().hide();
 
         // homePageNavigation();
+
+
+        // New google analytics v4
+        //***************************//
+        try
+        {
+            // Get tracker.
+            Tracker t = ((GlobalAppState) getApplication()).getTracker(
+                    GlobalAppState.TrackerName.APP_TRACKER);
+
+            // Set screen name.
+            t.setScreenName("Login Activity");
+
+            // Send a screen view.
+            t.send(new HitBuilders.AppViewBuilder().build());
+
+            // Enable Advertising Features.
+            t.enableAdvertisingIdCollection(true);
+        }
+        catch(Exception  e)
+        {
+            Toast.makeText(getApplicationContext(), "Error" + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -237,13 +264,15 @@ public class LoginActivity extends UserActivity implements OnClickListener {
         } catch (Exception e) {
             Log.e("error", e.toString(), e);
         }
-        EasyTracker.getInstance(this).activityStart(this); // Add this method.
+        //EasyTracker.getInstance(this).activityStart(this); // Add this method.
+        GoogleAnalytics.getInstance(this).reportActivityStart(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        EasyTracker.getInstance(this).activityStop(this);
+        //EasyTracker.getInstance(this).activityStop(this);
+        GoogleAnalytics.getInstance(this).reportActivityStop(this);
     }
 
     @Override

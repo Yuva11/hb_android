@@ -52,6 +52,9 @@ import com.HungryBells.util.Util;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.location.LocationClient;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -174,6 +177,28 @@ public class MainActivity extends UserActivity {
         } catch (Exception e) {
             Util.customToast(this, getString(R.string.internalerror));
             android.util.Log.e("Internal error", e.toString(), e);
+        }
+
+        // New google analytics v4
+        //***************************//
+        try
+        {
+            // Get tracker.
+            Tracker t = ((GlobalAppState) getApplication()).getTracker(
+                    GlobalAppState.TrackerName.APP_TRACKER);
+
+            // Set screen name.
+            t.setScreenName("Main Activity");
+
+            // Send a screen view.
+            t.send(new HitBuilders.AppViewBuilder().build());
+
+            // Enable Advertising Features.
+            t.enableAdvertisingIdCollection(true);
+        }
+        catch(Exception  e)
+        {
+            Toast.makeText(getApplicationContext(), "Error" + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
    /*This method invoke after onback pressed on the time of settings page*/
@@ -343,7 +368,8 @@ public class MainActivity extends UserActivity {
     public void onStart() {
         super.onStart();
         android.util.Log.d("MainActivity", "On Start");
-        EasyTracker.getInstance(this).activityStart(this);
+        //EasyTracker.getInstance(this).activityStart(this);
+        GoogleAnalytics.getInstance(this).reportActivityStart(this);
 
     }
 
@@ -351,6 +377,7 @@ public class MainActivity extends UserActivity {
     protected void onRestart() {
         super.onRestart();
         android.util.Log.d("MainActivity", "On Restart Process");
+        GoogleAnalytics.getInstance(this).reportActivityStop(this);
     }
 
     @Override
