@@ -75,6 +75,8 @@ public class ViewDealsActivity extends UserActivity implements
     /* ViewDealsactivity swipe using viewpager*/
     ViewPager mViewPager;
 
+    MenuItem like_button;
+
     /*
   * Initiaizing httpConnection,viewpager
   *
@@ -175,12 +177,14 @@ public class ViewDealsActivity extends UserActivity implements
     public boolean checkIsLiked(int position) {
         currentPage = position;
         if (appState.getAllDeals().get(position).getIsliked()) {
-            ((ImageView) findViewById(R.id.textViewlike))
-                    .setImageResource(R.drawable.unlikes);
+            like_button.setIcon(R.drawable.unlikes);
+            //((ImageView) findViewById(R.id.textViewlike))
+                    //.setImageResource(R.drawable.unlikes);
             return true;
         } else {
-            ((ImageView) findViewById(R.id.textViewlike))
-                    .setImageResource(R.drawable.likes);
+            like_button.setIcon(R.drawable.likes);
+            //((ImageView) findViewById(R.id.textViewlike))
+                    //.setImageResource(R.drawable.likes);
 
             return false;
         }
@@ -235,6 +239,7 @@ public class ViewDealsActivity extends UserActivity implements
             Log.e("Error", e.toString(), e);
         }
     }
+
     /*This method return true if the current restaurant is favorite for user*/
     private boolean getIsFavorate(Deals item) {
         try {
@@ -371,10 +376,20 @@ public class ViewDealsActivity extends UserActivity implements
                 startActivitiesUser(myOrders, this);
                 break;
 
-            /// custom things
-            case R.id.favButtonImage:
+
+            case R.id.action_like:
+
+                addCouponLike();
+
                 break;
-            case R.id.shareButtonImage:
+            case R.id.action_share:
+                // Share the item on web
+                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Content");
+                startActivity(Intent.createChooser(shareIntent, "Share via"));
+
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -387,7 +402,12 @@ public class ViewDealsActivity extends UserActivity implements
     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.login, menu);
+        getMenuInflater().inflate(R.menu.best_pick_detail_menu, menu);
+
+        like_button = menu.findItem(R.id.action_like);
+
+        checkIsLiked(currentPage);
+
         return true;
     }
 
@@ -431,13 +451,13 @@ public class ViewDealsActivity extends UserActivity implements
         boolean like = false;
         if (appState.getAllDeals().get(currentPage).getIsliked()) {
             Util.customToast(this, getString(R.string.likeremovesucuess));
-            ((ImageView) findViewById(R.id.textViewlike))
-                    .setImageResource(R.drawable.likes);
+            like_button.setIcon(R.drawable.likes);
+            //((ImageView) findViewById(R.id.textViewlike)).setImageResource(R.drawable.likes);
         } else {
             like = true;
             Util.customToast(this, getString(R.string.likesucuess));
-            ((ImageView) findViewById(R.id.textViewlike))
-                    .setImageResource(R.drawable.unlikes);
+            like_button.setIcon(R.drawable.unlikes);
+            //((ImageView) findViewById(R.id.textViewlike)).setImageResource(R.drawable.unlikes);
         }
         appState.getAllDeals().get(currentPage).setIsliked(like);
         Map<String, ContentDTO> contents = ContentsCache.getInstance()
