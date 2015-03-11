@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:id="@+id/imagedealback"
-    android:background="#ffffff">
+    android:background="@android:color/white">
 
 
 
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent">
 
         <ImageView
@@ -135,14 +135,23 @@
         android:src="@drawable/sold_out"
         android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="266dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="126dp"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"/>
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>
