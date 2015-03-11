@@ -71,8 +71,7 @@ public class ServiceListener {
 				try {
 					url = appState.getUrl() + requestData;
 					URI website = new URI(url);
-                    Log.e("Url",url);
-                    Log.e("Url",entity+"");
+
 					HttpResponse response = requestType(website, method, entity);
                     /*HttpResponse response = requestType(website, method, entity);
                     String responseData = EntityUtils.toString(response.getEntity());*/
@@ -86,6 +85,36 @@ public class ServiceListener {
 					}
 					in.close();
 					String responseData = sb.toString();
+
+                    // Logging all the data
+                    Log.e("Url",url);
+                    Log.e("Url",entity+"");
+                    if (entity != null) {
+                        if (entity.getContent() != null) {
+                            try {
+                                BufferedReader br = new BufferedReader(new InputStreamReader(entity.getContent()));
+                                Log.e("entity", br.readLine());
+                            } catch (Exception e) {
+                                Log.e("Error", e.toString());
+                            }
+                        }
+                    }
+                    Log.e("ResponseData", responseData);
+                    /*
+                    *
+                    * Uncomment the following lines to print all the charracters in the responseData to LogCat
+                    *
+                    Log.println(1, "ResponseData", responseData);
+                    int maxLogSize = 1000;
+                    for(int i = 0; i <= responseData.length() / maxLogSize; i++) {
+                        int start = i * maxLogSize;
+                        int end = (i+1) * maxLogSize;
+                        end = end > responseData.length() ? responseData.length() : end;
+                        Log.v("Response Data :" + i, responseData.substring(start, end));
+                    }
+                    */
+
+
 					Bundle b = new Bundle();
 					if (extra != null)
 						b.putAll(extra);

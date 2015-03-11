@@ -1,13 +1,5 @@
 package com.HungryBells.activity;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import org.apache.http.entity.StringEntity;
-import org.apache.http.protocol.HTTP;
-
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -20,10 +12,10 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
-import android.provider.CalendarContract;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
@@ -34,8 +26,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.Window;
-
 import android.widget.LinearLayout;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,6 +61,15 @@ import com.google.android.gms.location.LocationClient;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import org.apache.http.entity.StringEntity;
+import org.apache.http.protocol.HTTP;
+
+import java.io.File;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Timer;
+import java.util.TimerTask;
+
 /* Deals Activity Page class */
 @SuppressLint("InflateParams")
 public class DealsActivity extends UserActivity implements
@@ -77,7 +78,6 @@ public class DealsActivity extends UserActivity implements
    /* Dealsactivity Sliding tabs*/
     PagerSlidingTabStrip tabs;
     LinearLayout mTabsLinearLayout;
-
 
     /* Dealsactivity swipe using viewpager*/
     private ViewPager viewPager;
@@ -376,7 +376,7 @@ public class DealsActivity extends UserActivity implements
     *
     * */
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
-        private final String[] titles = { " Best Pick ", "What's New ",
+        private final String[] titles = { "What's New ", " Best Pick ",
                 "  Coupons " };
 
         public MyPagerAdapter(android.support.v4.app.FragmentManager fm) {
@@ -397,9 +397,9 @@ public class DealsActivity extends UserActivity implements
         public android.support.v4.app.Fragment getItem(int currentPage) {
 
             if (currentPage == 0) {
-                return new DealsListFragment();
-            } else if (currentPage == 1)
                 return new WhatsNewFragment();
+            } else if (currentPage == 1)
+                return new DealsListFragment();
             else
                 return new CouponsFragment();
         }
@@ -445,7 +445,6 @@ public class DealsActivity extends UserActivity implements
                         searchByLocation(location, this);
                     }
                     break;
-
                 case R.id.action_favrestaurent:
                     appState.setSelectedItem(0);
                     Intent cart = new Intent(this, FavorateRestaurentActivity.class);
@@ -471,12 +470,14 @@ public class DealsActivity extends UserActivity implements
             }
         return false;
     }
+
     /*
     * Inflating the menus in the Action oveerflow button
     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.login, menu);
+
         return true;
     }
     /*
@@ -566,6 +567,8 @@ public class DealsActivity extends UserActivity implements
         viewDeals.putExtras(bundle);
         appState.setSelectedItem(0);
         startActivitiesUser(viewDeals, this);
+
+
     }
 
 
