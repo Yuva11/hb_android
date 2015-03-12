@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/HBCode/AppviralityUI/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="fa01895027ad9161753b59080d74a324a9c9c056">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-c5c342fa1a883a2d62ab53a57ebf9910e462f697.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/HBCode/AppviralityUI/unspecified/libs/AppViralitySDK_V1.1.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="73df6fe1f942565c74a8175bf3cfb083bf53f1f7">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/AppViralitySDK_V1.1.3-ef43e14feac87702573d2d10c1e67beffce51ab9.jar" />
+    </item>
+
+</items>

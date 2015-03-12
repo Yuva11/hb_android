@@ -177,12 +177,17 @@ public class ViewDealsActivity extends UserActivity implements
     public boolean checkIsLiked(int position) {
         currentPage = position;
         if (appState.getAllDeals().get(position).getIsliked()) {
-            like_button.setIcon(R.drawable.unlikes);
+
+            like_button.setIcon(R.drawable.ic_action_like_full);
+
+            //like_button.setIcon(R.drawable.unlikes);
             //((ImageView) findViewById(R.id.textViewlike))
                     //.setImageResource(R.drawable.unlikes);
             return true;
         } else {
-            like_button.setIcon(R.drawable.likes);
+
+            like_button.setIcon(R.drawable.ic_action_like_empty);
+            //like_button.setIcon(R.drawable.likes);
             //((ImageView) findViewById(R.id.textViewlike))
                     //.setImageResource(R.drawable.likes);
 
@@ -451,12 +456,14 @@ public class ViewDealsActivity extends UserActivity implements
         boolean like = false;
         if (appState.getAllDeals().get(currentPage).getIsliked()) {
             Util.customToast(this, getString(R.string.likeremovesucuess));
-            like_button.setIcon(R.drawable.likes);
+            like_button.setIcon(R.drawable.ic_action_like_empty);
+            //like_button.setIcon(R.drawable.likes);
             //((ImageView) findViewById(R.id.textViewlike)).setImageResource(R.drawable.likes);
         } else {
             like = true;
             Util.customToast(this, getString(R.string.likesucuess));
-            like_button.setIcon(R.drawable.unlikes);
+            like_button.setIcon(R.drawable.ic_action_like_full);
+            //like_button.setIcon(R.drawable.unlikes);
             //((ImageView) findViewById(R.id.textViewlike)).setImageResource(R.drawable.unlikes);
         }
         appState.getAllDeals().get(currentPage).setIsliked(like);

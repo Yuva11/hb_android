@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.appvirality.test" >
+
+    <uses-sdk
+        android:minSdkVersion="1"
+        android:targetSdkVersion="1" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for com.appvirality.test"
+        android:targetPackage="com.appvirality.test" />
+
+    <application>
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="com.appvirality.wom.WelcomeScreenActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.appvirality.wom.ShowGrowthHack"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/appvirality_activity_style" />
+        <activity
+            android:name="com.appvirality.wom.Settings"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/appvirality_activity_style" />
+    </application>
+
+</manifest>

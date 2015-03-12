@@ -3,13 +3,15 @@
 
     <item
         android:id="@+id/action_like"
-        android:icon="@drawable/restaurent"
+        android:icon="@drawable/ic_action_like_empty"
         android:title="Like"
         android:showAsAction="always"/>
     <item
         android:id="@+id/action_share"
         android:title="Share"
-        android:showAsAction="ifRoom"/>
+        android:icon="@drawable/ic_action_share"
+        android:showAsAction="always"/>
+    <!--
     <item
         android:id="@+id/action_myorders"
         android:icon="@drawable/ic_myorders"
@@ -31,5 +33,6 @@
         android:icon="@drawable/feedbackback_menu"
         android:title="@string/feedbackcomments"
         android:showAsAction="ifRoom"/>
+        -->
 
 </menu>

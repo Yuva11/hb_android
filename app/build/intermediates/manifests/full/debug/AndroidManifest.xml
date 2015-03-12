@@ -214,6 +214,17 @@
 
         <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity" />
         <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity" />
+        <activity
+            android:name="com.appvirality.wom.WelcomeScreenActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.appvirality.wom.ShowGrowthHack"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/appvirality_activity_style" />
+        <activity
+            android:name="com.appvirality.wom.Settings"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/appvirality_activity_style" />
     </application>
 
 </manifest>
