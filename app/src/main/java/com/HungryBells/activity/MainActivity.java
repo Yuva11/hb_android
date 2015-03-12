@@ -1,57 +1,41 @@
 package com.HungryBells.activity;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.lang.reflect.Constructor;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.Future;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.location.Location;
-import android.media.MediaPlayer;
 import android.net.Uri;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.provider.Settings;
+import android.provider.Settings.Secure;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.HungryBells.DTO.ADSettingsDTO;
 import com.HungryBells.DTO.Customers;
 import com.HungryBells.DTO.ServiceListenerType;
-import com.HungryBells.DTO.User;
 import com.HungryBells.DTO.VersonDetailsDTO;
 import com.HungryBells.StaggeredGridView.ProgressWheel;
 import com.HungryBells.activity.service.GooglePlayServices;
 import com.HungryBells.activity.subactivity.AnimationRunActivty;
 import com.HungryBells.activity.subactivity.GCMRegistrationActivity;
 import com.HungryBells.service.ServiceListener;
-import com.HungryBells.util.ContentsCache;
 import com.HungryBells.util.FontOverride;
 import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
+import com.appvirality.android.AppviralityAPI;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
-
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -60,15 +44,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
-import com.koushikdutta.ion.ProgressCallback;
-
-import org.apache.http.entity.StringEntity;
-import org.apache.http.protocol.HTTP;
-
 import com.mobileapptracker.MobileAppTracker;
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
-import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
-import android.provider.Settings.Secure;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 
 
@@ -139,9 +120,21 @@ public class MainActivity extends UserActivity {
             registrations();
 
 
-            // Initialize MAT
+            // Initializing MAT
             MobileAppTracker.init(getApplicationContext(), "174262", "0275ecc3449ce2aed43bcfd5bd8cc6de");
             mobileAppTracker = MobileAppTracker.getInstance();
+
+            // Initializing AppVirality SDK
+            AppviralityAPI.init(getApplicationContext());
+            AppviralityAPI.UserDetails.setInstance(getApplicationContext())
+                    .setUserEmail("emailid")
+                    .setUserName("name")
+                    .setUseridInStore("storeId")
+                    .setProfileImage("userProfileUrl")
+                    .setCountry("Country")
+                    .setState("State")
+                    .setCity("City")
+                    .Update();
 
             // If your app already has a pre-existing user base before you implement the MAT SDK, then
             // identify the pre-existing users with this code snippet.
