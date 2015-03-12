@@ -108,7 +108,7 @@
     <orderEntry type="library" exported="" name="gson-2.3" level="project" />
     <orderEntry type="library" exported="" name="play-services-6.1.71" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.3" level="project" />
-    <orderEntry type="library" name="AppViralitySDK_V1.1.3" level="project" />
+    <orderEntry type="module" module-name="AppviralityUI" exported="" />
   </component>
 </module>
 
