@@ -27,8 +27,10 @@ import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 // Sample adapter implementation extending from AsymmetricGridViewAdapter<DemoItem>.
 // This is the easiest way to get started.
@@ -42,6 +44,7 @@ public class DefaultListAdapter extends AsymmetricGridViewAdapter<ContentDealDTO
 
     /*Stores the advertisement*/
     public List<ContentDealDTO> mItems = new ArrayList<ContentDealDTO>();
+    Object[] mItemsArray;
 
     /*background color for layout*/
     String backColor;
@@ -81,6 +84,7 @@ public class DefaultListAdapter extends AsymmetricGridViewAdapter<ContentDealDTO
 
         mContext = context;
         mItems = items;
+        mItemsArray = mItems.toArray();
         mAppContext = app;
         this.backColor = backColor;
         this.textColor = textColor;
@@ -97,7 +101,7 @@ public class DefaultListAdapter extends AsymmetricGridViewAdapter<ContentDealDTO
     public View getActualView(final int position, final View convertView, final ViewGroup parent) {
 
         View view = null;
-        final ContentDealDTO item = mItems.get(position);
+        final ContentDealDTO item = (ContentDealDTO)mItemsArray[position];
 
 		/*String url = item.getUrl();*/
         if (convertView == null) {

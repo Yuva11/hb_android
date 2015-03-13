@@ -39,122 +39,120 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3300">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1359" max-vertical-offset="7035">
-              <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4030#4064#0" expanded="true" />
-                <element signature="e#5934#6894#0" expanded="true" />
-                <element signature="e#6879#6880#0" expanded="true" />
-                <element signature="e#6975#7008#0" expanded="true" />
-                <element signature="e#8085#8371#0" expanded="true" />
-                <element signature="e#8178#8331#0" expanded="true" />
-                <element signature="e#8308#8309#0" expanded="true" />
-                <element signature="e#8356#8357#0" expanded="true" />
-                <element signature="e#9005#9535#0" expanded="true" />
-                <element signature="e#9512#9513#0" expanded="true" />
-                <element signature="e#9845#9863#0" expanded="true" />
-                <element signature="e#11423#11705#0" expanded="true" />
-                <element signature="e#11516#11665#0" expanded="true" />
-                <element signature="e#11642#11643#0" expanded="true" />
-                <element signature="e#11690#11691#0" expanded="true" />
-                <element signature="e#16054#16087#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DealsActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DealsActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/DealsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3846154" vertical-offset="5628" max-vertical-offset="12570">
-              <caret line="399" column="43" selection-start-line="399" selection-start-column="27" selection-end-line="399" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.17086528" vertical-offset="4239" max-vertical-offset="7020">
+              <caret line="407" column="16" selection-start-line="407" selection-start-column="16" selection-end-line="407" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#loadDeals#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#getSearchLocations#0;class#DealsActivity#0" expanded="false" />
+                <element signature="class#MyTimerTask#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#forceShowActionBarOverflowMenu#0;class#DealsActivity#0" expanded="false" />
+                <element signature="e#12577#12804#0" expanded="true" />
+                <element signature="e#12789#12790#0" expanded="true" />
+                <element signature="method#setUpTabStrip#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#allDealContents#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onMenuOpened#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onBackPressed#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onBackPressed#1;class#DealsActivity#0" expanded="false" />
+                <element signature="method#dealsAdsViewPage#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#dealsViewPage#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#dealsCouponViewPage#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#processMessage#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#profileUpdate#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#initializeTimerTask#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onStart#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onStop#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#DealsActivity#0" expanded="false" />
+                <element signature="class#LocationReceiver#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onReceive#0;class#LocationReceiver#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#updateProfile#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#getRegistrationId#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onSaveInstanceState#0;class#DealsActivity#0" expanded="false" />
+                <element signature="method#onRestoreInstanceState#0;class#DealsActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WhatsNewFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="fragment_whatsnew.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_whatsnew.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1305">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_whatsnew.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_whatsnew.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="11.111111" vertical-offset="300" max-vertical-offset="1080">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_whatsnew.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/fragment_whatsnew.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1275">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_whatsnew.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/fragment_whatsnew.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1275">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WhatsNewFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/fragments/WhatsNewFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3233831" vertical-offset="0" max-vertical-offset="3780">
-              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+            <state vertical-scroll-proportion="-4.6153846" vertical-offset="0" max-vertical-offset="3780">
+              <caret line="45" column="74" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewDealsFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/fragments/ViewDealsFragment.java">
+      <file leaf-file-name="DefaultListAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/adapter/DefaultListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="5610">
-              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppviralityUI/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppviralityUI.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppviralityUI/AppviralityUI.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppviralityUI/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
+              <caret line="100" column="98" selection-start-line="100" selection-start-column="98" selection-end-line="100" selection-end-column="98" />
+              <folding>
+                <element signature="e#3056#3088#0" expanded="true" />
+                <element signature="method#getActualView#0;class#DefaultListAdapter#0" expanded="false" />
+                <element signature="class#Holder#0;class#DefaultListAdapter#0" expanded="false" />
+                <element signature="method#sendDelasList#0;class#DefaultListAdapter#0" expanded="false" />
+                <element signature="e#9949#9992#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1820,6 +1818,8 @@
         <option value="$PROJECT_DIR$/AppviralityUI/build.gradle" />
         <option value="$PROJECT_DIR$/AppviralityUI/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/HungryBells/fragments/WhatsNewFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/adapter/DefaultListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/DealsActivity.java" />
       </list>
     </option>
   </component>
@@ -1854,7 +1854,55 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBell1812" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBell1812" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hb-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBell1812" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hb-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppviralityUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBell1812" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hb-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1871,6 +1919,60 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBell1812" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBell1812" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBell1812" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment_whatsnew.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1949,57 +2051,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="HungryBell1812" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HungryBell1812" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hb-android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HungryBell1812" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hb-android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppviralityUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HungryBell1812" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hb-android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HungryBells" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adapter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2134,7 +2214,7 @@
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -2210,15 +2290,16 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32943678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2254,17 +2335,120 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/fragments/WhatsNewFragment.java</url>
-          <line>82</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3300">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="7065">
+          <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/DealsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5985" max-vertical-offset="12915">
+          <caret line="399" column="43" selection-start-line="399" selection-start-column="27" selection-end-line="399" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadDeals#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#getSearchLocations#0;class#DealsActivity#0" expanded="false" />
+            <element signature="class#MyTimerTask#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#forceShowActionBarOverflowMenu#0;class#DealsActivity#0" expanded="false" />
+            <element signature="e#12577#12804#0" expanded="true" />
+            <element signature="e#12789#12790#0" expanded="true" />
+            <element signature="method#setUpTabStrip#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#allDealContents#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onMenuOpened#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#1;class#DealsActivity#0" expanded="false" />
+            <element signature="method#dealsAdsViewPage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#dealsViewPage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#dealsCouponViewPage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#processMessage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#profileUpdate#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#initializeTimerTask#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onStop#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#DealsActivity#0" expanded="false" />
+            <element signature="class#LocationReceiver#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onReceive#0;class#LocationReceiver#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#updateProfile#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#getRegistrationId#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onSaveInstanceState#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onRestoreInstanceState#0;class#DealsActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/fragments/WhatsNewFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="3780">
+          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/fragments/ViewDealsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="6285">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppviralityUI/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="630">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppviralityUI/AppviralityUI.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppviralityUI/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3270">
@@ -2277,25 +2461,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="6765">
           <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4030#4064#0" expanded="true" />
-            <element signature="e#5934#6894#0" expanded="true" />
-            <element signature="e#6879#6880#0" expanded="true" />
-            <element signature="e#6975#7008#0" expanded="true" />
-            <element signature="e#8085#8371#0" expanded="true" />
-            <element signature="e#8178#8331#0" expanded="true" />
-            <element signature="e#8308#8309#0" expanded="true" />
-            <element signature="e#8356#8357#0" expanded="true" />
-            <element signature="e#9005#9535#0" expanded="true" />
-            <element signature="e#9512#9513#0" expanded="true" />
-            <element signature="e#9845#9863#0" expanded="true" />
-            <element signature="e#11423#11705#0" expanded="true" />
-            <element signature="e#11516#11665#0" expanded="true" />
-            <element signature="e#11642#11643#0" expanded="true" />
-            <element signature="e#11690#11691#0" expanded="true" />
-            <element signature="e#16054#16087#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2367,35 +2533,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1359" max-vertical-offset="7035">
           <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4030#4064#0" expanded="true" />
-            <element signature="e#5934#6894#0" expanded="true" />
-            <element signature="e#6879#6880#0" expanded="true" />
-            <element signature="e#6975#7008#0" expanded="true" />
-            <element signature="e#8085#8371#0" expanded="true" />
-            <element signature="e#8178#8331#0" expanded="true" />
-            <element signature="e#8308#8309#0" expanded="true" />
-            <element signature="e#8356#8357#0" expanded="true" />
-            <element signature="e#9005#9535#0" expanded="true" />
-            <element signature="e#9512#9513#0" expanded="true" />
-            <element signature="e#9845#9863#0" expanded="true" />
-            <element signature="e#11423#11705#0" expanded="true" />
-            <element signature="e#11516#11665#0" expanded="true" />
-            <element signature="e#11642#11643#0" expanded="true" />
-            <element signature="e#11690#11691#0" expanded="true" />
-            <element signature="e#16054#16087#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/DealsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3846154" vertical-offset="5628" max-vertical-offset="12570">
-          <caret line="399" column="43" selection-start-line="399" selection-start-column="27" selection-end-line="399" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2407,11 +2545,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_whatsnew.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_whatsnew.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.111111" vertical-offset="300" max-vertical-offset="1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large/fragment_whatsnew.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/fragment_whatsnew.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/fragments/WhatsNewFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3233831" vertical-offset="0" max-vertical-offset="3780">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        <state vertical-scroll-proportion="-4.6153846" vertical-offset="0" max-vertical-offset="3780">
+          <caret line="45" column="74" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/adapter/DefaultListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
+          <caret line="100" column="98" selection-start-line="100" selection-start-column="98" selection-end-line="100" selection-end-column="98" />
+          <folding>
+            <element signature="e#3056#3088#0" expanded="true" />
+            <element signature="method#getActualView#0;class#DefaultListAdapter#0" expanded="false" />
+            <element signature="class#Holder#0;class#DefaultListAdapter#0" expanded="false" />
+            <element signature="method#sendDelasList#0;class#DefaultListAdapter#0" expanded="false" />
+            <element signature="e#9949#9992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/HungryBells/activity/DealsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17086528" vertical-offset="4239" max-vertical-offset="7020">
+          <caret line="407" column="16" selection-start-line="407" selection-start-column="16" selection-end-line="407" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadDeals#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#getSearchLocations#0;class#DealsActivity#0" expanded="false" />
+            <element signature="class#MyTimerTask#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#forceShowActionBarOverflowMenu#0;class#DealsActivity#0" expanded="false" />
+            <element signature="e#12577#12804#0" expanded="true" />
+            <element signature="e#12789#12790#0" expanded="true" />
+            <element signature="method#setUpTabStrip#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#allDealContents#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onMenuOpened#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#1;class#DealsActivity#0" expanded="false" />
+            <element signature="method#dealsAdsViewPage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#dealsViewPage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#dealsCouponViewPage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#processMessage#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#profileUpdate#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#initializeTimerTask#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onStop#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#DealsActivity#0" expanded="false" />
+            <element signature="class#LocationReceiver#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onReceive#0;class#LocationReceiver#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#updateProfile#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#getRegistrationId#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onSaveInstanceState#0;class#DealsActivity#0" expanded="false" />
+            <element signature="method#onRestoreInstanceState#0;class#DealsActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

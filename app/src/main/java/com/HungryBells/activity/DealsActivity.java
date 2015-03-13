@@ -88,6 +88,10 @@ public class DealsActivity extends UserActivity implements
 	/* Memember variable to store on back button pressed or not */
     private boolean isBackPressed = false;
 
+    private WhatsNewFragment whatsNewFragment;
+    private DealsListFragment dealsListFragment;
+    private CouponsFragment couponsFragment;
+
 	/*Timer task instacne */
     TimerTask timerTask;
 
@@ -162,6 +166,9 @@ public class DealsActivity extends UserActivity implements
             finish();
         }
 
+        whatsNewFragment = new WhatsNewFragment();
+        dealsListFragment = new DealsListFragment();
+        couponsFragment = new CouponsFragment();
 
         // New google analytics v4
         //***************************//
@@ -376,7 +383,7 @@ public class DealsActivity extends UserActivity implements
     *
     * */
     public class MyPagerAdapter extends FragmentStatePagerAdapter {
-        private final String[] titles = { "What's New ", " Best Pick ",
+        private final String[] titles = { " Best Pick ", "What's New ",
                 "  Coupons " };
 
         public MyPagerAdapter(android.support.v4.app.FragmentManager fm) {
@@ -397,11 +404,13 @@ public class DealsActivity extends UserActivity implements
         public android.support.v4.app.Fragment getItem(int currentPage) {
 
             if (currentPage == 0) {
-                return new WhatsNewFragment();
-            } else if (currentPage == 1)
+                // return new WhatsNewFragment();
                 return new DealsListFragment();
-            else
-                return new CouponsFragment();
+            } else if (currentPage == 1) {
+                return new WhatsNewFragment();
+                //return dealsListFragment;//new DealsListFragment();
+            } else
+                return couponsFragment;//new CouponsFragment();
         }
         @Override
         public int getItemPosition(Object object) {
@@ -536,9 +545,10 @@ public class DealsActivity extends UserActivity implements
     }
 	/* This function will determine which is sliding tab is selected */
     public void pageChanged(int currentPosition){
-
         tabs.setSelectedText(currentPosition);
         setUpTabStrip(currentPosition);
+
+        viewPager.setCurrentItem(currentPosition);
     }
 
     /*
@@ -618,6 +628,7 @@ public class DealsActivity extends UserActivity implements
 
 
     }
+
     /* This method updates the profile information in shared preferences */
     private void profileUpdate(){
         android.util.Log.e("Updated","updates done");

@@ -54,7 +54,7 @@ public class WhatsNewFragment extends Fragment implements AdapterView.OnItemClic
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setRetainInstance(true);
+        setRetainInstance(true);
     }
 
     @Override
@@ -98,21 +98,21 @@ public class WhatsNewFragment extends Fragment implements AdapterView.OnItemClic
         Log.e("Orientation","Orientations:"+getResources().getConfiguration().orientation);
         if (mItems.size() > 0) {
 
-            int counter = 0;
-            for (ContentDealDTO item : mItems) {
 
-                int rowSpan = 1, colSpan = 1;
-                if (counter == 0) {
-                    // Make first item 2 x 2
-                    rowSpan = 2;
-                    colSpan = 2;
-                }
+           for(int i = 0; i < mItems.size(); i++) {
 
-                item.setColumnSpan(colSpan);
-                item.setRowSpan(rowSpan);
+               ContentDealDTO item = mItems.get(i);
+               int rowSpan = 1, colSpan = 1;
+               if (i == 0) {
+                   // Make first item 2 x 2
+                   rowSpan = 2;
+                   colSpan = 2;
+               }
 
-                counter++;
-            }
+               item.setColumnSpan(colSpan);
+               item.setRowSpan(rowSpan);
+
+           }
 
             listView.setVisibility(View.VISIBLE);
             ((RelativeLayout) getActivity().findViewById(R.id.noads))
@@ -182,7 +182,7 @@ public class WhatsNewFragment extends Fragment implements AdapterView.OnItemClic
         }
 
 
-        //adapter.notifyDataSetChanged();
+        //adapter.notify();
     }
 
     /*
