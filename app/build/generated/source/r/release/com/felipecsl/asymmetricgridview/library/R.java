@@ -12,10 +12,10 @@ public final class R {
 		public static final int red = 0x7f09001b;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f0200d7;
-		public static final int item_divider_horizontal = 0x7f0200e4;
-		public static final int item_divider_vertical = 0x7f0200e5;
-		public static final int text_view_background_selector = 0x7f020134;
+		public static final int ic_launcher = 0x7f0200f4;
+		public static final int item_divider_horizontal = 0x7f020101;
+		public static final int item_divider_vertical = 0x7f020102;
+		public static final int text_view_background_selector = 0x7f020151;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f0d0012;

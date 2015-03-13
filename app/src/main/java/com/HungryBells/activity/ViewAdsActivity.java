@@ -77,6 +77,8 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
     /*check for playvideo*/
     private boolean isPlayVideo = false;
 
+    MenuItem like_button;
+
     /*Check for version and change to different layout
     * Layout for more than 18 view pager and other viewflow
     * */
@@ -132,6 +134,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 
             FloatingActionButton pink_icon= (FloatingActionButton)
                     findViewById(R.id.pink_icon);
+
+            // dice button set visibility to gone
+            pink_icon.setVisibility(View.GONE);
             pink_icon.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -166,6 +171,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 
             FloatingActionButton pink_icon= (FloatingActionButton)
                     findViewById(R.id.pink_icon);
+
+            // dice button set visibility to gone
+            pink_icon.setVisibility(View.GONE);
             pink_icon.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -191,12 +199,14 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 	public boolean checkIsLiked(int position) {
 		urlLoad = position;
 		if (appState.getAdvertisements().get(position).getIsliked()) {
-			((ImageView) findViewById(R.id.textViewAdslike))
-					.setImageResource(R.drawable.unlikes);
+
+            like_button.setIcon(R.drawable.ic_action_like_full);
+            //((ImageView) findViewById(R.id.textViewAdslike)).setImageResource(R.drawable.unlikes);
 			return true;
 		} else {
-			((ImageView)findViewById(R.id.textViewAdslike))
-					.setImageResource(R.drawable.likes);
+            like_button.setIcon(R.drawable.ic_action_like_empty);
+
+			//((ImageView)findViewById(R.id.textViewAdslike)).setImageResource(R.drawable.likes);
 
 			return false;
 		}
@@ -262,6 +272,18 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 			Intent myOrders = new Intent(this, MyOrdersActivity.class);
 			startActivitiesUser(myOrders, this);
 			break;
+            case R.id.action_like:
+
+                addAdvertisementLike();
+
+                break;
+            case R.id.action_share:
+                // Share the item on web
+                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Content");
+                startActivity(Intent.createChooser(shareIntent, "Share via"));
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -273,7 +295,13 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
     * */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.login, menu);
+		//getMenuInflater().inflate(R.menu.login, menu);
+        getMenuInflater().inflate(R.menu.best_pick_detail_menu, menu);
+        like_button = menu.findItem(R.id.action_like);
+
+        checkIsLiked(urlLoad);
+
+
 		return true;
 	}
 
@@ -360,15 +388,19 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 		if (appState.getAdvertisements().get(urlLoad).getIsliked()) {
 			Util.customToast(this, getString(R.string.likeremovesucuess));
 
-			((ImageView)  findViewById(R.id.textViewAdslike))
-					.setImageResource(R.drawable.likes);
+            like_button.setIcon(R.drawable.ic_action_like_empty);
+			//((ImageView)  findViewById(R.id.textViewAdslike)).setImageResource(R.drawable.likes);
 		} else {
 			like = true;
 			Util.customToast(this, getString(R.string.likesucuess));
-			((ImageView)  findViewById(R.id.textViewAdslike))
-					.setImageResource(R.drawable.unlikes);
+
+            like_button.setIcon(R.drawable.ic_action_like_full);
+
+			//((ImageView)  findViewById(R.id.textViewAdslike)).setImageResource(R.drawable.unlikes);
 		}
 		appState.getAdvertisements().get(urlLoad).setIsliked(like);
+
+        /*
 		Map<String, ContentDTO> contents = ContentsCache.getInstance()
 				.getContents();
 		ContentDTO contentsNew = contents.get(appState.getActionBarLocation());
@@ -376,6 +408,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 		ContentsCache.getInstance().getContents()
 				.put(appState.getActionBarLocation(), contentsNew);
         dataChange();
+        */
 	}
 
 	@Override
@@ -447,8 +480,8 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 	}
     /*This method is used to send like request to HB server*/
 	public void addAdvertisementLike() {
-		progressBar.setCancelable(false);
-		progressBar.show();
+		//progressBar.setCancelable(false);
+		//progressBar.show();
 
 		String url = "content/like/"
 				+ appState.getAdvertisements().get(urlLoad).getId() + "/"
