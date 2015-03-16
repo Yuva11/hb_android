@@ -389,13 +389,15 @@ public class ViewDealsActivity extends UserActivity implements
                 break;
             case R.id.action_share:
 
-                String title = appState.getAllDeals().get(currentPage).getName();
+                Deals deal = deals.get(currentPage);
+                String content = "Hey! I liked this Best Pick - " + deal.name + ". Check it out on Hungry Bells, The Hyperlocal Real-time Food Ordering App which gets you the most ultimate dining experience! \n" +
+                        "Download from Google Play Now!  http://goo.gl/Z2GSKh";
 
                 // Share the item on web
                 Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, title);
-                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, title);
+                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, deal.name);
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, content);
                 startActivity(Intent.createChooser(shareIntent, "Share via"));
 
                 break;
