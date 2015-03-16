@@ -220,6 +220,14 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name="com.HungryBells.activity.TermsPrivacyActivity"
+            android:label="@string/title_activity_terms_privacy"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DealsActivity" />
+        </activity>
         <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity" />
         <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity" />
         <activity

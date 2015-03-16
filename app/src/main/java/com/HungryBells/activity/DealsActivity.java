@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
@@ -475,6 +476,31 @@ public class DealsActivity extends UserActivity implements
                     Intent myOrders = new Intent(this, MyOrdersActivity.class);
                     startActivitiesUser(myOrders, this);
                     break;
+
+                case R.id.action_terms:
+                    InputMethodManager imm = (InputMethodManager) getSystemService(
+                            INPUT_METHOD_SERVICE);
+                    // imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    Intent intent = new Intent(this, TermsPrivacyActivity.class);
+                    intent.putExtra("key", "terms");
+                    intent.putExtra("keyName", "login");
+                    startActivitiesUser(intent, this);
+                    finish();
+                    //overridePendingTransition(0, R.anim.login_signupanimation);
+                    break;
+
+                case R.id.action_privacy:
+                    InputMethodManager im = (InputMethodManager) getSystemService(
+                            INPUT_METHOD_SERVICE);
+                    // im.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    Intent intentPrivacy = new Intent(this,
+                            TermsPrivacyActivity.class);
+                    intentPrivacy.putExtra("key", "privacy");
+                    intentPrivacy.putExtra("keyName", "login");
+                    startActivitiesUser(intentPrivacy, this);
+                    finish();
+                    // overridePendingTransition(0, R.anim.login_signupanimation);
+                    break;
                 default:
                     return super.onOptionsItemSelected(item);
             }
@@ -486,7 +512,7 @@ public class DealsActivity extends UserActivity implements
     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.login, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
 
         return true;
     }
