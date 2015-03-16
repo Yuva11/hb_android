@@ -44,4 +44,5 @@ dependencies {
     compile 'com.felipecsl.asymmetricgridview:library:1.1.0'
     compile files('libs/MobileAppTracker-3.7.1.jar')
     compile project(':AppviralityUI')
+    compile files('libs/GoogleConversionTrackingSdk-2.2.1.jar')
 }

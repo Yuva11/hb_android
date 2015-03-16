@@ -19,7 +19,7 @@
         android:id="@+id/pink_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        fab:fab_icon="@drawable/share"
+        fab:fab_icon="@drawable/feedbackback_menu"
         fab:fab_colorNormal="@color/pink"
         fab:fab_colorPressed="@color/pink_pressed"
 

@@ -136,13 +136,13 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
                     findViewById(R.id.pink_icon);
 
             // dice button set visibility to gone
-            pink_icon.setVisibility(View.GONE);
+            //pink_icon.setVisibility(View.GONE);
             pink_icon.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     checkIsLiked(urlLoad);
                     mCustomPagerAdapter.notifyDataSetChanged();
-                 /*   customQuickAction.show(view);*/
+                /*customQuickAction.show(view); */
                 }
             });
 
@@ -173,11 +173,12 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
                     findViewById(R.id.pink_icon);
 
             // dice button set visibility to gone
-            pink_icon.setVisibility(View.GONE);
+            //pink_icon.setVisibility(View.GONE);
             pink_icon.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mAdsPagerAdapter.pageChange(urlLoad);
+                    //mAdsPagerAdapter.pageChange(urlLoad);
+                    adFeedBack();
                 }
             });
             viewFlow.setOnViewSwitchListener(new ViewFlowEX.ViewSwitchListener() {
@@ -296,7 +297,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		//getMenuInflater().inflate(R.menu.login, menu);
-        getMenuInflater().inflate(R.menu.best_pick_detail_menu, menu);
+        getMenuInflater().inflate(R.menu.whats_new_detail_menu, menu);
         like_button = menu.findItem(R.id.action_like);
 
         checkIsLiked(urlLoad);

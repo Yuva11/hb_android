@@ -388,11 +388,14 @@ public class ViewDealsActivity extends UserActivity implements
 
                 break;
             case R.id.action_share:
+
+                String title = appState.getAllDeals().get(currentPage).getName();
+
                 // Share the item on web
                 Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
-                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Content");
+                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, title);
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, title);
                 startActivity(Intent.createChooser(shareIntent, "Share via"));
 
                 break;

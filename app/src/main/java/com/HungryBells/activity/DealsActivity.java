@@ -52,6 +52,7 @@ import com.HungryBells.util.PagerSlidingTabStrip;
 import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
 import com.felipecsl.asymmetricgridview.library.Utils;
+import com.google.ads.conversiontracking.AdWordsAutomatedUsageReporter;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Log;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -753,6 +754,9 @@ public class DealsActivity extends UserActivity implements
 
     @Override
     protected void onResume() {
+
+        // Enable automated usage reporting.
+        //AdWordsAutomatedUsageReporter.enableAutomatedUsageReporting(this, MY_ACCOUNT_CONVERSION_ID)
         super.onResume();
     }
 

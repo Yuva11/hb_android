@@ -14,11 +14,11 @@ public class Deals implements Serializable {
 
     Long id;
 
-    String name;//Name of the Deal
+    public String name;//Name of the Deal
 
     ContentType contentType = ContentType.BUYOUT;//Type of Deal -{BUYOUT,PROMOTION,ADVERTISEMENT}
 
-    String details;//Details of the Deal
+    public String details;//Details of the Deal
 
     DealTemplateDTO dealTemplate;//NORMAL OR FULL_IMAGE
 
