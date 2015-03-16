@@ -23,6 +23,7 @@ import com.HungryBells.DTO.ServiceListenerType;
 import com.HungryBells.util.CustomProgressDialog;
 import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
+import com.appvirality.android.AppviralityAPI;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
@@ -196,6 +197,9 @@ public class SocialAuthActivity extends UserActivity {
             if (!myData.getAuthenticationId().isEmpty()) mobileAppTracker.setUserId(myData.getAuthenticationId());
             mobileAppTracker.measureAction("933029118");
             //mobileAppTracker.measureAction("registration");
+
+
+            AppviralityAPI.saveConversionEvent("Signup", null, null);
 
 		} catch (Exception e) {
 			Log.e("Json Parsing", e.toString(), e);

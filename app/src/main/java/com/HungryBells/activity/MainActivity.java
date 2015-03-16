@@ -126,6 +126,7 @@ public class MainActivity extends UserActivity {
 
             // Initializing AppVirality SDK
             AppviralityAPI.init(getApplicationContext());
+            /*
             AppviralityAPI.UserDetails.setInstance(getApplicationContext())
                     .setUserEmail("emailid")
                     .setUserName("name")
@@ -135,7 +136,7 @@ public class MainActivity extends UserActivity {
                     .setState("State")
                     .setCity("City")
                     .Update();
-
+            */
             // If your app already has a pre-existing user base before you implement the MAT SDK, then
             // identify the pre-existing users with this code snippet.
             // Otherwise, MAT counts your pre-existing users as new installs the first time they run your app.
