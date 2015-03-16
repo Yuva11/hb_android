@@ -65,7 +65,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
     /* Global application state Object where all contextual information is stored */
 	GlobalAppState appState;
 
-/*Viewflow instance*/
+    /*Viewflow instance*/
     private ViewFlowEX viewFlow;
 
     /*Relativelayout instance*/
@@ -73,6 +73,8 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 
    /*adapter instance*/
     AdvertisementViewAdapter mAdsPagerAdapter;
+
+    List<ContentDealDTO> mAdvertisements;
 
     /*check for playvideo*/
     private boolean isPlayVideo = false;
@@ -105,6 +107,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
                     viewFlow = (ViewFlowEX) findViewById(R.id.advertisementFlow);
                     setViewFlowAdapter();
                 }
+
+                mAdvertisements = appState.getAdvertisements();
+
 			} catch (Exception e) {
 				Log.e("View Ads", e.toString(), e);
 			}
@@ -220,13 +225,13 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 	}
 
     /*this method cloteol viewpager scroll*/
- public void pageScrollAds(boolean scroll){
+    public void pageScrollAds(boolean scroll){
      viewPager.setPagingEnabled(scroll);
  }
 
     /*
-* This method will fetch menu icons to be dispalyed dispalyed in action overflow button
-* */
+    * This method will fetch menu icons to be dispalyed dispalyed in action overflow button
+    * */
 	@Override
 	public boolean onMenuOpened(int featureId, Menu menu) {
 		if (featureId == Window.FEATURE_ACTION_BAR && menu != null) {
@@ -279,11 +284,18 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 
                 break;
             case R.id.action_share:
+
+                ContentDealDTO content = mAdvertisements.get(urlLoad);
+
+                String textContent = "Hey! I liked this post - " + content.name + ". Check it out on Hungry Bells, The Hyperlocal Real-time Food Ordering App which gets you the most ultimate dining experience! \n" +
+                        "Download from Google Play Now!  http://goo.gl/Z2GSKh\n";
+
+
                 // Share the item on web
                 Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
-                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Content");
+                shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, content.name);
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, textContent);
                 startActivity(Intent.createChooser(shareIntent, "Share via"));
 		default:
 			return super.onOptionsItemSelected(item);
@@ -370,8 +382,9 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 			break;
 		}
 	}
+
     /*reload the adapter*/
-  private void dataChange(){
+    private void dataChange(){
       int currentApiVersion = android.os.Build.VERSION.SDK_INT;
       if(currentApiVersion>18) {
           mCustomPagerAdapter.notifyDataSetChanged();
@@ -438,11 +451,13 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 
 	}
+
     /*This method is used to create dialog box for feedback*/
-   public void adFeedBack(){
+    public void adFeedBack(){
        Log.e("Ads","Ad changed feedback");
        new FeedbackAdDialog(this).show();
-   }
+    }
+
     /*Used to call the status update*/
     public void updateStatus(SocialAuthAdapter.Provider provider){
         progressBar = new CustomProgressDialog(this);
@@ -479,6 +494,7 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 		}
 
 	}
+
     /*This method is used to send like request to HB server*/
 	public void addAdvertisementLike() {
 		//progressBar.setCancelable(false);

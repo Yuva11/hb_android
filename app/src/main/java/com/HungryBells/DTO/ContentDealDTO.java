@@ -21,7 +21,7 @@ public class ContentDealDTO implements Serializable, AsymmetricItem {
 
     MerchantDto merchant;
 
-    String name;
+    public String name;
 
     String contentType;//Promotional OR Non-promotional
 
