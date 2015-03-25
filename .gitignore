@@ -835,3 +835,7 @@ app/build/intermediates/symbols/debug/R.txt
 app/build/intermediates/tmp/dex/debug/inputList.txt
 app/build/outputs/apk/app-debug-unaligned.apk
 app/build/outputs/apk/app-debug.apk
+app/build/intermediates/classes/debug/com/HungryBells/activity/LoginActivity$2.class
+app/build/intermediates/classes/debug/com/HungryBells/activity/MainActivity$2$1.class
+app/build/intermediates/classes/debug/com/HungryBells/activity/MainActivity$4$1.class
+app/build/intermediates/classes/debug/com/HungryBells/activity/MainActivity$4.class
