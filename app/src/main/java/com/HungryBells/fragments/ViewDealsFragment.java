@@ -14,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -21,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -42,6 +44,8 @@ public class ViewDealsFragment extends Fragment {
 	ImageLoader imageLoader;
 	Deals deals;
 	View rootView;
+
+    Button callUsButton;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -162,6 +166,19 @@ public class ViewDealsFragment extends Fragment {
 			}
 
              */
+
+
+            // Call us button
+            callUsButton = (Button) rootView.findViewById(R.id.call_us_button);
+            callUsButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String phone = "+918088002288";
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                    startActivity(intent);
+                }
+            });
+
 
 			TextView dealEndTime = (TextView) rootView
 					.findViewById(R.id.dealendtime);

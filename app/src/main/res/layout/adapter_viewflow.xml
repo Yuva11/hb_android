@@ -530,7 +530,42 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical" >
+                        android:orientation="vertical"
+                        android:background="#E1F5FF"
+                        >
+                        
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+                            
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Need some help?"
+                                android:gravity="left"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Timing- 12 PM to 9 PM"
+                                android:gravity="right"/>
+                            
+                            </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/call_us_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Call Us"
+                            android:textColor="@color/white"
+                            android:background="@drawable/call_us_button_bg"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            />
 
                         <!--
                         <RelativeLayout

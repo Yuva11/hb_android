@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_like"
+        android:icon="@drawable/ic_action_like_empty"
+        android:title="Like"
+        android:showAsAction="always"/>
+    <item
+        android:id="@+id/action_share"
+        android:title="Share"
+        android:icon="@drawable/ic_action_share"
+        android:showAsAction="always"/>
+    <!--
+    <item
+        android:id="@+id/action_myorders"
+        android:icon="@drawable/ic_myorders"
+        android:title="@string/myorders"
+        android:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile"
+        android:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_favrestaurent"
+        android:icon="@drawable/restaurent"
+        android:title="@string/favrest"
+        android:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_feedback"
+        android:icon="@drawable/feedbackback_menu"
+        android:title="@string/feedbackcomments"
+        android:showAsAction="ifRoom"/>
+        -->
+
+</menu><!-- From: file:/Users/ritesh/iOS/49apps/Projects/App%20Dev/HungryBells/HBCode/app/src/main/res/menu/best_pick_detail_menu.xml -->
