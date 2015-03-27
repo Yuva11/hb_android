@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-31badd4c9895778ab8cfec4463310fb1b4ddc0ad.jar" />
+    </item>
+    <item
         jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.0.1"
@@ -14,6 +21,20 @@
         revision="21.0.1"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-955ccbd47022966767ee1c6b6004dc5458e1c130.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/HBCode/AppviralityUI/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="07d0050f5da5c568edd28fc79849f353ad1d946b">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-c5c342fa1a883a2d62ab53a57ebf9910e462f697.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/gson-2.3-613d5bd2496aef34bc3d8483aa6ff83a82ea73d5.jar" />
     </item>
     <item
         jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/18.0.0/classes.jar"
@@ -37,60 +58,11 @@
         <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/ion-1.3.8-2cb6f475c2b9ae6a829f790d607bd07b330cd54d.jar" />
     </item>
     <item
-        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
         jumboMode="false"
         revision="21.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/library-2.4.0-1b1e27b34c910b645333f9218c9e13f98a9a3358.jar" />
-    </item>
-    <item
-        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.3/a85588bec3e2c4584d593d3f15df1677321bca72/universal-image-loader-1.9.3.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.3-a822d97538c2d35c8e679074321f634574b2bff8.jar" />
-    </item>
-    <item
-        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-020354e45fc9a9eb430059aaa037b076d4a1a655.jar" />
-    </item>
-    <item
-        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/HBCode/AppviralityUI/unspecified/libs/AppViralitySDK_V1.1.3.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="73df6fe1f942565c74a8175bf3cfb083bf53f1f7">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/AppViralitySDK_V1.1.3-ef43e14feac87702573d2d10c1e67beffce51ab9.jar" />
-    </item>
-    <item
-        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/1.3.8/1f8e4f77d5f24179688c32b24dd5f79e889e7110/androidasync-1.3.8.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="1f8e4f77d5f24179688c32b24dd5f79e889e7110">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/androidasync-1.3.8-0d2393903b24f18aa618865171f3635a7bdcd9f7.jar" />
-    </item>
-    <item
-        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.8.1/1eb6690b0c629d7000c77a72df5e822fb974f521/jsoup-1.8.1.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/jsoup-1.8.1-bce6c094c520f449d796c6131cb4956b1007a3d7.jar" />
-    </item>
-    <item
-        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/HBCode/AppviralityUI/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="07d0050f5da5c568edd28fc79849f353ad1d946b">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-c5c342fa1a883a2d62ab53a57ebf9910e462f697.jar" />
-    </item>
-    <item
-        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/gson-2.3-613d5bd2496aef34bc3d8483aa6ff83a82ea73d5.jar" />
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-5250d9eb8796e0e8358759391bdba65f2f4e970f.jar" />
     </item>
     <item
         jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f5df0f60aa42762a86e31e29892da07c5aaa0c71/lombok-1.12.6.jar"
@@ -114,6 +86,13 @@
         <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/MobileAppTracker-3.7.1-df8bbf0c71ea7e9a146679a96557a4b28d4b3a1c.jar" />
     </item>
     <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.twotoasters.jazzylistview/library/1.0.1/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="57b2e2d8ba828b125939f621aa74f7edabe7aa71">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-80b8604d531a968932f111fbc03ec8a3812b1fc7.jar" />
+    </item>
+    <item
         jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/viewflow.jar"
         jumboMode="false"
         revision="21.0.1"
@@ -121,11 +100,11 @@
         <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/viewflow-5cc82ec77a29cb47e4faa078bb45878236db9f08.jar" />
     </item>
     <item
-        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.twotoasters.jazzylistview/library/1.0.1/classes.jar"
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
         jumboMode="false"
         revision="21.0.1"
-        sha1="57b2e2d8ba828b125939f621aa74f7edabe7aa71">
-        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-80b8604d531a968932f111fbc03ec8a3812b1fc7.jar" />
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/library-2.4.0-1b1e27b34c910b645333f9218c9e13f98a9a3358.jar" />
     </item>
     <item
         jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.1.0/classes.jar"
@@ -135,11 +114,39 @@
         <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-19904c212c7841e61091c709eb835d375f284b81.jar" />
     </item>
     <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.3/a85588bec3e2c4584d593d3f15df1677321bca72/universal-image-loader-1.9.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.3-a822d97538c2d35c8e679074321f634574b2bff8.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/classes-020354e45fc9a9eb430059aaa037b076d4a1a655.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/HBCode/AppviralityUI/unspecified/libs/AppViralitySDK_V1.1.3.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="73df6fe1f942565c74a8175bf3cfb083bf53f1f7">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/AppViralitySDK_V1.1.3-ef43e14feac87702573d2d10c1e67beffce51ab9.jar" />
+    </item>
+    <item
         jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/socialauth-4.6.jar"
         jumboMode="false"
         revision="21.0.1"
         sha1="14c62d7fe1ba2e9cbf5a884c1815f0a9fd03890f">
         <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/socialauth-4.6-c664790208d52a92f23a8b17142f7297970834d1.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/1.3.8/1f8e4f77d5f24179688c32b24dd5f79e889e7110/androidasync-1.3.8.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="1f8e4f77d5f24179688c32b24dd5f79e889e7110">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/androidasync-1.3.8-0d2393903b24f18aa618865171f3635a7bdcd9f7.jar" />
     </item>
     <item
         jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/libs/GoogleConversionTrackingSdk-2.2.1.jar"
@@ -161,6 +168,13 @@
         revision="21.0.1"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-6e503a86c7a96a4c2c00d472609953b157e3c363.jar" />
+    </item>
+    <item
+        jar="/Users/ritesh/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.8.1/1eb6690b0c629d7000c77a72df5e822fb974f521/jsoup-1.8.1.jar"
+        jumboMode="false"
+        revision="21.0.1"
+        sha1="1eb6690b0c629d7000c77a72df5e822fb974f521">
+        <dex dex="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/pre-dexed/debug/jsoup-1.8.1-bce6c094c520f449d796c6131cb4956b1007a3d7.jar" />
     </item>
     <item
         jar="/Users/ritesh/iOS/49apps/Projects/App Dev/HungryBells/HBCode/app/build/intermediates/exploded-aar/com.nhaarman.listviewanimations/lib-core-slh/3.1.0/classes.jar"

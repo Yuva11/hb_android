@@ -8,14 +8,14 @@ package com.felipecsl.asymmetricgridview.library;
 
 public final class R {
 	public static final class color {
-		public static final int dark_red = 0x7f090013;
-		public static final int red = 0x7f09001b;
+		public static final int dark_red = 0x7f090020;
+		public static final int red = 0x7f090028;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f0200f5;
-		public static final int item_divider_horizontal = 0x7f020102;
-		public static final int item_divider_vertical = 0x7f020103;
-		public static final int text_view_background_selector = 0x7f020154;
+		public static final int ic_launcher = 0x7f020107;
+		public static final int item_divider_horizontal = 0x7f020114;
+		public static final int item_divider_vertical = 0x7f020115;
+		public static final int text_view_background_selector = 0x7f02016f;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f0d0012;

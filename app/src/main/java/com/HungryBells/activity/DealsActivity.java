@@ -52,6 +52,7 @@ import com.HungryBells.util.JsonParsing;
 import com.HungryBells.util.PagerSlidingTabStrip;
 import com.HungryBells.util.UndoBarController;
 import com.HungryBells.util.Util;
+import com.facebook.FacebookSdk;
 import com.felipecsl.asymmetricgridview.library.Utils;
 import com.google.ads.conversiontracking.AdWordsAutomatedUsageReporter;
 import com.google.analytics.tracking.android.EasyTracker;
@@ -171,6 +172,8 @@ public class DealsActivity extends UserActivity implements
         whatsNewFragment = new WhatsNewFragment();
         dealsListFragment = new DealsListFragment();
         couponsFragment = new CouponsFragment();
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
 
         // New google analytics v4
         //***************************//

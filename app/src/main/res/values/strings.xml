@@ -116,6 +116,9 @@
     <string name="showcase_main_title">Preference Change</string>
     <string name="showcase_main_message">Click on This.Select My Profile</string>
 
+
+    <string name="facebook_app_id">620745721385388</string>
+
     <!--
     <string name="local_cloud">http://192.168.1.193:7070/</string>
     <string name="deepan_cloud">http://192.168.1.192:1010/</string>
