@@ -43,6 +43,7 @@ import com.HungryBells.util.DepthPageTransformer;
 import com.HungryBells.util.Util;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -284,6 +285,10 @@ public class ViewAdsActivity extends UserActivity implements OnClickListener {
 
                 break;
             case R.id.action_share:
+
+
+                easyTracker.send(MapBuilder.createEvent("Share",
+                        "What's New Details", "Item shared", null).build());
 
                 ContentDealDTO content = mAdvertisements.get(urlLoad);
 

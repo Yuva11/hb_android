@@ -389,6 +389,9 @@ public class ViewDealsActivity extends UserActivity implements
                 break;
             case R.id.action_share:
 
+                easyTracker.send(MapBuilder.createEvent("Share",
+                        "Best Pick Details","Item shared", null).build());
+
                 Deals deal = deals.get(currentPage);
                 String content = "Hey! I liked this Best Pick - " + deal.name + ". Check it out on Hungry Bells, The Hyperlocal Real-time Food Ordering App which gets you the most ultimate dining experience! \n" +
                         "Download from Google Play Now!  http://goo.gl/Z2GSKh";
