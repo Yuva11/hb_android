@@ -554,7 +554,7 @@
                                 android:text="Timing- 12 PM to 9 PM"
                                 android:gravity="right"/>
                             
-                            </RelativeLayout>
+                        </RelativeLayout>
 
                         <Button
                             android:id="@+id/call_us_button"
@@ -602,6 +602,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="15dp" />
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/more_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="20dp"/>
 
                 </LinearLayout>
 

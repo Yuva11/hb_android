@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AppviralityUI/AppviralityUI.iml" filepath="$PROJECT_DIR$/AppviralityUI/AppviralityUI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HBCode.iml" filepath="$PROJECT_DIR$/HBCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hb-android.iml" filepath="$PROJECT_DIR$/hb-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/hb-android.iml" filepath="$PROJECT_DIR$/hb-android.iml" />
     </modules>
   </component>

@@ -15,6 +15,7 @@ public class Deals implements Serializable {
     Long id;
 
     public String name;//Name of the Deal
+    public String detail_text;
 
     ContentType contentType = ContentType.BUYOUT;//Type of Deal -{BUYOUT,PROMOTION,ADVERTISEMENT}
 

@@ -179,6 +179,8 @@ public class ViewDealsFragment extends Fragment {
                 }
             });
 
+            TextView moreTextView = (TextView)rootView.findViewById(R.id.more_text);
+            moreTextView.setText(deals.detail_text);
 
 			TextView dealEndTime = (TextView) rootView
 					.findViewById(R.id.dealendtime);
